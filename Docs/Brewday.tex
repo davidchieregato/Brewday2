@@ -1,0 +1,133 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\title{Title page with logo}
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article}
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage[colorinlistoftodos]{todonotes}
+
+\begin{document}
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+ 
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\textsc{\LARGE Università degli studi di Milano Bicocca}\\[1.5cm] % Name of your university/college
+\textsc{\Large Gruppo-BrewDay-2}\\[0.5cm] % Major heading such as course name
+\textsc{\large Progetto-BrewDay-2}\\[0.5cm] % Minor heading such as course title
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\[0.4cm]
+{ \huge \bfseries Brewday}\\[0.4cm] % Title of your document
+\HRule \\[1.5cm]
+ 
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
+
+\begin{minipage}{0.45\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+David \textsc{Chieregato} 806961 % Your name
+Davide \textsc{Ditolve} 806953
+\end{flushleft}
+\end{minipage}
+~
+\begin{minipage}{0.45\textwidth}
+\begin{flushright} \large
+~\newline
+Chunhua \textsc{He} 804350\\
+Luca \textsc{De Filippi} 
+\end{flushright}
+\end{minipage}\\[2cm]
+
+% If you don't want a supervisor, uncomment the two lines below and remove the section above
+%\Large \emph{Author:}\\
+%John \textsc{Smith}\\[3cm] % Your name
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+\includegraphics{logo.jpg}\\[3cm] % Include a department/university logo - this will require the graphicx package
+ 
+%----------------------------------------------------------------------------------------
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+
+\begin{abstract}
+Riassunto progetto.
+\end{abstract}
+
+\section{Requisiti}
+
+...
+\section{Casi d'uso}
+\label{cd:primo}
+
+\subsection{Primo}
+...\\
+\todo[inline, color=green!40]{This is an inline comment.}
+
+% Commands to include a figure:
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{logo.jpg}
+\caption{\label{fig:frog}This is a figure caption.}
+\end{figure}
+
+\begin{table}
+\centering
+\begin{tabular}{l|r}
+Item & Quantity \\\hline
+Widgets & 42 \\
+Gadgets & 13
+\end{tabular}
+\caption{\label{tab:widgets}An example table.}
+\end{table}
+
+\subsection{Lists}
+
+\begin{enumerate}
+\item Like this,
+\item and like this.
+\end{enumerate}
+\dots or bullet points \dots
+\begin{itemize}
+\item Like this,
+\item and like this.
+\end{itemize}
+
+\section{Attività}
+
+\section{Sequenza}
+
+\section{Dominio}
+
+\section{Componenti}
+
+\section{Classi}
+
+\section{Iterazione}
+
+\section{Stato}
+
+\section{Test}
+
+\end{document}
