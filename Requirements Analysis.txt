@@ -1,0 +1,34 @@
+Requirements Analysis for "Brew Day!"
+
+The goal of this project is to develop an application for home brewers thats allows them to mantain a list of recipes, and adapt esisting ones.
+This application is intended for the "all-grain" users only, thus "extract" brews are not supported.
+
+
+Functional Requirements:
+
+The application allows users to create a recipe
+
+The application allows users to store a recipe 
+
+The application allows users to update a recipe
+
+The application allows users to delete a recipe
+
+
+The application mantain a list of available ingredients
+
+The application update ingredients's list after a batch
+
+The application update ingredients's list when new ingredients are bought
+
+The application produce a shopping list for the next batch 
+
+The application has "what should i brew today" feature.
+
+	With the "what should i brew today" feature, the application suggest a recipe made with the available ingredients.
+
+	With the "what should i brew today" feature, the application maximize the usage of available ingredients.
+
+	With the "what should i brew today" feature, the application maximize the batch size.
+
+
