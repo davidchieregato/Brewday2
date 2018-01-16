@@ -6,6 +6,16 @@ This application is intended for the "all-grain" users only, thus "extract" brew
 
 Functional Requirements:
 
+User:
+
+The application allows users to create an account
+
+The application allows users to login in their account
+
+	Every user have specific equipment which can produce a maximum "batch size"
+
+Recipe:
+	
 The application allows users to create a recipe
 
 The application allows users to store a recipe 
@@ -14,8 +24,15 @@ The application allows users to update a recipe
 
 The application allows users to delete a recipe
 
+The application stores recipe's ingredients in an "absolute" measure; eg. total percentage
+
+	Recipes are made by ingredients: Water, Malts, Hops, Yeasts, Sugars, Additives
+
+Ingredients:
 
 The application mantain a list of available ingredients
+
+The application notifies users about missing ingredients
 
 The application update ingredients's list after a batch
 
@@ -23,12 +40,16 @@ The application update ingredients's list when new ingredients are bought
 
 The application produce a shopping list for the next batch 
 
+Special features:
+
 The application has "what should i brew today" feature.
 
 	With the "what should i brew today" feature, the application suggest a recipe made with the available ingredients.
 
-	With the "what should i brew today" feature, the application maximize the usage of available ingredients.
+	With the "what should i brew today" feature, the suggested recipe maximizes the usage of available ingredients.
 
-	With the "what should i brew today" feature, the application maximize the batch size.
+	With the "what should i brew today" feature, the suggested recipe maximizes the batch size.
+	
+The application supports notes for brews
 
 
