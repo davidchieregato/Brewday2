@@ -69,6 +69,8 @@ Reliability:
 	
 Mantainance:
 	
+	*** aggiungere DESIGN PATTERN  ****
+	
 	The application's code can be easily refactored and updated
 	
 
