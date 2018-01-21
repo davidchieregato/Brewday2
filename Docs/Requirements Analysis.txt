@@ -52,4 +52,26 @@ The application has "what should i brew today" feature.
 	
 The application supports notes for brews
 
+------------------------------------------------------
+Non-functional Requirements:
 
+Usability:
+
+	The application have a user friendly GUI
+	
+	The application provides data in acceptable time
+	
+Reliability:
+	
+	The application provides a persitent database
+	
+	The application provides a scalable database
+	
+Mantainance:
+	
+	*** aggiungere DESIGN PATTERN  ****
+	
+	The application's code can be easily refactored and updated
+	
+
+	
