@@ -103,10 +103,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdditiviRicettaTest.cs" />
+    <Compile Include="AdditiviTest.cs" />
     <Compile Include="ApplicationDbContextTest.cs" />
     <Compile Include="ApplicationUserTest.cs" />
+    <Compile Include="Categorie_birreTest.cs" />
     <Compile Include="HomeControllerTest.cs" />
+    <Compile Include="IndexViewModelTest.cs" />
+    <Compile Include="LievitiRicettaTest.cs" />
+    <Compile Include="LuppoliRicettaTest.cs" />
+    <Compile Include="LuppoliTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ZuccheriRicettaTest.cs" />
+    <Compile Include="ZuccheriTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
