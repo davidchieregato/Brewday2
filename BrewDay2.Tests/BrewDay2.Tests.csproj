@@ -103,6 +103,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountControllerTest.cs" />
     <Compile Include="AdditiviRicettaTest.cs" />
     <Compile Include="AdditiviTest.cs" />
     <Compile Include="ApplicationDbContextTest.cs" />
