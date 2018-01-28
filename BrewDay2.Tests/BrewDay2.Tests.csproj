@@ -127,6 +127,7 @@
     <Compile Include="ResetPasswordViewModelTest.cs" />
     <Compile Include="RicetteControllerTest.cs" />
     <Compile Include="ZuccheriRicettaTest.cs" />
+    <Compile Include="ZuccherisControllerTest.cs" />
     <Compile Include="ZuccheriTest.cs" />
   </ItemGroup>
   <ItemGroup>
