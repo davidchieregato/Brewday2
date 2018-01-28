@@ -125,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModelTest.cs" />
     <Compile Include="ResetPasswordViewModelTest.cs" />
+    <Compile Include="RicetteControllerTest.cs" />
     <Compile Include="ZuccheriRicettaTest.cs" />
     <Compile Include="ZuccheriTest.cs" />
   </ItemGroup>
