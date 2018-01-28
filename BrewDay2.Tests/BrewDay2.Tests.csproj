@@ -121,6 +121,7 @@
     <Compile Include="LuppoliTest.cs" />
     <Compile Include="MagazzinoControllerTests.cs" />
     <Compile Include="MaltisControllerTest.cs" />
+    <Compile Include="ManageControllerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModelTest.cs" />
     <Compile Include="ResetPasswordViewModelTest.cs" />
