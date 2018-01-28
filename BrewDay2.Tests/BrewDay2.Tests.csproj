@@ -119,6 +119,7 @@
     <Compile Include="LuppoliControllerTest.cs" />
     <Compile Include="LuppoliRicettaTest.cs" />
     <Compile Include="LuppoliTest.cs" />
+    <Compile Include="MagazzinoControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RegisterViewModelTest.cs" />
     <Compile Include="ResetPasswordViewModelTest.cs" />
