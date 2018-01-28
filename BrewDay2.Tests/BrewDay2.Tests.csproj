@@ -116,6 +116,7 @@
     <Compile Include="LievitiRicettaTest.cs" />
     <Compile Include="LievitisControllerTest.cs" />
     <Compile Include="LoginViewModelTest.cs" />
+    <Compile Include="LuppoliControllerTest.cs" />
     <Compile Include="LuppoliRicettaTest.cs" />
     <Compile Include="LuppoliTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
