@@ -114,6 +114,7 @@
     <Compile Include="HomeControllerTest.cs" />
     <Compile Include="IndexViewModelTest.cs" />
     <Compile Include="LievitiRicettaTest.cs" />
+    <Compile Include="LievitisControllerTest.cs" />
     <Compile Include="LoginViewModelTest.cs" />
     <Compile Include="LuppoliRicettaTest.cs" />
     <Compile Include="LuppoliTest.cs" />
