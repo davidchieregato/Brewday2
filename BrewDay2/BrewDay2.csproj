@@ -197,9 +197,11 @@
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Additivi.cs" />
+    <Compile Include="Models\AdditiviMagazzino.cs" />
     <Compile Include="Models\AdditiviRicetta.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lieviti.cs" />
+    <Compile Include="Models\LievitiMagazzino.cs" />
     <Compile Include="Models\LievitiRicetta.cs" />
     <Compile Include="Models\Luppoli.cs" />
     <Compile Include="Models\LuppoliRicetta.cs" />
