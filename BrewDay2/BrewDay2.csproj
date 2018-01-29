@@ -224,6 +224,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="js\chart.js" />
+    <Content Include="js\hoverable-collapse.js" />
+    <Content Include="js\maps.js" />
+    <Content Include="js\misc.js" />
+    <Content Include="js\off-canvas.js" />
     <Content Include="pages\charts\index.html" />
     <Content Include="pages\forms\index.html" />
     <Content Include="pages\icons\index.html" />
