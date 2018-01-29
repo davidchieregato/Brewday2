@@ -276,6 +276,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Additivi\Edit.cshtml" />
     <Content Include="Views\Additivi\Index.cshtml" />
+    <Content Include="Views\Additivi\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
