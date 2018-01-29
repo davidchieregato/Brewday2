@@ -5,18 +5,42 @@
     {
     @Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
+
+            <div class="col-md-12 col-xs-12 col-sm-12">
+                Benvenuto<br /> <b>@User.Identity.Name</b>
+                @*@Html.ActionLink("Benvenuto " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })*@
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-6 col-xs-12 col-sm-12 noPad" style="max-width: 100%;">
+                    <a href="/Manage/" class="btn btn-personalizzatoManage btn-block">Account</a>
+                </div><br />
+                @*<div class="col-md-1 noPad hidden-xs hidden-sm">&nbsp;</div>*@
+                <div class="col-md-6 col-xs-12 col-sm-12 noPad"  style="max-width: 100%;">
+                    <a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-personalizzatoLogout btn-block">Logout</a>
+                </div>
+            </div>
+
+    @*<ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Salve " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            @Html.ActionLink("Benvenuto " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
         </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Disconnetti</a></li>
-    </ul>
+        <li><a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-personalizzato btn-block">Disconnetti</a></li>
+    </ul>*@
     }
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Registrazione", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Accedi", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+    <div class="col-md-12">
+        <div class="col-md-6 noPad col-xs-12 col-sm-12" style="max-width: 100%;">
+            @Html.ActionLink("Registrati", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-personalizzato btn-block" })
+        </div><br />
+        @*<div class="col-md-1 noPad hidden-xs hidden-sm">&nbsp;</div>*@
+        <div class="col-md-6 noPad col-xs-12 col-sm-12" style="max-width: 100%;">
+            @Html.ActionLink("Accedi", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-personalizzatoBlu btn-block" })
+        </div>
+    </div>
+    @*<ul class="nav navbar-nav navbar-right">
+        <li>@Html.ActionLink("Registrazione", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-personalizzato btn-block" })</li>
+        <li>@Html.ActionLink("Accedi", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-personalizzatoBlu btn-block" })</li>
+    </ul>*@
 }
