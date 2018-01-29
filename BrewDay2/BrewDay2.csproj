@@ -278,6 +278,7 @@
     <Content Include="Views\Additivi\Index.cshtml" />
     <Content Include="Views\Additivi\Details.cshtml" />
     <Content Include="Views\Additivi\Create.cshtml" />
+    <Content Include="Views\Additivi\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
