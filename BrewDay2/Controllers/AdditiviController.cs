@@ -78,7 +78,47 @@ namespace BrewDay2.Controllers
             }
             return View(additivi);
         }
+        // POST: Additivi/Edit/5
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Additivi additivi)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(additivi).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(additivi);
+        }
 
+        // GET: Additivi/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Additivi additivi = db.Additivi.Find(id);
+            if (additivi == null)
+            {
+                return HttpNotFound();
+            }
+            return View(additivi);
+        }
+
+        // POST: Additivi/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Additivi additivi = db.Additivi.Find(id);
+            db.Additivi.Remove(additivi);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
         protected override void Dispose(bool disposing)
         {
             if (disposing)
