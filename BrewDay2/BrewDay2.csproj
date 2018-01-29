@@ -283,6 +283,8 @@
     <Content Include="Views\Lievitis\Index.cshtml" />
     <Content Include="Views\Lievitis\Create.cshtml" />
     <Content Include="Views\Lievitis\Details.cshtml" />
+    <Content Include="Views\Lievitis\Delete.cshtml" />
+    <Content Include="Views\Lievitis\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
