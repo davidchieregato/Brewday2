@@ -13980,32 +13980,8 @@ input {
     left: 16px;
     font-size: 20px; }
 
-/*.auth-pages a.btn-google {
-  background-color: #f44336;
-  color: #ffffff;
-  border: none;
-  line-height: 1.88;
-  position: relative; }
-  .auth-pages a.btn-google:before {
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: 14px;
-    font-size: inherit;
-    text-rendering: auto;
-    display: inline;
-    position: absolute;
-    top: 10px;
-    left: 16px;
-    font-size: 20px; }
-*/ 
-
-
-
 
 .auth-pages a.btn-create-account {
   background: #ffffff;
   border: solid 1px #ebebeb;
   color: #1c2c3f; }
-
-
-
-/*# sourceMappingURL=maps/style.css.map */
