@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
-namespace BrewDay.Models
+namespace BrewDay2.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -44,7 +44,7 @@ namespace BrewDay.Models
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<BrewDay.Models.Magazzino> Magazzinoes { get; set; }
+        public System.Data.Entity.DbSet<Magazzino> Magazzinoes { get; set; }
     }
 
 }

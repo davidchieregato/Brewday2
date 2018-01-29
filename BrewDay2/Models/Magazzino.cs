@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
-using System.Linq;
-using System.Web;
 
-namespace BrewDay.Models
+namespace BrewDay2.Models
 {
     public class Magazzino
     {
