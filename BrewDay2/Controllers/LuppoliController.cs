@@ -58,5 +58,21 @@ namespace BrewDay.Controllers
 
             return View(luppoli);
         }
+
+        // GET: Luppoli/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Luppoli luppoli = db.Luppoli.Find(id);
+            if (luppoli == null)
+            {
+                return HttpNotFound();
+            }
+            return View(luppoli);
+        }
+
     }
 }
