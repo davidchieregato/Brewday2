@@ -211,6 +211,7 @@
     <Compile Include="Models\LuppoliRicetta.cs" />
     <Compile Include="Models\Magazzino.cs" />
     <Compile Include="Models\Malti.cs" />
+    <Compile Include="Models\MaltiMagazzino.cs" />
     <Compile Include="Models\MaltiRicetta.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Ricette.cs" />
