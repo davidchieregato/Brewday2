@@ -42,5 +42,21 @@ namespace BrewDay.Controllers
             return View();
         }
 
-	}
+        // POST: Luppoli/Create
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Luppoli luppoli)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Luppoli.Add(luppoli);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(luppoli);
+        }
+    }
 }
