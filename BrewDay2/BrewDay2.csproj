@@ -193,9 +193,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdditiviController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LievitisController.cs" />
     <Compile Include="Controllers\LuppoliController.cs" />
+    <Compile Include="Controllers\MagazzinoController.cs" />
     <Compile Include="Controllers\MaltisController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RicetteController.cs" />
+    <Compile Include="Controllers\ZuccherisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
