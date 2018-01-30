@@ -1506,6 +1506,10 @@
     <Content Include="Views\Luppoli\Index.cshtml" />
     <Content Include="Views\Ricette\Index.cshtml" />
     <Content Include="Views\Ricette\Create.cshtml" />
+    <Content Include="Views\Ricette\AggiungiAdditivo.cshtml" />
+    <Content Include="Views\Ricette\Delete.cshtml" />
+    <Content Include="Views\Ricette\Details.cshtml" />
+    <Content Include="Views\Ricette\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
