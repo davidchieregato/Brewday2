@@ -59,6 +59,37 @@ namespace BrewDay.Controllers
             return View(malti);
         }
 
+        // GET: Maltis/Edit/5
+        public ActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Malti malti = db.Malti.Find(id);
+            if (malti == null)
+            {
+                return HttpNotFound();
+            }
+            return View(malti);
+        }
+
+        // POST: Maltis/Edit/5
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit([Bind(Include = "Id,Nome,Produttore,Descrizione,Prezzo")] Malti malti)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(malti).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(malti);
+        }
+
 
     }
 }
