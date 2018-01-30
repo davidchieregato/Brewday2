@@ -214,6 +214,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Ricette.cs" />
     <Compile Include="Models\Zuccheri.cs" />
+    <Compile Include="Models\ZuccheriMagazzino.cs" />
     <Compile Include="Models\ZuccheriRicetta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
