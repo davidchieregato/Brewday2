@@ -227,7 +227,7 @@
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="css\ricetta.css" />
+    <Content Include="css\ricette.css" />
     <Content Include="css\style.css" />
     <Content Include="Dependencies Graph.png" />
     <Content Include="favicon.ico" />
