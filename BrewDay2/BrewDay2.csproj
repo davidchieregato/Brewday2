@@ -233,6 +233,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\asc.gif" />
+    <Content Include="images\bg.gif" />
     <Content Include="images\birre\1.png" />
     <Content Include="images\birre\1a.png" />
     <Content Include="images\birre\2.png" />
@@ -245,6 +247,8 @@
     <Content Include="images\birre\5a.png" />
     <Content Include="images\birre\6.png" />
     <Content Include="images\birre\6a.png" />
+    <Content Include="images\brewday.png" />
+    <Content Include="images\desc.gif" />
     <Content Include="js\chart.js" />
     <Content Include="js\hoverable-collapse.js" />
     <Content Include="js\maps.js" />
@@ -1294,6 +1298,7 @@
     <Content Include="Content\bootstrap\utilities.less" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="css\maps\style.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
@@ -1477,6 +1482,21 @@
     <Content Include="Views\Lievitis\Details.cshtml" />
     <Content Include="Views\Lievitis\Delete.cshtml" />
     <Content Include="Views\Lievitis\Edit.cshtml" />
+    <Content Include="Views\Zuccheris\Create.cshtml" />
+    <Content Include="Views\Zuccheris\Delete.cshtml" />
+    <Content Include="Views\Zuccheris\Details.cshtml" />
+    <Content Include="Views\Zuccheris\Edit.cshtml" />
+    <Content Include="Views\Zuccheris\Index.cshtml" />
+    <Content Include="Views\Maltis\Create.cshtml" />
+    <Content Include="Views\Maltis\Delete.cshtml" />
+    <Content Include="Views\Maltis\Details.cshtml" />
+    <Content Include="Views\Maltis\Edit.cshtml" />
+    <Content Include="Views\Maltis\Index.cshtml" />
+    <Content Include="Views\Luppoli\Create.cshtml" />
+    <Content Include="Views\Luppoli\Delete.cshtml" />
+    <Content Include="Views\Luppoli\Details.cshtml" />
+    <Content Include="Views\Luppoli\Edit.cshtml" />
+    <Content Include="Views\Luppoli\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
