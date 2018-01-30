@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BrewDay2.Controllers;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BrewDay2.Tests.Controllers
+namespace BrewDay2.Tests
 {
     [TestClass]
     public class HomeControllerTest
