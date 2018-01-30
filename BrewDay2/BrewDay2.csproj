@@ -250,6 +250,7 @@
     <Content Include="images\birre\6a.png" />
     <Content Include="images\brewday.png" />
     <Content Include="images\desc.gif" />
+    <Content Include="images\icon.png" />
     <Content Include="js\chart.js" />
     <Content Include="js\hoverable-collapse.js" />
     <Content Include="js\maps.js" />
