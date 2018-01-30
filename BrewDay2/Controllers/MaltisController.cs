@@ -105,6 +105,25 @@ namespace BrewDay.Controllers
             return View(malti);
         }
 
+        // POST: Maltis/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Malti malti = db.Malti.Find(id);
+            db.Malti.Remove(malti);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
 
     }
 }
