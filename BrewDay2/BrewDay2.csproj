@@ -207,6 +207,7 @@
     <Compile Include="Models\LievitiMagazzino.cs" />
     <Compile Include="Models\LievitiRicetta.cs" />
     <Compile Include="Models\Luppoli.cs" />
+    <Compile Include="Models\LuppoliMagazzino.cs" />
     <Compile Include="Models\LuppoliRicetta.cs" />
     <Compile Include="Models\Magazzino.cs" />
     <Compile Include="Models\Malti.cs" />
