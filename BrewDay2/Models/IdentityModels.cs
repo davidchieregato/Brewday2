@@ -25,9 +25,26 @@ namespace BrewDay2.Models
         {
         }
 
+        public DbSet<Additivi> Additivi { get; set; }
+        public DbSet<Lieviti> Lieviti { get; set; }
+        public DbSet<Luppoli> Luppoli { get; set; }
+        public DbSet<Malti> Malti { get; set; }
+        public DbSet<Zuccheri> Zuccheri { get; set; }
+        public DbSet<Ricette> Ricette { get; set; }
+        public DbSet<AdditiviRicetta> AdditiviRicettas { get; set; }
+        public DbSet<LievitiRicetta> LievitiRicettas { get; set; }
+        public DbSet<LuppoliRicetta> LuppoliRicettas { get; set; }
+        public DbSet<MaltiRicetta> MaltiRicettas { get; set; }
+        public DbSet<ZuccheriRicetta> ZuccheriRicettas { get; set; }
+        //public DbSet<Magazzino> Magazzini { get; set; }
+
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Magazzino> Magazzinoes { get; set; }
     }
+
 }
