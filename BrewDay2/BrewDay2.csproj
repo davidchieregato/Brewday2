@@ -193,6 +193,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdditiviController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LievitisController.cs" />
     <Compile Include="Controllers\LuppoliController.cs" />
     <Compile Include="Controllers\MaltisController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
