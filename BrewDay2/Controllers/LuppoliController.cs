@@ -102,7 +102,7 @@ namespace BrewDay.Controllers
             {
                 return HttpNotFound();
             }
-           
+            return View(luppoli);
         }
 
     }
