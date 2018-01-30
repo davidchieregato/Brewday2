@@ -1,113 +1,117 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-using BrewDay2.Models;
+using BrewDay.Models;
 
-namespace BrewDay2.Controllers
+namespace BrewDay.Controllers
 {
     [Authorize]
-    public class MaltisController : Controller
+    public class ZuccherisController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Maltis
+        // GET: Zuccheris
         public ActionResult Index()
         {
-            return View(db.Malti.ToList());
+            return View(db.Zuccheri.ToList());
         }
 
-        // GET: Maltis/Details/5
+        // GET: Zuccheris/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Malti malti = db.Malti.Find(id);
-            if (malti == null)
+            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            if (zuccheri == null)
             {
                 return HttpNotFound();
             }
-            return View(malti);
+            return View(zuccheri);
         }
 
-        // GET: Maltis/Create
+        // GET: Zuccheris/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Maltis/Create
+        // POST: Zuccheris/Create
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Produttore,Descrizione,Prezzo")] Malti malti)
+        public ActionResult Create([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Zuccheri zuccheri)
         {
             if (ModelState.IsValid)
             {
-                db.Malti.Add(malti);
+                db.Zuccheri.Add(zuccheri);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(malti);
+            return View(zuccheri);
         }
 
-        // GET: Maltis/Edit/5
+        // GET: Zuccheris/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Malti malti = db.Malti.Find(id);
-            if (malti == null)
+            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            if (zuccheri == null)
             {
                 return HttpNotFound();
             }
-            return View(malti);
+            return View(zuccheri);
         }
 
-        // POST: Maltis/Edit/5
+        // POST: Zuccheris/Edit/5
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Produttore,Descrizione,Prezzo")] Malti malti)
+        public ActionResult Edit([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Zuccheri zuccheri)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(malti).State = EntityState.Modified;
+                db.Entry(zuccheri).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(malti);
+            return View(zuccheri);
         }
 
-        // GET: Maltis/Delete/5
+        // GET: Zuccheris/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Malti malti = db.Malti.Find(id);
-            if (malti == null)
+            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            if (zuccheri == null)
             {
                 return HttpNotFound();
             }
-            return View(malti);
+            return View(zuccheri);
         }
 
-        // POST: Maltis/Delete/5
+        // POST: Zuccheris/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Malti malti = db.Malti.Find(id);
-            db.Malti.Remove(malti);
+            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            db.Zuccheri.Remove(zuccheri);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -120,6 +124,5 @@ namespace BrewDay2.Controllers
             }
             base.Dispose(disposing);
         }
-
     }
 }
