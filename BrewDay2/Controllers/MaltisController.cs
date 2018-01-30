@@ -42,6 +42,23 @@ namespace BrewDay.Controllers
             return View();
         }
 
-        
+        // POST: Maltis/Create
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Id,Nome,Produttore,Descrizione,Prezzo")] Malti malti)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Malti.Add(malti);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
+            return View(malti);
+        }
+
+
     }
 }
