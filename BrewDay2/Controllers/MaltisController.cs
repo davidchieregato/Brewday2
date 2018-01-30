@@ -90,6 +90,21 @@ namespace BrewDay.Controllers
             return View(malti);
         }
 
+        // GET: Maltis/Delete/5
+        public ActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            Malti malti = db.Malti.Find(id);
+            if (malti == null)
+            {
+                return HttpNotFound();
+            }
+            return View(malti);
+        }
+
 
     }
 }
