@@ -105,5 +105,25 @@ namespace BrewDay.Controllers
             return View(luppoli);
         }
 
+        // POST: Luppoli/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            Luppoli luppoli = db.Luppoli.Find(id);
+            db.Luppoli.Remove(luppoli);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
     }
 }
