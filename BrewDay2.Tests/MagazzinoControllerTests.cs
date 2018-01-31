@@ -1,12 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BrewDay2.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace BrewDay2.Controllers.Tests
+namespace BrewDay2.Tests
 {
     [TestClass()]
     public class MagazzinoControllerTests
