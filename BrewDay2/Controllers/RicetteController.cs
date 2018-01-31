@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using BrewDay2.Models;
 
-namespace BrewDay.Controllers
+namespace BrewDay2.Controllers
 {
     [Authorize]
     public class RicetteController : Controller
