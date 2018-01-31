@@ -1,0 +1,33 @@
+﻿@model IEnumerable<BrewDay2.Models.Magazzino>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.UserId)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.UserId)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MagazzinoId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MagazzinoId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MagazzinoId })
+        </td>
+    </tr>
+}
+
+</table>
