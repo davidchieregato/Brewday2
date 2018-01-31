@@ -27,10 +27,9 @@ namespace BrewDay2.Tests
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            if (controller.About() is ViewResult result) Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
         [TestMethod]
