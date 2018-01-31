@@ -1,0 +1,201 @@
+﻿.contlist ul {
+    text-align: left !important;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+    .contlist ul li {
+        display: inline-block;
+        margin: 0;
+        max-width: 326px;
+        padding: 0;
+    }
+
+.multibox_preview {
+    text-align: left;
+}
+
+.box-articoli-hp {
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: 463px;
+    float: left;
+    background-color: #fff;
+    margin: 0 6px 10px 0;
+    max-width: 320px;
+}
+
+    .box-articoli-hp h3 a:link, .box-articoli-hp h3 a:active, .box-articoli-hp h3 a:visited {
+        font-size: 30px;
+        text-transform: initial;
+        text-decoration: none;
+        font-weight: normal;
+        color: #333;
+        font-family: 'Source Sans Pro', sans-serif;
+        line-height: 28px;
+        font-weight: 400;
+    }
+
+.nofloat {
+    clear: both;
+    float: none;
+    font-size: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.categoria-articolo-label-time {
+    left: 0;
+    position: absolute;
+    top: 200px;
+    width: 100%;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    -webkit-padding-start: 0;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    -webkit-padding-start: 0;
+}
+
+.contlist {
+    position: relative;
+    width: 100%;
+    display: table;
+    text-align: center !important;
+}
+
+.box-articoli-hp .img-articolo {
+    background-color: #33cc99;
+    margin-bottom: 32px;
+    overflow: hidden;
+}
+
+.box-articoli-hp h3, h3.title_articolo {
+    margin: 0 0 0 0;
+    padding: 15px 18px 7px;
+    line-height: 28px;
+    height: 80px;
+    overflow: hidden;
+}
+
+.box-articoli-hp p {
+    margin: 0 0 0 0;
+    padding: 0 18px 16px 18px;
+    font-size: 14px;
+    line-height: 22px;
+    /* font-family: 'Raleway', sans-serif; */
+    color: #666;
+}
+
+.box-articoli-hp a.continua:link, .box-articoli-hp a.continua:active, .box-articoli-hp a.continua:visited {
+    color: #33cc99;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.box-articoli-hp a.categoria-articolo-label-link:link, .box-articoli-hp a.categoria-articolo-label-link:active, .box-articoli-hp a.categoria-articolo-label-link:visited {
+    background-color: #33cc99;
+    color: #FFFFFF;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 18px;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    min-width: 113px;
+    text-decoration: none;
+    float: left;
+}
+@media screen and (min-width: 981px) {
+    .contlist {
+        width: 990px;
+    }
+
+    .box-articoli-hp-big, .box-banner-hp-cx, .home_speciale_box, .title-inpag {
+        width: 980px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .box-articoli-hp-big {
+        float: none
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .box-articoli-hp-big-content {
+        top: 120px;
+        right: 15px
+    }
+
+    .box-articoli-hp-big {
+        height: auto;
+        max-height: none
+    }
+
+        .box-articoli-hp-big .img-articolo-big {
+            position: relative;
+            float: none
+        }
+
+    .contlist ul {
+        text-align: center !important;
+    }
+
+    .box-articoli-hp h1 a:active, .box-articoli-hp h1 a:link, .box-articoli-hp h1 a:visited, .box-articoli-hp h3 a:active, .box-articoli-hp h3 a:link, .box-articoli-hp h3 a:visited {
+        font-size: 26px !important;
+    }
+
+    .box-articoli-hp p {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (max-width: 980px) and (min-width: 601px) {
+    .contlist ul li {
+        padding: 0;
+        width: 31%;
+        margin: 1%;
+    }
+
+    .box-articoli-hp {
+        margin: 0 6px 10px;
+    }
+
+        .box-articoli-hp h1, .box-articoli-hp h3 {
+            line-height: 20px;
+            height: 65px;
+        }
+
+            .box-articoli-hp h1 a:active, .box-articoli-hp h1 a:link, .box-articoli-hp h1 a:visited, .box-articoli-hp h3 a:active, .box-articoli-hp h3 a:link, .box-articoli-hp h3 a:visited {
+                font-size: 20px;
+                line-height: 1px;
+            }
+
+        .box-articoli-hp p {
+            line-height: 16px;
+        }
+
+    .box_piccolo .box_testo_ristoranti, .categoria-articolo-time {
+        display: none
+    }
+
+    @media screen and (-webkit-min-device-pixel-ratio:0) {
+         .box-articoli-hp h1 a:active, .box-articoli-hp h1 a:link, .box-articoli-hp h1 a:visited {
+            line-height: 22px
+        }
+    }
+}

@@ -1,0 +1,72 @@
+﻿@model BrewDay2.Models.Ricette
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Ricette</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Note)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Note)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeRicetta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeRicetta)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TempoPreparazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TempoPreparazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TempoFermentazione)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TempoFermentazione)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Categoria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Categoria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Privata)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Privata)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

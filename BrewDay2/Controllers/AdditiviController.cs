@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
-using System.EnterpriseServices;
+﻿using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using BrewDay2.Models;
 
@@ -17,7 +12,7 @@ namespace BrewDay2.Controllers
 
         //SE SERVE RECUPERARE UTENTE CORRENTE
         //var me = db.Users.First(x => x.UserName == User.Identity.Name);
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Additivi
         public ActionResult Index()

@@ -193,8 +193,13 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdditiviController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LievitisController.cs" />
     <Compile Include="Controllers\LuppoliController.cs" />
+    <Compile Include="Controllers\MagazzinoController.cs" />
+    <Compile Include="Controllers\MaltisController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\RicetteController.cs" />
+    <Compile Include="Controllers\ZuccherisController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,12 +231,15 @@
     <Content Include="Content\bootstrap-datetimepicker.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="css\ricette.css" />
     <Content Include="css\style.css" />
     <Content Include="Dependencies Graph.png" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\asc.gif" />
+    <Content Include="images\bg.gif" />
     <Content Include="images\birre\1.png" />
     <Content Include="images\birre\1a.png" />
     <Content Include="images\birre\2.png" />
@@ -244,6 +252,9 @@
     <Content Include="images\birre\5a.png" />
     <Content Include="images\birre\6.png" />
     <Content Include="images\birre\6a.png" />
+    <Content Include="images\brewday.png" />
+    <Content Include="images\desc.gif" />
+    <Content Include="images\icon.png" />
     <Content Include="js\chart.js" />
     <Content Include="js\hoverable-collapse.js" />
     <Content Include="js\maps.js" />
@@ -1217,6 +1228,7 @@
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
@@ -1293,6 +1305,7 @@
     <Content Include="Content\bootstrap\utilities.less" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\wells.less" />
+    <Content Include="css\maps\style.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
@@ -1476,6 +1489,32 @@
     <Content Include="Views\Lievitis\Details.cshtml" />
     <Content Include="Views\Lievitis\Delete.cshtml" />
     <Content Include="Views\Lievitis\Edit.cshtml" />
+    <Content Include="Views\Zuccheris\Create.cshtml" />
+    <Content Include="Views\Zuccheris\Delete.cshtml" />
+    <Content Include="Views\Zuccheris\Details.cshtml" />
+    <Content Include="Views\Zuccheris\Edit.cshtml" />
+    <Content Include="Views\Zuccheris\Index.cshtml" />
+    <Content Include="Views\Maltis\Create.cshtml" />
+    <Content Include="Views\Maltis\Delete.cshtml" />
+    <Content Include="Views\Maltis\Details.cshtml" />
+    <Content Include="Views\Maltis\Edit.cshtml" />
+    <Content Include="Views\Maltis\Index.cshtml" />
+    <Content Include="Views\Luppoli\Create.cshtml" />
+    <Content Include="Views\Luppoli\Delete.cshtml" />
+    <Content Include="Views\Luppoli\Details.cshtml" />
+    <Content Include="Views\Luppoli\Edit.cshtml" />
+    <Content Include="Views\Luppoli\Index.cshtml" />
+    <Content Include="Views\Ricette\Index.cshtml" />
+    <Content Include="Views\Ricette\Create.cshtml" />
+    <Content Include="Views\Ricette\AggiungiAdditivo.cshtml" />
+    <Content Include="Views\Ricette\Delete.cshtml" />
+    <Content Include="Views\Ricette\Details.cshtml" />
+    <Content Include="Views\Ricette\Edit.cshtml" />
+    <Content Include="Views\Ricette\AggiungiLievito.cshtml" />
+    <Content Include="Views\Ricette\AggiungiLuppolo.cshtml" />
+    <Content Include="Views\Ricette\AggiungiMalti.cshtml" />
+    <Content Include="Views\Ricette\AggiungiZuccheri.cshtml" />
+    <Content Include="Views\Ricette\MyRecipes.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
