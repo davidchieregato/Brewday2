@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BrewDay.Models.Ricette>
+﻿@model IEnumerable<BrewDay2.Models.Ricette>
 
 @{
     ViewBag.Title = "Index";
@@ -68,10 +68,10 @@
                 @Html.ActionLink("+", "AggiungiLuppolo", new { id = item.RicettaId })
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiMalto", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiMalti", new { id = item.RicettaId })
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiZucchero", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiZuccheri", new { id = item.RicettaId })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.RicettaId }) |
@@ -97,7 +97,7 @@
                 <div class="box-articoli-hp">
                     <div class="box_ss56545">
                         <div class="img-articolo">
-                            <a href="link"><img src="@Html.Raw(item.ImmagineScelta != null ? item.ImmagineScelta.Replace(".png","a.png") : "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
+                            <a href="link"><img src="@Html.Raw(item.ImmagineScelta?.Replace(".png","a.png") ?? "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
                         </div>
                         <h3 class="title_articolo">
                             <a href="link">@Html.DisplayFor(modelItem => item.NomeRicetta)</a>
