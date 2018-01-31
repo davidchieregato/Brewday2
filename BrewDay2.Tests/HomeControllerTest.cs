@@ -1,8 +1,8 @@
 ﻿using System.Web.Mvc;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BrewDay2.Controllers;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BrewDay2.Tests.Controllers
+namespace BrewDay2.Tests
 {
     [TestClass]
     public class HomeControllerTest
@@ -27,10 +27,9 @@ namespace BrewDay2.Tests.Controllers
             HomeController controller = new HomeController();
 
             // Act
-            ViewResult result = controller.About() as ViewResult;
 
             // Assert
-            Assert.AreEqual("Your application description page.", result.ViewBag.Message);
+            if (controller.About() is ViewResult result) Assert.AreEqual("Your application description page.", result.ViewBag.Message);
         }
 
         [TestMethod]
