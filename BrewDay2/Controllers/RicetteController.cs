@@ -11,7 +11,7 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class RicetteController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Ricette
         public ActionResult Index()
@@ -27,11 +27,7 @@ namespace BrewDay2.Controllers
         [HttpGet]
         public ActionResult Index(String nomeparametro)
         {
-            List<Ricette> lista = null;
-            if (!String.IsNullOrEmpty(nomeparametro))
-                lista = db.Ricette.Where(x => x.Categoria == nomeparametro).ToList();
-            else
-                lista = db.Ricette.ToList();
+            var lista = !String.IsNullOrEmpty(nomeparametro) ? db.Ricette.Where(x => x.Categoria == nomeparametro).ToList() : db.Ricette.ToList();
 
             return View(lista);
         }

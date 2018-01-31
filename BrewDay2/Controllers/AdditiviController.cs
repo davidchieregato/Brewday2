@@ -12,7 +12,7 @@ namespace BrewDay2.Controllers
 
         //SE SERVE RECUPERARE UTENTE CORRENTE
         //var me = db.Users.First(x => x.UserName == User.Identity.Name);
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Additivi
         public ActionResult Index()

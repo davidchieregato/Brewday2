@@ -9,7 +9,7 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class ZuccherisController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Zuccheris
         public ActionResult Index()

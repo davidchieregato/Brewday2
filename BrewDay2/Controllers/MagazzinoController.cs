@@ -9,7 +9,7 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class MagazzinoController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Magazzino
         public ActionResult Index()
@@ -130,7 +130,7 @@ namespace BrewDay2.Controllers
             var me = db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino magazzino = db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
-            am.MagazzinoId = magazzino.MagazzinoId;
+            if (magazzino != null) am.MagazzinoId = magazzino.MagazzinoId;
             SelectList Additivi = new SelectList(db.Additivi,"AdditiviId","Nome");
             ViewBag.Additivi = Additivi;
             return View(am);
@@ -148,7 +148,7 @@ namespace BrewDay2.Controllers
             var me = db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino magazzino = db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
-            am.MagazzinoId = magazzino.MagazzinoId;
+            if (magazzino != null) am.MagazzinoId = magazzino.MagazzinoId;
             SelectList Additivi = new SelectList(db.Additivi, "AdditiviId", "Nome");
             ViewBag.Additivi = Additivi;
             return View(am);

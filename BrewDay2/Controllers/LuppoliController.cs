@@ -9,7 +9,7 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class LuppoliController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Luppoli
         public ActionResult Index()
