@@ -1,8 +1,14 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using BrewDay2.Models;
+using Microsoft.AspNet.Identity;
 
 namespace BrewDay2.Controllers
 {
@@ -17,6 +23,7 @@ namespace BrewDay2.Controllers
         // GET: Additivi
         public ActionResult Index()
         {
+            ViewBag.me = User.Identity.GetUserId();
             return View(db.Additivi.ToList());
         }
 
@@ -38,7 +45,10 @@ namespace BrewDay2.Controllers
         // GET: Additivi/Create
         public ActionResult Create()
         {
-            return View();
+            Additivi a = new Additivi();
+            a.UserId = User.Identity.GetUserId();
+
+            return View(a);
         }
 
         // POST: Additivi/Create
@@ -46,7 +56,7 @@ namespace BrewDay2.Controllers
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Additivi additivi)
+        public ActionResult Create(Additivi additivi)
         {
             if (ModelState.IsValid)
             {
