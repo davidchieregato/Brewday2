@@ -1,8 +1,13 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using BrewDay2.Models;
+using Microsoft.AspNet.Identity;
 
 namespace BrewDay2.Controllers
 {
@@ -14,6 +19,7 @@ namespace BrewDay2.Controllers
         // GET: Luppoli
         public ActionResult Index()
         {
+            ViewBag.me = User.Identity.GetUserId();
             return View(db.Luppoli.ToList());
         }
 
@@ -35,7 +41,9 @@ namespace BrewDay2.Controllers
         // GET: Luppoli/Create
         public ActionResult Create()
         {
-            return View();
+            Luppoli l = new Luppoli();
+            l.UserId = User.Identity.GetUserId();
+            return View(l);
         }
 
         // POST: Luppoli/Create
