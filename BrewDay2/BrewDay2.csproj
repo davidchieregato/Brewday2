@@ -1515,6 +1515,16 @@
     <Content Include="Views\Ricette\AggiungiMalti.cshtml" />
     <Content Include="Views\Ricette\AggiungiZuccheri.cshtml" />
     <Content Include="Views\Ricette\MyRecipes.cshtml" />
+    <Content Include="Views\Magazzino\AggiungiAdditivo.cshtml" />
+    <Content Include="Views\Magazzino\AggiungiLievito.cshtml" />
+    <Content Include="Views\Magazzino\AggiungiLuppolo.cshtml" />
+    <Content Include="Views\Magazzino\AggiungiMalti.cshtml" />
+    <Content Include="Views\Magazzino\AggiungiZucchero.cshtml" />
+    <Content Include="Views\Magazzino\Create.cshtml" />
+    <Content Include="Views\Magazzino\Delete.cshtml" />
+    <Content Include="Views\Magazzino\Details.cshtml" />
+    <Content Include="Views\Magazzino\Edit.cshtml" />
+    <Content Include="Views\Magazzino\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
