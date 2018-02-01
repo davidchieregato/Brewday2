@@ -14,5 +14,7 @@ namespace BrewDay2.Models
         public String Descrizione { get; set; }
         public String Produttore { get; set; }
         public Decimal Prezzo { get; set; }
+        public String UserId { get; set; }
+        public virtual ApplicationUser User { get; set; }
     }
 }
