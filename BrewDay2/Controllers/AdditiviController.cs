@@ -56,7 +56,7 @@ namespace BrewDay2.Controllers
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Additivi additivi)
+        public ActionResult Create(Additivi additivi)
         {
             if (ModelState.IsValid)
             {
