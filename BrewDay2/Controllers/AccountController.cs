@@ -73,7 +73,7 @@ namespace BrewDay2.Controllers
 
             // Questa opzione non calcola il numero di tentativi di accesso non riusciti per il blocco dell'account
             // Per abilitare il conteggio degli errori di password per attivare il blocco, impostare shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -132,7 +132,7 @@ namespace BrewDay2.Controllers
             // Se un utente immette codici non corretti in un intervallo di tempo specificato, l'account dell'utente 
             // viene bloccato per un intervallo di tempo specificato. 
             // Si possono configurare le impostazioni per il blocco dell'account in IdentityConfig
-            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, isPersistent:  model.RememberMe, rememberBrowser: model.RememberBrowser);
+            var result = await SignInManager.TwoFactorSignInAsync(model.Provider, model.Code, model.RememberMe, model.RememberBrowser);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -177,7 +177,7 @@ namespace BrewDay2.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+                    await SignInManager.SignInAsync(user, false, false);
                     
                     // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
                     // Inviare un messaggio di posta elettronica con questo collegamento
@@ -357,7 +357,7 @@ namespace BrewDay2.Controllers
             }
 
             // Se l'utente ha già un account, consentire l'accesso dell'utente a questo provider di accesso esterno
-            var result = await SignInManager.ExternalSignInAsync(loginInfo, isPersistent: false);
+            var result = await SignInManager.ExternalSignInAsync(loginInfo, false);
             switch (result)
             {
                 case SignInStatus.Success:
@@ -401,7 +401,7 @@ namespace BrewDay2.Controllers
                     result = await UserManager.AddLoginAsync(user.Id, info.Login);
                     if (result.Succeeded)
                     {
-                        await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                        await SignInManager.SignInAsync(user, false, false);
                         return RedirectToLocal(returnUrl);
                     }
                 }
