@@ -208,6 +208,7 @@
     <Compile Include="Models\AdditiviMagazzino.cs" />
     <Compile Include="Models\AdditiviRicetta.cs" />
     <Compile Include="Models\CategoriaBirre.cs" />
+    <Compile Include="Models\DecimalBinder.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lieviti.cs" />
     <Compile Include="Models\LievitiMagazzino.cs" />
