@@ -1,4 +1,4 @@
-﻿@model BrewDay.Models.Magazzino
+﻿@model BrewDay2.Models.Magazzino
 
 @{
     ViewBag.Title = "Index";
@@ -6,9 +6,11 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+@Html.ActionLink("Aggiungi Additivo","AggiungiAdditivo")
+@Html.ActionLink("Aggiungi Lievito", "AggiungiLievito")
+@Html.ActionLink("Aggiungi Luppolo", "AggiungiLuppolo")
+@Html.ActionLink("Aggiungi Malto", "AggiungiMalti")
+@Html.ActionLink("Aggiungi Zucchero", "AggiungiZucchero")
 @*<table class="table">
     <tr>
         <th>

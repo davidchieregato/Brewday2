@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace BrewDay.Models
+namespace BrewDay2.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

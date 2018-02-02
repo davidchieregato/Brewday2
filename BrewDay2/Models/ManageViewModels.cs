@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace BrewDay.Models
+namespace BrewDay2.Models
 {
     public class IndexViewModel
     {

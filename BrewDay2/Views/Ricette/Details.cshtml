@@ -1,4 +1,4 @@
-﻿@model BrewDay.Models.Ricette
+﻿@model BrewDay2.Models.Ricette
 
 @{
     ViewBag.Title = "Details";
@@ -11,7 +11,7 @@
     <h2>@Html.DisplayFor(model => model.NomeRicetta)</h2><br />
     <img src="@Html.DisplayFor(model => model.ImmagineScelta)" alt="" title="@Html.DisplayNameFor(model => model.NomeRicetta)" />
     <br /><br />
-    <div class="well well-sm">Creata da: <i><u>@Html.DisplayFor(model => model.UserId)&nbsp;</u>
+    <div class="well well-sm">Creata da: <i><u>@ViewBag.user &nbsp;</u>
             </i> nella categoria: <i><u><a href="/Ricette/Index?nomeparametro=@Html.DisplayFor(model => model.Categoria)">@Html.DisplayFor(model => model.Categoria)&nbsp;</a></u></i></div>
     <div class="well well-sm">Tempo preparazione: <i><u>@Html.DisplayFor(model => model.TempoPreparazione)&nbsp;min</u></i> Tempo fermentazione: <i><u>@Html.DisplayFor(model => model.TempoFermentazione)&nbsp;min</u></i></div>
 

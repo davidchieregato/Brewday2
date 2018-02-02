@@ -1,14 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using BrewDay2.Models;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using BrewDay.Models;
 
-namespace BrewDay.Controllers
+namespace BrewDay2.Controllers
 {
     [Authorize]
     public class ManageController : Controller

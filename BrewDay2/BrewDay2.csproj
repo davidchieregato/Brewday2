@@ -207,6 +207,7 @@
     <Compile Include="Models\Additivi.cs" />
     <Compile Include="Models\AdditiviMagazzino.cs" />
     <Compile Include="Models\AdditiviRicetta.cs" />
+    <Compile Include="Models\CategoriaBirre.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lieviti.cs" />
     <Compile Include="Models\LievitiMagazzino.cs" />
@@ -255,6 +256,7 @@
     <Content Include="images\brewday.png" />
     <Content Include="images\desc.gif" />
     <Content Include="images\icon.png" />
+    <Content Include="images\img.jpg" />
     <Content Include="js\chart.js" />
     <Content Include="js\hoverable-collapse.js" />
     <Content Include="js\maps.js" />
@@ -1444,6 +1446,8 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <None Include="Scripts\_references.js" />
+    <Content Include="Views\img.jpg" />
+    <Content Include="Views\ricetta.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -1525,6 +1529,21 @@
     <Content Include="Views\Magazzino\Details.cshtml" />
     <Content Include="Views\Magazzino\Edit.cshtml" />
     <Content Include="Views\Magazzino\Index.cshtml" />
+    <Content Include="Views\Magazzino\ElencoAdditivi.cshtml" />
+    <Content Include="Views\Magazzino\ElencoLieviti.cshtml" />
+    <Content Include="Views\Magazzino\ElencoLuppoli.cshtml" />
+    <Content Include="Views\Magazzino\ElencoMalti.cshtml" />
+    <Content Include="Views\Magazzino\ElencoZuccheri.cshtml" />
+    <Content Include="Views\Ricette\LievitiRicetta.cshtml" />
+    <Content Include="Views\Ricette\LuppoliRicetta.cshtml" />
+    <Content Include="Views\Ricette\MaltiRicetta.cshtml" />
+    <Content Include="Views\Ricette\ZuccheriRicetta.cshtml" />
+    <Content Include="Views\Ricette\EditAdditivo.cshtml" />
+    <Content Include="Views\Ricette\EditLievito.cshtml" />
+    <Content Include="Views\Ricette\EditLuppolo.cshtml" />
+    <Content Include="Views\Ricette\EditMalti.cshtml" />
+    <Content Include="Views\Ricette\EditZuccheri.cshtml" />
+    <Content Include="Views\Ricette\AdditiviRicetta.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

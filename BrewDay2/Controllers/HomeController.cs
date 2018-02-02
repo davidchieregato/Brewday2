@@ -1,8 +1,8 @@
-﻿using BrewDay.Models;
-using System.Linq;
+﻿using System.Linq;
 using System.Web.Mvc;
+using BrewDay2.Models;
 
-namespace BrewDay.Controllers
+namespace BrewDay2.Controllers
 {
     public class HomeController : Controller
     {

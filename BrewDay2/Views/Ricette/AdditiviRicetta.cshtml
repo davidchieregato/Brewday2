@@ -14,6 +14,9 @@
         <th>
             @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Prezzo)
         </th>
+        <th>
+            Quantit&agrave;
+        </th>
         <th></th>
     </tr>
 
@@ -30,6 +33,13 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Prezzo)
+        </td>
+        <td>
+             @{
+                 ApplicationDbContext db = new ApplicationDbContext();
+                 var quan = db.AdditiviRicettas.Where(x => x.RicettaId == Model.RicettaId && x.AdditiviId == item.AdditiviId).Select(y => y.Quantita).FirstOrDefault();
+             }
+            @quan
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.AdditiviId, idr = Model.RicettaId }) |
