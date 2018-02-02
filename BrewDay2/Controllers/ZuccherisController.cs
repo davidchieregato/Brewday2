@@ -94,7 +94,6 @@ namespace BrewDay2.Controllers
         /// Se l' ID è nullo ritorna uno StatusCode di BadRequest
         /// Se l' ID non è presente nel database ritorna HttpNotFound
         /// Se è presente ritorna la vista del Zuccheris trovato
-        /// </summary>
         /// <param name="id">Valore della chiave per il model Zuccheris</param>
         /// <returns></returns>
         public ActionResult Edit(int? id)
