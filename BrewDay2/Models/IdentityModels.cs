@@ -3,8 +3,10 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BrewDay2.Models
+namespace BrewDay.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser
@@ -37,17 +39,18 @@ namespace BrewDay2.Models
         public DbSet<MaltiRicetta> MaltiRicettas { get; set; }
         public DbSet<ZuccheriRicetta> ZuccheriRicettas { get; set; }
         //public DbSet<Magazzino> Magazzini { get; set; }
+        public DbSet<MaltiMagazzino> MaltiMagazzinos { get; set; }
         public DbSet<ZuccheriMagazzino> ZuccheriMagazzinos { get; set; }
         public DbSet<AdditiviMagazzino> AdditiviMagazzinos { get; set; }
         public DbSet<LuppoliMagazzino> LuppoliMagazzinos { get; set; }
         public DbSet<LievitiMagazzino> LievitiMagazzinos { get; set; }
-
+        public DbSet<CategoriaBirre> CategoriaBirres { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
 
-        public System.Data.Entity.DbSet<Magazzino> Magazzinoes { get; set; }
+        public System.Data.Entity.DbSet<BrewDay.Models.Magazzino> Magazzinoes { get; set; }
     }
 
 }

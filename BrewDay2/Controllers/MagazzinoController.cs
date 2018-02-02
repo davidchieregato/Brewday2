@@ -1,21 +1,25 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-using BrewDay2.Models;
+using BrewDay.Models;
 
-namespace BrewDay2.Controllers
+namespace BrewDay.Controllers
 {
     [Authorize]
     public class MagazzinoController : Controller
     {
-        private readonly ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Magazzino
         public ActionResult Index()
         {
             var me = db.Users.First(x => x.UserName == User.Identity.Name);
-            return View(db.Magazzinoes.ToList());
+            return View(db.Magazzinoes.First(f => f.UserId == me.Id));            
         }
 
         // GET: Magazzino/Details/5
@@ -130,7 +134,7 @@ namespace BrewDay2.Controllers
             var me = db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino magazzino = db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
-            if (magazzino != null) am.MagazzinoId = magazzino.MagazzinoId;
+            am.MagazzinoId = magazzino.MagazzinoId;
             SelectList Additivi = new SelectList(db.Additivi,"AdditiviId","Nome");
             ViewBag.Additivi = Additivi;
             return View(am);
@@ -148,7 +152,7 @@ namespace BrewDay2.Controllers
             var me = db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino magazzino = db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
-            if (magazzino != null) am.MagazzinoId = magazzino.MagazzinoId;
+            am.MagazzinoId = magazzino.MagazzinoId;
             SelectList Additivi = new SelectList(db.Additivi, "AdditiviId", "Nome");
             ViewBag.Additivi = Additivi;
             return View(am);

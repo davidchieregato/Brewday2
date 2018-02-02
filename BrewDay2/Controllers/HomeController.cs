@@ -1,12 +1,18 @@
-﻿using System.Web.Mvc;
+﻿using BrewDay.Models;
+using System.Linq;
+using System.Web.Mvc;
 
-namespace BrewDay2.Controllers
+namespace BrewDay.Controllers
 {
     public class HomeController : Controller
     {
+        private ApplicationDbContext db = new ApplicationDbContext();
+
+        [HttpGet]
         public ActionResult Index()
         {
-            return View();
+            var daRestituire = db.Ricette.Where(x => x.Privata == false);
+            return View(daRestituire);
         }
 
         public ActionResult About()

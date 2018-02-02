@@ -1,26 +1,46 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
+using System.EnterpriseServices;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-using BrewDay2.Models;
+using BrewDay.Models;
+using Microsoft.AspNet.Identity;
 
-namespace BrewDay2.Controllers
+namespace BrewDay.Controllers
 {
     [Authorize]
     public class AdditiviController : Controller
     {
-
         //SE SERVE RECUPERARE UTENTE CORRENTE
         //var me = db.Users.First(x => x.UserName == User.Identity.Name);
-        private readonly ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Additivi
+        /// <summary>
+        /// Metodo invocato alla richiesta /Additivi/
+        /// Setta nella variabile speciale viewbag l'utente loggato e restituisce
+        /// alla view una collection di additivi
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
+            ViewBag.me = User.Identity.GetUserId();
             return View(db.Additivi.ToList());
         }
 
         // GET: Additivi/Details/5
+        /// <summary>
+        /// Metodo invocato dalla richiesta di dettagli su un additivo
+        /// Es: GET: Additivi/Details/5
+        /// Restituisce errore se id è nullo o non esiste a db
+        /// Altrimenti restituisce l'elemento cercato alla pagina
+        /// </summary>
+        /// <param name="id">Valore della chiave per model Additivi</param>
+        /// <returns></returns>
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -38,15 +58,18 @@ namespace BrewDay2.Controllers
         // GET: Additivi/Create
         public ActionResult Create()
         {
-            return View();
+            Additivi a = new Additivi();
+            a.UserId = User.Identity.GetUserId();
+
+            return View(a);
         }
 
         // POST: Additivi/Create
-        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Additivi additivi)
+        public ActionResult Create(Additivi additivi)
         {
             if (ModelState.IsValid)
             {
@@ -72,8 +95,9 @@ namespace BrewDay2.Controllers
             }
             return View(additivi);
         }
+
         // POST: Additivi/Edit/5
-        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -113,6 +137,7 @@ namespace BrewDay2.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)

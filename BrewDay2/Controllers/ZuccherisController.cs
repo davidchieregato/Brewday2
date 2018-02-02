@@ -1,19 +1,25 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
-using BrewDay2.Models;
+using BrewDay.Models;
+using Microsoft.AspNet.Identity;
 
-namespace BrewDay2.Controllers
+namespace BrewDay.Controllers
 {
     [Authorize]
     public class ZuccherisController : Controller
     {
-        private readonly ApplicationDbContext db = new ApplicationDbContext();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Zuccheris
         public ActionResult Index()
         {
+            ViewBag.me = User.Identity.GetUserId();
             return View(db.Zuccheri.ToList());
         }
 
@@ -35,11 +41,13 @@ namespace BrewDay2.Controllers
         // GET: Zuccheris/Create
         public ActionResult Create()
         {
-            return View();
+            Zuccheri z = new Zuccheri();
+            z.UserId = User.Identity.GetUserId();
+            return View(z);
         }
 
         // POST: Zuccheris/Create
-        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -71,7 +79,7 @@ namespace BrewDay2.Controllers
         }
 
         // POST: Zuccheris/Edit/5
-        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
+        // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]

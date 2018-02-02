@@ -2,16 +2,21 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
+using System.Linq;
+using System.Web;
 
-namespace BrewDay2.Models
+namespace BrewDay.Models
 {
     public class Magazzino
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MagazzinoId { get; set; }
+
         public String UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
+
         public virtual ICollection<AdditiviMagazzino> AdditiviUtente { get; set; }
         public virtual ICollection<LievitiMagazzino> LievitiUtente { get; set; }
         public virtual ICollection<LuppoliMagazzino> LuppoliUtente { get; set; }
