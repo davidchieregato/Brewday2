@@ -39,13 +39,6 @@ namespace BrewDay2.Controllers
 
         //
         // GET: /Account/Login
-        /// <summary>
-        /// Metodo invocato alla chiamata di Login
-        /// Setta nella variabile speciale ViewBag l' Url passata come parametro 
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="returnUrl">Stringa da assegnare alla variabile ViewBag</param>
-        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult Login(string returnUrl)
         {
@@ -55,12 +48,6 @@ namespace BrewDay2.Controllers
 
         //
         // POST: /Account/Login
-        /// <summary>
-        /// Metodo invocato alla richiesta di Login
-        /// ????
-        /// <param name="model"></param>
-        /// <param name="returnUrl"></param>
-        /// <returns></returns></summary>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -90,13 +77,6 @@ namespace BrewDay2.Controllers
 
         //
         // GET: /Account/VerifyCode
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="provider"></param>
-        /// <param name="returnUrl"></param>
-        /// <param name="rememberMe"></param>
-        /// <returns></returns>
         [AllowAnonymous]
         public async Task<ActionResult> VerifyCode(string provider, string returnUrl, bool rememberMe)
         {
@@ -110,14 +90,6 @@ namespace BrewDay2.Controllers
 
         //
         // POST: /Account/VerifyCode
-        /// <summary>
-        /// Metodo invocato alla submit della form per la verifica del codice di autenticazione a due fattori
-        /// In caso di successo permette il login
-        /// In caso di fallimento avvisa con un messaggio di errore
-        /// In caso di lockout ritorna la vista specifica
-        /// </summary>
-        /// <param name="model">???</param>
-        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -147,11 +119,6 @@ namespace BrewDay2.Controllers
 
         //
         // GET: /Account/Register
-        /// <summary>
-        /// Metodo invocato alla richiesta di registrazione di un nuovo account
-        /// Ritorna la vista
-        /// </summary>
-        /// <returns></returns>
         [AllowAnonymous]
         public ActionResult Register()
         {
@@ -160,12 +127,6 @@ namespace BrewDay2.Controllers
 
         //
         // POST: /Account/Register
-        /// <summary>
-        /// Metodo invocato alla submit della form per la registrazione di un nuovo account nella pagina equivalente
-        /// Se il modello è valido
-        /// </summary>
-        /// <param name="model"></param>
-        /// <returns></returns>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]

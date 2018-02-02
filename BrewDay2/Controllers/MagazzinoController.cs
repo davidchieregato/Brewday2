@@ -68,7 +68,7 @@ namespace BrewDay2.Controllers
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         /// <summary>
-        /// Metodo invocato alla submit della form per la creazione di un Magazzino nella pagina equivalente
+        /// Metodo invocato alla submit della form per la creazione di un Magazzino 
         /// Se il modello è valido, crea e aggiunge il magazzino al database
         /// </summary>
         /// <param name="magazzino">Oggetto da inserire nel database</param>
@@ -114,7 +114,7 @@ namespace BrewDay2.Controllers
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding. 
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
         /// <summary>
-        /// Metodo invocato alla submit della form per la modifica di un magazzino nella pagina equivalente
+        /// Metodo invocato alla submit della form per la modifica di un magazzino 
         /// Se il modello è valido sostituisce nelle database il magazzino con quello modificato, salva i cambiamenti
         /// Ritorna la vista
         /// </summary>
@@ -157,7 +157,7 @@ namespace BrewDay2.Controllers
         }
 
         /// <summary>
-        /// Metodo invocato alla submit della form per l'aggiunto di un additivo nel magazzino nella pagina equivalente
+        /// Metodo invocato alla submit della form per l'aggiunto di un additivo nel magazzino 
         /// Se il modello è valido, aggiunge il nuovo additivo al magazzino e salva i cambiamenti
         /// Assegna l'AdditiviMagazzino al magazzino collegato all' ID dell' utente
         /// Ritorna la vista 
