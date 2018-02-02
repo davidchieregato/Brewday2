@@ -425,7 +425,9 @@
     <Content Include="images\flags\VE.png" />
     <Content Include="images\flags\VN.png" />
     <Content Include="images\flags\YE.png" />
-    <Content Include="images\icon.png" />
+    <Content Include="images\icon.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="images\icons\001-doc.png" />
     <Content Include="images\icons\001-editing.png" />
     <Content Include="images\icons\001-map.png" />
