@@ -134,48 +134,7 @@ namespace BrewDay2.Controllers
             return View(magazzino);
         }
 
-        // GET: Magazzino/Delete/5
-        /// <summary>
-        /// Metodo invocato alla cancellazione di un magazzino
-        /// Se l' ID è nullo ritorna uno StatusCode di BadRequest
-        /// Se l' ID non è presente nel database ritorna HttpNotFound
-        /// Se è presente ritorna la vista del magazzino
-        /// </summary>
-        /// <param name="id">Valore della chiave per il model Magazzino</param>
-        /// <returns></returns>
-        public ActionResult Delete(int? id)
-        {
-            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Magazzino magazzino = _db.Magazzinoes.Find(id);
-            if (magazzino == null)
-            {
-                return HttpNotFound();
-            }
-            return View(magazzino);
-        }
-
-        // POST: Magazzino/Delete/5
-        /// <summary>
-        /// Metodo invocato alla submit della form per la cancellazione di un magazzino nella pagina equivalente
-        /// Se l' ID è presente nel database, rimuove il magazzino e salva i cambiamenti
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="id">Valore della chiave del magazzino da eliminare</param>
-        /// <returns></returns>
-        [HttpPost, ActionName("Delete")]
-        [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
-        {
-            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
-            Magazzino magazzino = _db.Magazzinoes.Find(id);
-            _db.Magazzinoes.Remove(magazzino);
-            _db.SaveChanges();
-            return RedirectToAction("Index");
-        }
+        
 
         /// <summary>
         /// Metodo invocato all' aggiunta di un nuovo additivo nel magazzino

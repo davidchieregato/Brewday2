@@ -57,15 +57,6 @@ namespace BrewDay2
             }
         }
 
-        public Startup(HostingEnvironment env)
-        {
-            using (var client = new ApplicationDbContext())
-            {
-                client.Database.Initialize(true);
-                client.Database.CreateIfNotExists();
-                client.Dispose();
-            }
-        }
 
         public void Configuration(IAppBuilder app)
         {

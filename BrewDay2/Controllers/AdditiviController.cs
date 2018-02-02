@@ -11,8 +11,6 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class AdditiviController : Controller
     {
-        //SE SERVE RECUPERARE UTENTE CORRENTE
-        //var me = db.Users.First(x => x.UserName == User.Identity.Name);
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Additivi

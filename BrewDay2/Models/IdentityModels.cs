@@ -36,7 +36,7 @@ namespace BrewDay2.Models
         public DbSet<LuppoliRicetta> LuppoliRicettas { get; set; }
         public DbSet<MaltiRicetta> MaltiRicettas { get; set; }
         public DbSet<ZuccheriRicetta> ZuccheriRicettas { get; set; }
-        //public DbSet<Magazzino> Magazzini { get; set; }
+        
         public DbSet<MaltiMagazzino> MaltiMagazzinos { get; set; }
         public DbSet<ZuccheriMagazzino> ZuccheriMagazzinos { get; set; }
         public DbSet<AdditiviMagazzino> AdditiviMagazzinos { get; set; }
