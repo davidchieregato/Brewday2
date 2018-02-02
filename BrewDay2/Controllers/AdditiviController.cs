@@ -161,6 +161,7 @@ namespace BrewDay2.Controllers
             return View(additivi);
         }
 
+        // POST: Additivi/Delete/5
         /// <summary>
         /// <summary>
         /// Metodo invocato alla submit della form per la cancellazione di un Additivo nella pagina equivalente
@@ -169,7 +170,6 @@ namespace BrewDay2.Controllers
         /// </summary>
         /// <param name="id">Valore della chiave dell'additivo da eliminare</param>
         /// <returns></returns>
-        // POST: Additivi/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
