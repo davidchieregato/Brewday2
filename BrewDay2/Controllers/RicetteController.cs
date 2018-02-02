@@ -15,16 +15,31 @@ namespace BrewDay2.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Ricette
+        /// <summary>
+        /// Metodo invocato alla richiesta di Ricette
+        /// Ritorna la vista delle ricette
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             return View(db.Ricette.ToList());
         }
 
+        /// <summary>
+        /// Metodo invocato alla richiesta di visualizzazione delle mie ricette
+        /// Ritorna la vista
+        /// </summary>
+        /// <returns></returns>
         public ActionResult MyRecipes()
         {
             return View();
         }
 
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <param name="nomeparametro"></param>
+        /// <returns></returns>
         [HttpGet]
         public ActionResult Index(String nomeparametro)
         {
@@ -38,6 +53,13 @@ namespace BrewDay2.Controllers
         }
 
         // GET: Ricette/Details/5
+        /// <summary>
+        /// Metodo invocato alla richiesta di dettagli delle ricette
+        /// Restituisce errore se id è nullo o non esiste
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -53,6 +75,10 @@ namespace BrewDay2.Controllers
         }
 
         // GET: Ricette/Create
+        /// <summary>
+        /// ???
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Create()
         {
             SelectList sl = new SelectList(db.CategoriaBirres,"Nome","Nome");
@@ -139,9 +165,17 @@ namespace BrewDay2.Controllers
             int quale = r.Next(0, valide.Count());
             return View(valide.ElementAt(quale));
         }
+
         // POST: Ricette/Create
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Metodo invocato alla submit della form per la creazione di una Ricetta nella pagina equivalente
+        /// Se il modello è valido, crea e aggiunge la ricetta al database
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="ricette">Oggetto da inserire nel database</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(Ricette ricette)
@@ -157,6 +191,13 @@ namespace BrewDay2.Controllers
         }
 
         // GET: Ricette/Edit/5
+        /// <summary>
+        /// Metodo invocato alla modifica di una ricetta
+        /// Se l' ID è nullo ritorna uno StatusCode di BadRequest
+        /// Se l' ID non è presente nel database ritorna HttpNotFound
+        /// Se è presente ritorna la vista della ricetta trovato
+        /// <param name="id">Valore della chiave per il model Ricette</param>
+        /// <returns></returns>
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -174,6 +215,13 @@ namespace BrewDay2.Controllers
         // POST: Ricette/Edit/5
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
         // Per ulteriori dettagli, vedere https://go.microsoft.com/fwlink/?LinkId=317598.
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di una ricetta nella pagina equivalente
+        /// Se il modello è valido sostituisce nel database la ricetta con quella modificata, salva i cambiamenti
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="ricette">Oggetto da modificare nel database</param>
+        /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(Ricette ricette)
@@ -188,6 +236,14 @@ namespace BrewDay2.Controllers
         }
 
         // GET: Ricette/Delete/5
+        /// <summary>
+        /// Metodo invocato alla cancellazione di una ricetta
+        /// Se l' ID è nullo ritorna uno StatusCode di BadRequest
+        /// Se l' ID non è presente nel database ritorna HttpNotFound
+        /// Se è presente ritorna la vista della ricetta trovata
+        /// </summary>
+        /// <param name="id">Valore della chiave per il model Ricette</param>
+        /// <returns></returns>
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -203,6 +259,13 @@ namespace BrewDay2.Controllers
         }
 
         // POST: Ricette/Delete/5
+        /// <summary>
+        /// Metodo invocato alla submit della form per la cancellazione di una ricetta nella pagina equivalente
+        /// Se il modello è valido rimuove nel database la ricetta e salva i cambiamenti
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id">Valore della chiave della ricetta da eliminare</param>
+        /// <returns></returns>
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
