@@ -179,7 +179,9 @@ namespace BrewDay2.Controllers
 
         /// <summary>
         /// Metodo invocato all' aggiunta di un nuovo additivo nel magazzino
-        /// 
+        /// Crea un nuovo AdditiviMagazzino assegnandolo al magazzino collegato all' ID dell' utente
+        /// Assegna la lista di additivi alla variabile speciale ViewBag
+        /// Ritorna la vista di AdditiviMagazzino
         /// </summary>
         /// <returns></returns>
         public ActionResult AggiungiAdditivo()
@@ -194,6 +196,15 @@ namespace BrewDay2.Controllers
             return View(am);
 
         }
+
+        /// <summary>
+        /// Metodo invocato alla submit della form per l'aggiunto di un additivo nel magazzino nella pagina equivalente
+        /// Se il modello è valido, aggiunge il nuovo additivo al magazzino e salva i cambiamenti
+        /// Assegna l'AdditiviMagazzino al magazzino collegato all' ID dell' utente
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="am">Additivo da aggiungere al magazzino</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiAdditivo(AdditiviMagazzino am)
         {
@@ -212,6 +223,12 @@ namespace BrewDay2.Controllers
             return View(am);
 
         }
+
+        /// <summary>
+        /// Metodo invocato alla cancellazione del database
+        /// Se il flag è true, cancella il database
+        /// </summary>
+        /// <param name="disposing">Flag utilizzato per cancellare il database</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
