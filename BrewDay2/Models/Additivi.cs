@@ -8,8 +8,10 @@ namespace BrewDay2.Models
     public class Additivi
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Display(Name = "Additivi")]
         [Key]
         public int AdditiviId { get; set; }
+
         public String Nome { get; set; }
         public String Descrizione { get; set; }
         public String Produttore { get; set; }

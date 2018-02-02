@@ -1,0 +1,43 @@
+﻿@model BrewDay2.Models.Magazzino
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.LuppoliUtente.FirstOrDefault().Luppolo.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuppoliUtente.FirstOrDefault().Luppolo.Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuppoliUtente.FirstOrDefault().Luppolo.Produttore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LuppoliUtente.FirstOrDefault().Luppolo.Prezzo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.LuppoliUtente)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luppolo.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luppolo.Descrizione)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luppolo.Produttore)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Luppolo.Prezzo)
+            </td>
+            <td>
+                @*@Html.ActionLink("Edit", "Edit", new { id = item.AdditiviId, idr = Model.RicettaId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.AdditiviId, idr = Model.RicettaId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.AdditiviId, idr = Model.RicettaId })*@
+            </td>
+        </tr>
+    }
+
+</table>

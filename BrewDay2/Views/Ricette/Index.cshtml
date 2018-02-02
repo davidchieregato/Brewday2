@@ -68,10 +68,10 @@
                 @Html.ActionLink("+", "AggiungiLuppolo", new { id = item.RicettaId })
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiMalti", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiMalto", new { id = item.RicettaId })
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiZuccheri", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiZucchero", new { id = item.RicettaId })
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.RicettaId }) |
@@ -82,7 +82,7 @@
     }
 
 </table>
-=======
+
 <h2>Ultime ricette</h2>
 
 
@@ -97,14 +97,14 @@
                 <div class="box-articoli-hp">
                     <div class="box_ss56545">
                         <div class="img-articolo">
-                            <a href="link"><img src="@Html.Raw(item.ImmagineScelta?.Replace(".png","a.png") ?? "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
+                            <a href="/Ricette/Details/@item.RicettaId"><img src="@Html.Raw(item.ImmagineScelta != null ? item.ImmagineScelta.Replace(".png","a.png") : "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
                         </div>
                         <h3 class="title_articolo">
-                            <a href="link">@Html.DisplayFor(modelItem => item.NomeRicetta)</a>
+                            <a href="/Ricette/Details/@item.RicettaId">@Html.DisplayFor(modelItem => item.NomeRicetta)</a>
                         </h3>
-                        <p class="abs-articolo">@Html.DisplayFor(modelItem => item.Note) <a href="Details/@item.RicettaId" class="continua">&nbsp;CONTINUA</a></p>
+                        <p class="abs-articolo">@Html.DisplayFor(modelItem => item.Note) <a href="/Ricette/Details/@item.RicettaId" class="continua">&nbsp;CONTINUA</a></p>
                         <div class="categoria-articolo-label-time">
-                            <div class="categoria-articolo-label"><a href="?nomeparametro=@item.Categoria" class="categoria-articolo-label-link" style="cursor:text">@Html.DisplayFor(modelItem => item.Categoria)</a></div>
+                            <div class="categoria-articolo-label"><a href="/Ricette/Index?nomeparametro=@item.Categoria" class="categoria-articolo-label-link" style="cursor:text">@Html.DisplayFor(modelItem => item.Categoria)</a></div>
                             <div class="nofloat"></div>
                         </div>
                     </div>

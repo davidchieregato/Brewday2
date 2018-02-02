@@ -10,6 +10,7 @@ namespace BrewDay2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int LuppoliId { get; set; }
+
         public String Nome { get; set; }
         public String Descrizione { get; set; }
         public String Produttore { get; set; }

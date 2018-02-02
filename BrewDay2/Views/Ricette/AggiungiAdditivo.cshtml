@@ -25,15 +25,15 @@
         </div>*@
 
         <div class="form-group">
-            @Html.LabelFor(model => model.AdditiviId, "AdditiviId", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.AdditiviId, "Additivo", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("AdditiviId", (SelectList)ViewBag.additivi, htmlAttributes: new { @class = "form-control" })
+                @Html.DropDownList("AdditiviId", (SelectList)ViewBag.additivi, new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.AdditiviId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Quantita, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Quantita, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Quantita, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Quantita, "", new { @class = "text-danger" })

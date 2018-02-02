@@ -31,11 +31,11 @@ else
 {
     <div class="col-md-12">
         <div class="col-md-6 noPad col-xs-12 col-sm-12" style="max-width: 100%;">
-            @Html.ActionLink("Registrati", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "btn btn-personalizzato btn-block" })
+            @Html.ActionLink("Registrati", "Register", "Account", null, new { id = "registerLink", @class = "btn btn-personalizzato btn-block" })
         </div><br />
         @*<div class="col-md-1 noPad hidden-xs hidden-sm">&nbsp;</div>*@
         <div class="col-md-6 noPad col-xs-12 col-sm-12" style="max-width: 100%;">
-            @Html.ActionLink("Accedi", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "btn btn-personalizzatoBlu btn-block" })
+            @Html.ActionLink("Accedi", "Login", "Account", null, new { id = "loginLink", @class = "btn btn-personalizzatoBlu btn-block" })
         </div>
     </div>
     @*<ul class="nav navbar-nav navbar-right">

@@ -16,7 +16,9 @@ namespace BrewDay2.Models
         public String TempoFermentazione { get; set; }
         public String Categoria { get; set; }
         public String ImmagineScelta { get; set; }
+        public decimal CapacitaContenitore { get; set; }
         public bool Privata { get; set; } = false;
+        public String UserId { get; set; }
         public virtual ICollection<Malti> Maltis { get; set; }
         public virtual ICollection<Additivi> Additivis { get; set; }
         public virtual ICollection<Lieviti> Lievitis { get; set; }

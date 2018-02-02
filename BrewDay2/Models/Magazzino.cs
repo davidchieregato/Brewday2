@@ -10,8 +10,10 @@ namespace BrewDay2.Models
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int MagazzinoId { get; set; }
+
         public String UserId { get; set; }
         public virtual ApplicationUser User { get; set; }
+
         public virtual ICollection<AdditiviMagazzino> AdditiviUtente { get; set; }
         public virtual ICollection<LievitiMagazzino> LievitiUtente { get; set; }
         public virtual ICollection<LuppoliMagazzino> LuppoliUtente { get; set; }

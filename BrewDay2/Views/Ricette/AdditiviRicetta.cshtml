@@ -1,0 +1,53 @@
+﻿@using BrewDay2.Models
+@model BrewDay2.Models.Ricette
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Descrizione)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Produttore)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Prezzo)
+        </th>
+        <th>
+            Quantit&agrave;
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model.Additivis) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descrizione)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Produttore)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prezzo)
+        </td>
+        <td>
+             @{
+                 ApplicationDbContext db = new ApplicationDbContext();
+                 var quan = db.AdditiviRicettas.Where(x => x.RicettaId == Model.RicettaId && x.AdditiviId == item.AdditiviId).Select(y => y.Quantita).FirstOrDefault();
+             }
+            @quan
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.AdditiviId, idr = Model.RicettaId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.AdditiviId, idr = Model.RicettaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.AdditiviId, idr = Model.RicettaId })
+        </td>
+    </tr>
+}
+
+</table>

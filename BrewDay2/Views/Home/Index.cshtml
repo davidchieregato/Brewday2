@@ -1,31 +1,37 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿@model IEnumerable<BrewDay2.Models.Ricette>
+
+@{
+    ViewBag.Title = "HomePage";
 }
-
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
-
+<h2>Ultime ricette</h2>
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <link rel="stylesheet" href="/css/ricette.css" type="text/css" />
+
+    <div class="contlist">
+        <ul>
+            @foreach (var item in Model)
+            {
+                <li>
+                    <div class="box_1 multibox_preview">
+                        <div class="box-articoli-hp">
+                            <div class="box_ss56545">
+                                <div class="img-articolo">
+                                    <a href="/Ricette/Details/@item.RicettaId"><img src="@Html.Raw(item.ImmagineScelta != null ? item.ImmagineScelta.Replace(".png","a.png") : "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
+                                </div>
+                                <h3 class="title_articolo">
+                                    <a href="/Ricette/Details/@item.RicettaId">@Html.DisplayFor(modelItem => item.NomeRicetta)</a>
+                                </h3>
+                                <p class="abs-articolo">@Html.DisplayFor(modelItem => item.Note) <a href="/Ricette/Details/@item.RicettaId" class="continua">&nbsp;CONTINUA</a></p>
+                                <div class="categoria-articolo-label-time">
+                                    <div class="categoria-articolo-label"><a href="/Ricette/Index?nomeparametro=@item.Categoria" class="categoria-articolo-label-link" style="cursor:text">@Html.DisplayFor(modelItem => item.Categoria)</a></div>
+                                    <div class="nofloat"></div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
     </div>
 </div>

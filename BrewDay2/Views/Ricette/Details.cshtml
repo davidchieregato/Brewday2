@@ -3,71 +3,39 @@
 @{
     ViewBag.Title = "Details";
 }
+<!--TODO
+    Se ricetta privata ed utente non autenticato -> login
+    da userid recuperare nome utente
+    -->
+<div class="well well-lg">
+    <h2>@Html.DisplayFor(model => model.NomeRicetta)</h2><br />
+    <img src="@Html.DisplayFor(model => model.ImmagineScelta)" alt="" title="@Html.DisplayNameFor(model => model.NomeRicetta)" />
+    <br /><br />
+    <div class="well well-sm">Creata da: <i><u>@ViewBag.user &nbsp;</u>
+            </i> nella categoria: <i><u><a href="/Ricette/Index?nomeparametro=@Html.DisplayFor(model => model.Categoria)">@Html.DisplayFor(model => model.Categoria)&nbsp;</a></u></i></div>
+    <div class="well well-sm">Tempo preparazione: <i><u>@Html.DisplayFor(model => model.TempoPreparazione)&nbsp;min</u></i> Tempo fermentazione: <i><u>@Html.DisplayFor(model => model.TempoFermentazione)&nbsp;min</u></i></div>
 
-<h2>Details</h2>
-
-<div>
-    <h4>Ricette</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Note)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Note)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.NomeRicetta)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.NomeRicetta)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TempoPreparazione)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TempoPreparazione)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.TempoFermentazione)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.TempoFermentazione)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Categoria)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Categoria)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Privata)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Privata)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ImmagineScelta)
-        </dt>
-
-        <dd>
-            <img src="@Html.DisplayFor(model => model.ImmagineScelta)" alt="" title="@Html.DisplayNameFor(model => model.NomeRicetta)" />
-        </dd>
-    </dl>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card border-secondary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Ingredienti:</h5>
+                    <p class="card-text"><i><u>@Html.Partial("AdditiviRicetta") </u></i></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="card border-secondary mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">Istruzioni</h5>
+                    <p class="card-text"><i><u>@Html.DisplayFor(model => model.Note)&nbsp;</u></i></p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.RicettaId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Modifica", "Edit", new { id = Model.RicettaId }) |
+    @Html.ActionLink("Torna alla lista", "Index")
 </p>

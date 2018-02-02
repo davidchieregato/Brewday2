@@ -1,5 +1,5 @@
 ﻿@{ 
-    string ItemSelezionato = string.IsNullOrEmpty(ViewBag.Selezionato) ? "" : ViewBag.Selezionato;
+    string itemSelezionato = string.IsNullOrEmpty(ViewBag.Selezionato) ? "" : ViewBag.Selezionato;
 }
 
 <nav class="bg-white sidebar sidebar-offcanvas" id="sidebar">
@@ -9,59 +9,59 @@
 @if (Request.IsAuthenticated)
 {
     <ul class="nav">
-        <li class="nav-item @(ItemSelezionato == "Dashboard" ? "active" : "")">
+        <li class="nav-item @(itemSelezionato == "Home" ? "active" : "")">
             <a class="nav-link" href="/Home/Index">
-                <i class="fa fa-line-chart verde" aria-hidden="true"></i>
-                <span class="menu-title">Dashboard</span>
+                <img src="~/images/file-icons/home.png" aria-hidden="true">
+                <span class="menu-title">Home</span>
             </a>
         </li>
-        <li class="nav-item @(ItemSelezionato == "Account" ? "active" : "")">
+        <li class="nav-item @(itemSelezionato == "Account" ? "active" : "")">
             <a class="nav-link" href="/Manage/Index">
-                <i class="fa fa-line-chart verde" aria-hidden="true"></i>
+                <img src="~/images/file-icons/user.png" aria-hidden="true">
                 <span class="menu-title">Account</span>
             </a>
         </li>
-        <li class="nav-item @(ItemSelezionato == "Magazzino" ? "active" : "")">
+        <li class="nav-item @(itemSelezionato == "Magazzino" ? "active" : "")">
             <a class="nav-link" href="/Magazzino/Index">
-                <i class="fa fa-line-chart verde" aria-hidden="true"></i>
+                <img src="~/images/file-icons/warehouse.png" aria-hidden="true">
                 <span class="menu-title">Magazzino</span>
             </a>
         </li>
 
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#prodotti" aria-expanded="false" aria-controls="sample-pages">
-                <i class="fa fa-calendar verde" aria-hidden="true"></i>
+                <img src="~/images/file-icons/box.png" aria-hidden="true">
                 <span class="menu-title">Prodotti<i class="fa fa-sort-down"></i></span>
             </a>
             <div class="collapse" id="prodotti">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item @(ItemSelezionato == "Additivi" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Additivi" ? "active" : "")">
                         <a class="nav-link" href="/Additivi">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/addt.png" aria-hidden="true">
                             <span class="menu-title">Additivi</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Lieviti" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Lieviti" ? "active" : "")">
                         <a class="nav-link" href="/Lievitis">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/lievito.png" aria-hidden="true">
                             <span class="menu-title">Lievitis</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Luppoli" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Luppoli" ? "active" : "")">
                         <a class="nav-link" href="/Luppoli">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/luppolo.png" aria-hidden="true">
                             <span class="menu-title">Luppoli</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Malti" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Malti" ? "active" : "")">
                         <a class="nav-link" href="/Maltis">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/malto.png" aria-hidden="true">
                             <span class="menu-title">Maltis</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Zuccheri" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Zuccheri" ? "active" : "")">
                         <a class="nav-link" href="/Zuccheris">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/zucchero.png" aria-hidden="true">
                             <span class="menu-title">Zuccheris</span>
                         </a>
                     </li>
@@ -70,92 +70,92 @@
         </li>
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#categorie" aria-expanded="false" aria-controls="sample-pages">
-                <i class="fa fa-calendar verde" aria-hidden="true"></i>
-                <span class="menu-title">Categorie<i class="fa fa-sort-down"></i></span>
+                <img src="~/images/file-icons/1.png" aria-hidden="true">
+                <span class="menu-title">Birre<i class="fa fa-sort-down"></i></span>
             </a>
             <div class="collapse" id="categorie">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item @(ItemSelezionato == "Tutte" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Tutte" ? "active" : "")">
                         <a class="nav-link" href="/Ricette">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/1.png" aria-hidden="true">
                             <span class="menu-title">Tutte</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "WitBier" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "WitBier" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=WitBier">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/2.png" aria-hidden="true">
                             <span class="menu-title">WitBier</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Maibock" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Maibock" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Maibock">
-                            <i class="fa fa-clock-o" style="color:#1991EB" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/3.png" aria-hidden="true">
                             <span class="menu-title">Maibock</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Weiss" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Weiss" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Weiss">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/4.png" aria-hidden="true">
                             <span class="menu-title">Weiss</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "PaleAle" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "PaleAle" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=PaleAle">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/6.png" aria-hidden="true">
                             <span class="menu-title">Pale Ale</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Saison" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Saison" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Saison">
-                            <i class="fa fa-clock-o" style="color:#1991EB" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/8.png" aria-hidden="true">
                             <span class="menu-title">Saison</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Bitter" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Bitter" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Bitter">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/10.png" aria-hidden="true">
                             <span class="menu-title">Bitter</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "DoubleIPA" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "DoubleIPA" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=DoubleIPA">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/13.png" aria-hidden="true">
                             <span class="menu-title">Double Ipa</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Marzen" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Marzen" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Marzen">
-                            <i class="fa fa-clock-o" style="color:#1991EB" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/17.png" aria-hidden="true">
                             <span class="menu-title">Marzen</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Bock" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Bock" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Bock">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/20.png" aria-hidden="true">
                             <span class="menu-title">Bock</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Doppelbock" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Doppelbock" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Doppelbock">
-                            <i class="fa fa-phone" style="color:#FF0000" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/24.png" aria-hidden="true">
                             <span class="menu-title">Doppelbock</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Stout" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Stout" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Stout">
-                            <i class="fa fa-clock-o" style="color:#1991EB" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/29.png" aria-hidden="true">
                             <span class="menu-title">Stout</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "Porter" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "Porter" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=Porter">
-                            <i class="fa fa-clock-o" style="color:#1991EB" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/35.png" aria-hidden="true">
                             <span class="menu-title">Porter</span>
                         </a>
                     </li>
-                    <li class="nav-item @(ItemSelezionato == "ImperialStout" ? "active" : "")">
+                    <li class="nav-item @(itemSelezionato == "ImperialStout" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=ImperialStout">
-                            <i class="fa fa-clock-o" style="color:#1991EB" aria-hidden="true"></i>
+                            <img src="~/images/file-icons/35.png" aria-hidden="true">
                             <span class="menu-title">Imperial Stout</span>
                         </a>
                     </li>

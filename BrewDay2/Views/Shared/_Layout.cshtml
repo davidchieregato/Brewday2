@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/node_modules/flag-icon-css/css/flag-icon.min.css" />
     <link rel="stylesheet" href="/Content/themes/base/datepicker.css" />
     <link rel="stylesheet" href="/css/style.css" />
-    <link rel="shortcut icon" href="/images/favicon.png" />
+    <link rel="shortcut icon" href="/favicon.ico" />
 </head>
 <body>
     <div class="container-scroller">
@@ -75,7 +75,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/ajax")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", false)
     <script>
         $("li.active").each(function () {
             $(this).parent().parent().addClass("show");

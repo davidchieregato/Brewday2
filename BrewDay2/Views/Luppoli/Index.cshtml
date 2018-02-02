@@ -40,11 +40,14 @@
         <td>
             @Html.DisplayFor(modelItem => item.Prezzo)
         </td>
+@if (ViewBag.me != null && ViewBag.me == item.UserId)
+{
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LuppoliId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LuppoliId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LuppoliId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.LuppoliId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.LuppoliId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.LuppoliId })
         </td>
+}
     </tr>
 }
 

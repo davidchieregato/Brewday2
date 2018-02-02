@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BrewDay2.Models.Magazzino>
+﻿@model BrewDay2.Models.Magazzino
 
 @{
     ViewBag.Title = "Index";
@@ -6,21 +6,23 @@
 
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+@Html.ActionLink("Aggiungi Additivo","AggiungiAdditivo")
+@Html.ActionLink("Aggiungi Lievito", "AggiungiLievito")
+@Html.ActionLink("Aggiungi Luppolo", "AggiungiLuppolo")
+@Html.ActionLink("Aggiungi Malto", "AggiungiMalti")
+@Html.ActionLink("Aggiungi Zucchero", "AggiungiZucchero")
+@*<table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.UserId)
+            Html.DisplayNameFor(model => model.UserId)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+@foreach (var item in Model.AdditiviUtente) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.UserId)
+            @Html.DisplayFor(modelItem => item.Additivo.Nome)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.MagazzinoId }) |
@@ -31,3 +33,45 @@
 }
 
 </table>
+
+*@
+
+<h3 onclick="ToggleDiv('divAdditivi')">Addittivi a magazzino</h3>(clicca per espandere l'elenco)
+<div class="divAdditivi" style="display:none">
+    @Html.Partial("ElencoAdditivi")
+</div>
+
+<br />
+
+<h3 onclick="ToggleDiv('divLieviti')">Lieviti a magazzino</h3>(clicca per espandere l'elenco)
+<div class="divLieviti" style="display:none">
+    @Html.Partial("ElencoLieviti")
+</div>
+
+<br />
+
+<h3 onclick="ToggleDiv('divLuppoli')">Luppoli a magazzino</h3>(clicca per espandere l'elenco)
+<div class="divLuppoli" style="display:none">
+    @Html.Partial("ElencoLuppoli")
+</div>
+
+<br />
+
+<h3 onclick="ToggleDiv('divMalti')">Malti a magazzino</h3>(clicca per espandere l'elenco)
+<div class="divMalti" style="display:none">
+    @Html.Partial("ElencoMalti")
+</div>
+
+<br />
+
+<h3 onclick="ToggleDiv('divZuccheri')">Zuccheri a magazzino</h3>(clicca per espandere l'elenco)
+<div class="divZuccheri" style="display:none">
+    @Html.Partial("ElencoZuccheri")
+</div>
+
+<script>
+
+    function ToggleDiv(selettore) {
+        $("." + selettore).toggle();
+    }
+</script>
