@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -12,7 +13,7 @@ namespace BrewDay2.Controllers
     {
         //SE SERVE RECUPERARE UTENTE CORRENTE
         //var me = db.Users.First(x => x.UserName == User.Identity.Name);
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Additivi
         /// <summary>
@@ -24,7 +25,7 @@ namespace BrewDay2.Controllers
         public ActionResult Index()
         {
             ViewBag.me = User.Identity.GetUserId();
-            return View(db.Additivi.ToList());
+            return View(_db.Additivi.ToList());
         }
 
         // GET: Additivi/Details/5
@@ -42,7 +43,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Additivi additivi = db.Additivi.Find(id);
+            Additivi additivi = _db.Additivi.Find(id);
             if (additivi == null)
             {
                 return HttpNotFound();
@@ -53,8 +54,7 @@ namespace BrewDay2.Controllers
         // GET: Additivi/Create
         public ActionResult Create()
         {
-            Additivi a = new Additivi();
-            a.UserId = User.Identity.GetUserId();
+            Additivi a = new Additivi {UserId = User.Identity.GetUserId()};
 
             return View(a);
         }
@@ -68,8 +68,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Additivi.Add(additivi);
-                db.SaveChanges();
+                _db.Additivi.Add(additivi);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +83,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Additivi additivi = db.Additivi.Find(id);
+            Additivi additivi = _db.Additivi.Find(id);
             if (additivi == null)
             {
                 return HttpNotFound();
@@ -100,8 +100,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(additivi).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(additivi).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(additivi);
@@ -114,7 +114,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Additivi additivi = db.Additivi.Find(id);
+            Additivi additivi = _db.Additivi.Find(id);
             if (additivi == null)
             {
                 return HttpNotFound();
@@ -127,9 +127,9 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Additivi additivi = db.Additivi.Find(id);
-            db.Additivi.Remove(additivi);
-            db.SaveChanges();
+            Additivi additivi = _db.Additivi.Find(id);
+            _db.Additivi.Remove(additivi ?? throw new InvalidOperationException());
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -137,7 +137,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

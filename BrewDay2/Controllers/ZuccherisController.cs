@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -10,13 +11,13 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class ZuccherisController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Zuccheris
         public ActionResult Index()
         {
             ViewBag.me = User.Identity.GetUserId();
-            return View(db.Zuccheri.ToList());
+            return View(_db.Zuccheri.ToList());
         }
 
         // GET: Zuccheris/Details/5
@@ -26,7 +27,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            Zuccheri zuccheri = _db.Zuccheri.Find(id);
             if (zuccheri == null)
             {
                 return HttpNotFound();
@@ -37,8 +38,7 @@ namespace BrewDay2.Controllers
         // GET: Zuccheris/Create
         public ActionResult Create()
         {
-            Zuccheri z = new Zuccheri();
-            z.UserId = User.Identity.GetUserId();
+            Zuccheri z = new Zuccheri {UserId = User.Identity.GetUserId()};
             return View(z);
         }
 
@@ -51,8 +51,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Zuccheri.Add(zuccheri);
-                db.SaveChanges();
+                _db.Zuccheri.Add(zuccheri);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +66,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            Zuccheri zuccheri = _db.Zuccheri.Find(id);
             if (zuccheri == null)
             {
                 return HttpNotFound();
@@ -83,8 +83,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(zuccheri).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(zuccheri).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(zuccheri);
@@ -97,7 +97,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Zuccheri zuccheri = db.Zuccheri.Find(id);
+            Zuccheri zuccheri = _db.Zuccheri.Find(id);
             if (zuccheri == null)
             {
                 return HttpNotFound();
@@ -110,9 +110,9 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Zuccheri zuccheri = db.Zuccheri.Find(id);
-            db.Zuccheri.Remove(zuccheri);
-            db.SaveChanges();
+            Zuccheri zuccheri = _db.Zuccheri.Find(id);
+            _db.Zuccheri.Remove(zuccheri ?? throw new InvalidOperationException());
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +120,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

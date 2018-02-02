@@ -60,7 +60,7 @@ namespace BrewDay2.Controllers
         /// ????
         /// <param name="model"></param>
         /// <param name="returnUrl"></param>
-        /// <returns></returns>
+        /// <returns></returns></summary>
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
@@ -366,7 +366,6 @@ namespace BrewDay2.Controllers
                     return View("Lockout");
                 case SignInStatus.RequiresVerification:
                     return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = false });
-                case SignInStatus.Failure:
                 default:
                     // Se l'utente non ha un account, chiedere all'utente di crearne uno
                     ViewBag.ReturnUrl = returnUrl;

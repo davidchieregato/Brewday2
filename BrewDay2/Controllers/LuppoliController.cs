@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -10,13 +11,13 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class LuppoliController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Luppoli
         public ActionResult Index()
         {
             ViewBag.me = User.Identity.GetUserId();
-            return View(db.Luppoli.ToList());
+            return View(_db.Luppoli.ToList());
         }
 
         // GET: Luppoli/Details/5
@@ -26,7 +27,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Luppoli luppoli = db.Luppoli.Find(id);
+            Luppoli luppoli = _db.Luppoli.Find(id);
             if (luppoli == null)
             {
                 return HttpNotFound();
@@ -37,8 +38,7 @@ namespace BrewDay2.Controllers
         // GET: Luppoli/Create
         public ActionResult Create()
         {
-            Luppoli l = new Luppoli();
-            l.UserId = User.Identity.GetUserId();
+            Luppoli l = new Luppoli {UserId = User.Identity.GetUserId()};
             return View(l);
         }
 
@@ -51,8 +51,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Luppoli.Add(luppoli);
-                db.SaveChanges();
+                _db.Luppoli.Add(luppoli);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +66,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Luppoli luppoli = db.Luppoli.Find(id);
+            Luppoli luppoli = _db.Luppoli.Find(id);
             if (luppoli == null)
             {
                 return HttpNotFound();
@@ -83,8 +83,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(luppoli).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(luppoli).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(luppoli);
@@ -97,7 +97,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Luppoli luppoli = db.Luppoli.Find(id);
+            Luppoli luppoli = _db.Luppoli.Find(id);
             if (luppoli == null)
             {
                 return HttpNotFound();
@@ -110,9 +110,9 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Luppoli luppoli = db.Luppoli.Find(id);
-            db.Luppoli.Remove(luppoli);
-            db.SaveChanges();
+            Luppoli luppoli = _db.Luppoli.Find(id);
+            _db.Luppoli.Remove(luppoli ?? throw new InvalidOperationException());
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +120,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

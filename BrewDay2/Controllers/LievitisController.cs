@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -10,13 +11,13 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class LievitisController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Lievitis
         public ActionResult Index()
         {
             ViewBag.me = User.Identity.GetUserId();
-            return View(db.Lieviti.ToList());
+            return View(_db.Lieviti.ToList());
         }
 
         // GET: Lievitis/Details/5
@@ -26,7 +27,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lieviti lieviti = db.Lieviti.Find(id);
+            Lieviti lieviti = _db.Lieviti.Find(id);
             if (lieviti == null)
             {
                 return HttpNotFound();
@@ -37,8 +38,7 @@ namespace BrewDay2.Controllers
         // GET: Lievitis/Create
         public ActionResult Create()
         {
-            Lieviti l = new Lieviti();
-            l.UserId = User.Identity.GetUserId();
+            Lieviti l = new Lieviti {UserId = User.Identity.GetUserId()};
             return View(l);
         }
 
@@ -51,8 +51,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Lieviti.Add(lieviti);
-                db.SaveChanges();
+                _db.Lieviti.Add(lieviti);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +66,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lieviti lieviti = db.Lieviti.Find(id);
+            Lieviti lieviti = _db.Lieviti.Find(id);
             if (lieviti == null)
             {
                 return HttpNotFound();
@@ -83,8 +83,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(lieviti).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(lieviti).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(lieviti);
@@ -97,7 +97,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Lieviti lieviti = db.Lieviti.Find(id);
+            Lieviti lieviti = _db.Lieviti.Find(id);
             if (lieviti == null)
             {
                 return HttpNotFound();
@@ -110,9 +110,9 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Lieviti lieviti = db.Lieviti.Find(id);
-            db.Lieviti.Remove(lieviti);
-            db.SaveChanges();
+            Lieviti lieviti = _db.Lieviti.Find(id);
+            _db.Lieviti.Remove(lieviti ?? throw new InvalidOperationException());
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +120,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

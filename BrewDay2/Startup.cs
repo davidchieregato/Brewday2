@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Entity.SqlServer;
 using System.Linq;
 using Microsoft.Owin;
 using Owin;
@@ -28,20 +27,22 @@ namespace BrewDay2
                 }
                 if (client.CategoriaBirres.ToList().Count == 0)
                 {
-                    List<String> categorie = new List<string>();
-                    categorie.Add("WitBier");
-                    categorie.Add("Maibock");
-                    categorie.Add("Weiss");
-                    categorie.Add("PaleAle");
-                    categorie.Add("Saison");
-                    categorie.Add("Bitter");
-                    categorie.Add("DoubleIPA");
-                    categorie.Add("Marzen");
-                    categorie.Add("Bock");
-                    categorie.Add("Doppelbock");
-                    categorie.Add("Stout");
-                    categorie.Add("Porter");
-                    categorie.Add("ImperialStout");
+                    List<String> categorie = new List<string>
+                    {
+                        "WitBier",
+                        "Maibock",
+                        "Weiss",
+                        "PaleAle",
+                        "Saison",
+                        "Bitter",
+                        "DoubleIPA",
+                        "Marzen",
+                        "Bock",
+                        "Doppelbock",
+                        "Stout",
+                        "Porter",
+                        "ImperialStout"
+                    };
                     foreach (var c in categorie)
                     {
                         CategoriaBirre cb = new CategoriaBirre

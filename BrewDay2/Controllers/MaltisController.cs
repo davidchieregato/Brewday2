@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -10,13 +11,13 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class MaltisController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Maltis
         public ActionResult Index()
         {
             ViewBag.me = User.Identity.GetUserId();
-            return View(db.Malti.ToList());
+            return View(_db.Malti.ToList());
         }
 
         // GET: Maltis/Details/5
@@ -26,7 +27,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Malti malti = db.Malti.Find(id);
+            Malti malti = _db.Malti.Find(id);
             if (malti == null)
             {
                 return HttpNotFound();
@@ -37,8 +38,7 @@ namespace BrewDay2.Controllers
         // GET: Maltis/Create
         public ActionResult Create()
         {
-            Malti m = new Malti();
-            m.UserId = User.Identity.GetUserId();
+            Malti m = new Malti {UserId = User.Identity.GetUserId()};
             return View(m);
         }
 
@@ -51,8 +51,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Malti.Add(malti);
-                db.SaveChanges();
+                _db.Malti.Add(malti);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -66,7 +66,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Malti malti = db.Malti.Find(id);
+            Malti malti = _db.Malti.Find(id);
             if (malti == null)
             {
                 return HttpNotFound();
@@ -83,8 +83,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(malti).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(malti).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(malti);
@@ -97,7 +97,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Malti malti = db.Malti.Find(id);
+            Malti malti = _db.Malti.Find(id);
             if (malti == null)
             {
                 return HttpNotFound();
@@ -110,9 +110,9 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Malti malti = db.Malti.Find(id);
-            db.Malti.Remove(malti);
-            db.SaveChanges();
+            Malti malti = _db.Malti.Find(id);
+            _db.Malti.Remove(malti ?? throw new InvalidOperationException());
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -120,7 +120,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }

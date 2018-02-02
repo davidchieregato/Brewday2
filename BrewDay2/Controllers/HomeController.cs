@@ -6,12 +6,12 @@ namespace BrewDay2.Controllers
 {
     public class HomeController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         [HttpGet]
         public ActionResult Index()
         {
-            var daRestituire = db.Ricette.Where(x => x.Privata == false);
+            var daRestituire = _db.Ricette.Where(x => x.Privata == false);
             return View(daRestituire);
         }
 

@@ -12,29 +12,25 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class RicetteController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Ricette
         public ActionResult Index()
         {
-            return View(db.Ricette.ToList());
+            return View(_db.Ricette.ToList());
         }
         [HttpGet]
         public ActionResult MyRecipes()
         {
             var me = User.Identity.GetUserId();
-            var daRestituire = db.Ricette.Where(x => x.UserId == me);
+            var daRestituire = _db.Ricette.Where(x => x.UserId == me);
             return View(daRestituire);
         }
 
         [HttpGet]
         public ActionResult Index(String nomeparametro)
         {
-            List<Ricette> lista = null;
-            if (!String.IsNullOrEmpty(nomeparametro))
-                lista = db.Ricette.Where(x => x.Categoria == nomeparametro).ToList();
-            else
-                lista = db.Ricette.ToList();
+            var lista = !String.IsNullOrEmpty(nomeparametro) ? _db.Ricette.Where(x => x.Categoria == nomeparametro).ToList() : _db.Ricette.ToList();
 
             return View(lista);
         }
@@ -46,7 +42,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ricette ricette = db.Ricette.Find(id);
+            Ricette ricette = _db.Ricette.Find(id);
             if (ricette == null)
             {
                 return HttpNotFound();
@@ -57,7 +53,7 @@ namespace BrewDay2.Controllers
         // GET: Ricette/Create
         public ActionResult Create()
         {
-            SelectList sl = new SelectList(db.CategoriaBirres,"Nome","Nome");
+            SelectList sl = new SelectList(_db.CategoriaBirres,"Nome","Nome");
             ViewBag.categorie = sl;
             return View();
         }
@@ -65,78 +61,82 @@ namespace BrewDay2.Controllers
         public ActionResult WhatShoudIBrewToday()
         {
             var me = User.Identity.GetUserId();
-            List<Ricette> Additivi = new List<Ricette>();
-            List<Ricette> Luppoli = new List<Ricette>();
-            List<Ricette> Lieviti = new List<Ricette>();
-            List<Ricette> Malti = new List<Ricette>();
-            List<Ricette> Zuccheri = new List<Ricette>();
-            Magazzino m = db.Magazzinoes.Where(x => x.UserId == me).FirstOrDefault();
+            List<Ricette> additivi = new List<Ricette>();
+            List<Ricette> luppoli = new List<Ricette>();
+            List<Ricette> lieviti = new List<Ricette>();
+            List<Ricette> malti = new List<Ricette>();
+            List<Ricette> zuccheri = new List<Ricette>();
+            Magazzino m = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me);
 
             List<Additivi> a = new List<Additivi>();
-            foreach (var additiviMagazzino in m.AdditiviUtente)
-            {
-                a.Add(db.Additivi.Where(x=>x.AdditiviId==additiviMagazzino.AdditiviId).FirstOrDefault());
-            }
-            foreach (var ricette in db.Ricette)
+            if (m?.AdditiviUtente != null)
+                foreach (var additiviMagazzino in m.AdditiviUtente)
+                {
+                    a.Add(_db.Additivi.FirstOrDefault(x => x.AdditiviId == additiviMagazzino.AdditiviId));
+                }
+            foreach (var ricette in _db.Ricette)
             {
                 if (a.All(x => ricette.Additivis.Contains(x)))
                 {
-                    Additivi.Add(ricette);
+                    additivi.Add(ricette);
                 }
             }
 
             List<Luppoli> l = new List<Luppoli>();
-            foreach (var additiviMagazzino in m.LuppoliUtente)
+            if (m != null)
             {
-                l.Add(db.Luppoli.Where(x => x.LuppoliId == additiviMagazzino.LuppoliId).FirstOrDefault());
-            }
-            foreach (var ricette in db.Ricette)
-            {
-                if (l.All(x => ricette.Luppolis.Contains(x)))
+                foreach (var additiviMagazzino in m.LuppoliUtente)
                 {
-                    Luppoli.Add(ricette);
+                    l.Add(_db.Luppoli.FirstOrDefault(x => x.LuppoliId == additiviMagazzino.LuppoliId));
                 }
-            }
+                foreach (var ricette in _db.Ricette)
+                {
+                    if (l.All(x => ricette.Luppolis.Contains(x)))
+                    {
+                        luppoli.Add(ricette);
+                    }
+                }
 
-            List<Lieviti> li = new List<Lieviti>();
-            foreach (var additiviMagazzino in m.LievitiUtente)
-            {
-                li.Add(db.Lieviti.Where(x => x.LievitiId == additiviMagazzino.LievitiId).FirstOrDefault());
-            }
-            foreach (var ricette in db.Ricette)
-            {
-                if (li.All(x => ricette.Lievitis.Contains(x)))
+                List<Lieviti> li = new List<Lieviti>();
+                foreach (var additiviMagazzino in m.LievitiUtente)
                 {
-                    Lieviti.Add(ricette);
+                    li.Add(_db.Lieviti.FirstOrDefault(x => x.LievitiId == additiviMagazzino.LievitiId));
                 }
-            }
+                foreach (var ricette in _db.Ricette)
+                {
+                    if (li.All(x => ricette.Lievitis.Contains(x)))
+                    {
+                        lieviti.Add(ricette);
+                    }
+                }
 
-            List<Malti> ma = new List<Malti>();
-            foreach (var additiviMagazzino in m.MaltiUtente)
-            {
-                ma.Add(db.Malti.Where(x => x.MaltiId == additiviMagazzino.MaltiId).FirstOrDefault());
-            }
-            foreach (var ricette in db.Ricette)
-            {
-                if (ma.All(x => ricette.Maltis.Contains(x)))
+                List<Malti> ma = new List<Malti>();
+                foreach (var additiviMagazzino in m.MaltiUtente)
                 {
-                    Malti.Add(ricette);
+                    ma.Add(_db.Malti.Where(x => x.MaltiId == additiviMagazzino.MaltiId).FirstOrDefault());
                 }
-            }
+                foreach (var ricette in _db.Ricette)
+                {
+                    if (ma.All(x => ricette.Maltis.Contains(x)))
+                    {
+                        malti.Add(ricette);
+                    }
+                }
 
-            List<Zuccheri> z = new List<Zuccheri>();
-            foreach (var additiviMagazzino in m.ZuccheriUtente)
-            {
-                z.Add(db.Zuccheri.Where(x => x.ZuccheriId == additiviMagazzino.ZuccheriId).FirstOrDefault());
-            }
-            foreach (var ricette in db.Ricette)
-            {
-                if (z.All(x => ricette.Zuccheris.Contains(x)))
+                List<Zuccheri> z = new List<Zuccheri>();
+                foreach (var additiviMagazzino in m.ZuccheriUtente)
                 {
-                    Zuccheri.Add(ricette);
+                    z.Add(_db.Zuccheri.Where(x => x.ZuccheriId == additiviMagazzino.ZuccheriId).FirstOrDefault());
+                }
+                foreach (var ricette in _db.Ricette)
+                {
+                    if (z.All(x => ricette.Zuccheris.Contains(x)))
+                    {
+                        zuccheri.Add(ricette);
+                    }
                 }
             }
-            var valide = Additivi.Intersect(Malti).Intersect(Luppoli).Intersect(Lieviti).Intersect(Zuccheri);
+            var valide = additivi.Intersect(malti).Intersect(luppoli).Intersect(lieviti).Intersect(zuccheri);
             Random r = new Random();
             int quale = r.Next(0, valide.Count());
             return View(valide.ElementAt(quale));
@@ -151,8 +151,8 @@ namespace BrewDay2.Controllers
             ricette.UserId = User.Identity.GetUserId();
             if (ModelState.IsValid)
             {
-                db.Ricette.Add(ricette);
-                db.SaveChanges();
+                _db.Ricette.Add(ricette);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -166,7 +166,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ricette ricette = db.Ricette.Find(id);
+            Ricette ricette = _db.Ricette.Find(id);
             if (ricette == null)
             {
                 return HttpNotFound();
@@ -183,8 +183,8 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Entry(ricette).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(ricette).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(ricette);
@@ -197,7 +197,7 @@ namespace BrewDay2.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ricette ricette = db.Ricette.Find(id);
+            Ricette ricette = _db.Ricette.Find(id);
             if (ricette == null)
             {
                 return HttpNotFound();
@@ -210,9 +210,9 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Ricette ricette = db.Ricette.Find(id);
-            db.Ricette.Remove(ricette);
-            db.SaveChanges();
+            Ricette ricette = _db.Ricette.Find(id);
+            _db.Ricette.Remove(ricette);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -220,7 +220,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }
@@ -228,8 +228,8 @@ namespace BrewDay2.Controllers
         public ActionResult AggiungiAdditivo(int id)
         {
             AdditiviRicetta ar = new AdditiviRicetta { RicettaId = id };
-            SelectList AdditiviId = new SelectList(db.Additivi, "AdditiviId", "Nome");
-            ViewBag.additivi = AdditiviId;
+            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
+            ViewBag.additivi = additiviId;
             return View(ar);
         }
 
@@ -238,20 +238,20 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.AdditiviRicettas.Add(ar);
-                db.SaveChanges();
+                _db.AdditiviRicettas.Add(ar);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList AdditiviId = new SelectList(db.Additivi, "AdditiviId", "Nome");
-            ViewBag.additivi = AdditiviId;
+            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
+            ViewBag.additivi = additiviId;
             return View(ar);
         }
 
         public ActionResult AggiungiLievito(int id)
         {
             LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
-            SelectList LievitiId = new SelectList(db.Lieviti, "LievitiId", "Nome");
-            ViewBag.lieviti = LievitiId;
+            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
+            ViewBag.lieviti = lievitiId;
             return View(lr);
         }
 
@@ -260,21 +260,21 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.LievitiRicettas.Add(lr);
-                db.SaveChanges();
+                _db.LievitiRicettas.Add(lr);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
-            SelectList LievitiId = new SelectList(db.Lieviti, "LievitiId", "Nome");
-            ViewBag.lieviti = LievitiId;
+            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
+            ViewBag.lieviti = lievitiId;
             return View(lr);
         }
 
         public ActionResult AggiungiLuppolo(int id)
         {
             LuppoliRicetta lr = new LuppoliRicetta { RicettaId = id };
-            SelectList LuppoliId = new SelectList(db.Luppoli, "LuppoliId", "Nome");
-            ViewBag.luppoli = LuppoliId;
+            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.luppoli = luppoliId;
             return View(lr);
         }
 
@@ -283,20 +283,20 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.LuppoliRicettas.Add(lr);
-                db.SaveChanges();
+                _db.LuppoliRicettas.Add(lr);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList LuppoliId = new SelectList(db.Luppoli, "LuppoliId", "Nome");
-            ViewBag.luppoli = LuppoliId;
+            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.luppoli = luppoliId;
             return View(lr);
         }
 
         public ActionResult AggiungiMalti(int id)
         {
             MaltiRicetta mr = new MaltiRicetta { MaltiId = id };
-            SelectList MaltiId = new SelectList(db.Malti, "MaltiId", "Nome");
-            ViewBag.malti = MaltiId;
+            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
+            ViewBag.malti = maltiId;
             return View(mr);
         }
 
@@ -305,20 +305,20 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.MaltiRicettas.Add(mr);
-                db.SaveChanges();
+                _db.MaltiRicettas.Add(mr);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList MaltiId = new SelectList(db.Malti, "MaltiId", "Nome");
-            ViewBag.malti = MaltiId;
+            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
+            ViewBag.malti = maltiId;
             return View(mr);
         }
 
         public ActionResult AggiungiZuccheri(int id)
         {
             ZuccheriRicetta zr = new ZuccheriRicetta { RicettaId = id };
-            SelectList ZuccheriId = new SelectList(db.Zuccheri, "ZuccheriId", "Nome");
-            ViewBag.zuccheri = ZuccheriId;
+            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = zuccheriId;
             return View(zr);
         }
 
@@ -327,18 +327,18 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.ZuccheriRicettas.Add(zr);
-                db.SaveChanges();
+                _db.ZuccheriRicettas.Add(zr);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList ZuccheriId = new SelectList(db.Zuccheri, "ZuccheriId", "Nome");
-            ViewBag.zuccheri = ZuccheriId;
+            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = zuccheriId;
             return View(zr);
         }
 
         public ActionResult EditAdditivo(int id, int idr)
         {
-            AdditiviRicetta ar = db.AdditiviRicettas.Where(x => x.AdditiviId == id && x.RicettaId == idr).FirstOrDefault();
+            AdditiviRicetta ar = _db.AdditiviRicettas.Where(x => x.AdditiviId == id && x.RicettaId == idr).FirstOrDefault();
             //SelectList AdditiviId = new SelectList(db.Additivi, "AdditiviId", "Nome")
             return View(ar);
         }
@@ -346,99 +346,99 @@ namespace BrewDay2.Controllers
         [HttpPost]
         public ActionResult EditAdditivo(AdditiviRicetta ar)
         {
-            AdditiviRicetta ar2 = db.AdditiviRicettas.Where(x => x.AdditiviId == ar.AdditiviId && x.RicettaId == ar.RicettaId).FirstOrDefault();
+            AdditiviRicetta ar2 = _db.AdditiviRicettas.Where(x => x.AdditiviId == ar.AdditiviId && x.RicettaId == ar.RicettaId).FirstOrDefault();
             ar2.Quantita = ar.Quantita;
             if (ModelState.IsValid)
             {
-                db.SaveChanges();
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList AdditiviId = new SelectList(db.Additivi, "AdditiviId", "Nome");
-            ViewBag.additivi = AdditiviId;
+            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
+            ViewBag.additivi = additiviId;
             return View(ar);
         }
 
         public ActionResult EditLievito(int id, int idr)
         {
-            LievitiRicetta lr = db.LievitiRicettas.Where(x => x.LievitoId == id && x.RicettaId == idr).FirstOrDefault();
+            LievitiRicetta lr = _db.LievitiRicettas.Where(x => x.LievitoId == id && x.RicettaId == idr).FirstOrDefault();
             return View(lr);
         }
 
         [HttpPost]
         public ActionResult EditLievito(LievitiRicetta lr)
         {
-            LievitiRicetta lr2 = db.LievitiRicettas.Where(x => x.LievitoId == lr.LievitoId && x.RicettaId == lr.RicettaId).FirstOrDefault();
+            LievitiRicetta lr2 = _db.LievitiRicettas.Where(x => x.LievitoId == lr.LievitoId && x.RicettaId == lr.RicettaId).FirstOrDefault();
             lr2.Quantita = lr.Quantita;
             if (ModelState.IsValid)
             {
-                db.SaveChanges();
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
-            SelectList LievitiId = new SelectList(db.Lieviti, "LievitiId", "Nome");
-            ViewBag.lieviti = LievitiId;
+            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
+            ViewBag.lieviti = lievitiId;
             return View(lr);
         }
 
         public ActionResult EditLuppolo(int id, int idr)
         {
-            LuppoliRicetta lr = db.LuppoliRicettas.Where(x => x.LuppoliId == id && x.RicettaId == idr).FirstOrDefault();
+            LuppoliRicetta lr = _db.LuppoliRicettas.Where(x => x.LuppoliId == id && x.RicettaId == idr).FirstOrDefault();
             return View(lr);
         }
 
         [HttpPost]
         public ActionResult EditLuppolo(LuppoliRicetta lr)
         {
-            LuppoliRicetta lr2 = db.LuppoliRicettas.Where(x => x.LuppoliId == lr.LuppoliId && x.RicettaId == lr.RicettaId).FirstOrDefault();
+            LuppoliRicetta lr2 = _db.LuppoliRicettas.Where(x => x.LuppoliId == lr.LuppoliId && x.RicettaId == lr.RicettaId).FirstOrDefault();
             if (ModelState.IsValid)
             {
-                db.SaveChanges();
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList LuppoliId = new SelectList(db.Luppoli, "LuppoliId", "Nome");
-            ViewBag.luppoli = LuppoliId;
+            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.luppoli = luppoliId;
             return View(lr);
         }
 
         public ActionResult EditMalti(int id, int idr)
         {
-            MaltiRicetta mr = db.MaltiRicettas.Where(x => x.MaltiId == id && x.RicettaId == idr).FirstOrDefault();
+            MaltiRicetta mr = _db.MaltiRicettas.Where(x => x.MaltiId == id && x.RicettaId == idr).FirstOrDefault();
             return View(mr);
         }
 
         [HttpPost]
         public ActionResult EditMalti(MaltiRicetta mr)
         {
-            MaltiRicetta mr2 = db.MaltiRicettas.Where(x => x.MaltiId == mr.MaltiId && x.RicettaId == mr.RicettaId).FirstOrDefault();
+            MaltiRicetta mr2 = _db.MaltiRicettas.Where(x => x.MaltiId == mr.MaltiId && x.RicettaId == mr.RicettaId).FirstOrDefault();
             mr2.Quantita = mr.Quantita;
             if (ModelState.IsValid)
             {
-                db.SaveChanges();
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList MaltiId = new SelectList(db.Malti, "MaltiId", "Nome");
-            ViewBag.malti = MaltiId;
+            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
+            ViewBag.malti = maltiId;
             return View(mr);
         }
 
         public ActionResult EditZuccheri(int id, int idr)
         {
-            ZuccheriRicetta zr = db.ZuccheriRicettas.Where(x => x.RicettaId == idr && x.ZuccheriId == id).FirstOrDefault();
+            ZuccheriRicetta zr = _db.ZuccheriRicettas.Where(x => x.RicettaId == idr && x.ZuccheriId == id).FirstOrDefault();
             return View(zr);
         }
 
         [HttpPost]
         public ActionResult EditZuccheri(ZuccheriRicetta zr, int idr)
         {
-            ZuccheriRicetta zr2 = db.ZuccheriRicettas.Where(x => x.ZuccheriId == zr.ZuccheriId && x.RicettaId == idr).FirstOrDefault();
+            ZuccheriRicetta zr2 = _db.ZuccheriRicettas.Where(x => x.ZuccheriId == zr.ZuccheriId && x.RicettaId == idr).FirstOrDefault();
             zr2.Quantita = zr.Quantita;
             if (ModelState.IsValid)
             {
-                db.SaveChanges();
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList ZuccheriId = new SelectList(db.Zuccheri, "ZuccheriId", "Nome");
-            ViewBag.zuccheri = ZuccheriId;
+            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = zuccheriId;
             return View(zr);
         }
     }

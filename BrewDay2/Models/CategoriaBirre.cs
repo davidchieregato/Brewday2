@@ -9,7 +9,7 @@ namespace BrewDay2.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int id { get; set; }
+        public int Id { get; set; }
         public String Nome { get; set; }
     }
 }

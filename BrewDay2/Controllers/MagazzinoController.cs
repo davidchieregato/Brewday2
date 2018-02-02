@@ -9,7 +9,7 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class MagazzinoController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Magazzino
         /// <summary>
@@ -19,8 +19,8 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
-            return View(db.Magazzinoes.First(f => f.UserId == me.Id));            
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            return View(_db.Magazzinoes.First(f => f.UserId == me.Id));            
         }
 
         // GET: Magazzino/Details/5
@@ -33,12 +33,12 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Details(int? id)
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Magazzino magazzino = db.Magazzinoes.Find(id);
+            Magazzino magazzino = _db.Magazzinoes.Find(id);
             if (magazzino == null)
             {
                 return HttpNotFound();
@@ -56,7 +56,7 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Create()
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino m = new Magazzino
             {
                 UserId = me.Id
@@ -77,11 +77,11 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MagazzinoId,UserId")] Magazzino magazzino)
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (ModelState.IsValid)
             {
-                db.Magazzinoes.Add(magazzino);
-                db.SaveChanges();
+                _db.Magazzinoes.Add(magazzino);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -97,12 +97,12 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Edit(int? id)
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Magazzino magazzino = db.Magazzinoes.Find(id);
+            Magazzino magazzino = _db.Magazzinoes.Find(id);
             if (magazzino == null)
             {
                 return HttpNotFound();
@@ -124,11 +124,11 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MagazzinoId,UserId")] Magazzino magazzino)
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (ModelState.IsValid)
             {
-                db.Entry(magazzino).State = EntityState.Modified;
-                db.SaveChanges();
+                _db.Entry(magazzino).State = EntityState.Modified;
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(magazzino);
@@ -145,12 +145,12 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Delete(int? id)
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Magazzino magazzino = db.Magazzinoes.Find(id);
+            Magazzino magazzino = _db.Magazzinoes.Find(id);
             if (magazzino == null)
             {
                 return HttpNotFound();
@@ -170,10 +170,10 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
-            Magazzino magazzino = db.Magazzinoes.Find(id);
-            db.Magazzinoes.Remove(magazzino);
-            db.SaveChanges();
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.Find(id);
+            _db.Magazzinoes.Remove(magazzino);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -187,12 +187,12 @@ namespace BrewDay2.Controllers
         public ActionResult AggiungiAdditivo()
         {
             AdditiviMagazzino am = new AdditiviMagazzino();
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
-            Magazzino magazzino = db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
             am.MagazzinoId = magazzino.MagazzinoId;
-            SelectList Additivi = new SelectList(db.Additivi,"AdditiviId","Nome");
-            ViewBag.Additivi = Additivi;
+            SelectList additivi = new SelectList(_db.Additivi,"AdditiviId","Nome");
+            ViewBag.Additivi = additivi;
             return View(am);
 
         }
@@ -210,16 +210,16 @@ namespace BrewDay2.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.AdditiviMagazzinos.Add(am);
-                db.SaveChanges();
+                _db.AdditiviMagazzinos.Add(am);
+                _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            var me = db.Users.First(x => x.UserName == User.Identity.Name);
-            Magazzino magazzino = db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
             am.MagazzinoId = magazzino.MagazzinoId;
-            SelectList Additivi = new SelectList(db.Additivi, "AdditiviId", "Nome");
-            ViewBag.Additivi = Additivi;
+            SelectList additivi = new SelectList(_db.Additivi, "AdditiviId", "Nome");
+            ViewBag.Additivi = additivi;
             return View(am);
 
         }
@@ -233,7 +233,7 @@ namespace BrewDay2.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                _db.Dispose();
             }
             base.Dispose(disposing);
         }
