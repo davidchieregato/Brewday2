@@ -160,7 +160,6 @@ namespace BrewDay2.Controllers
 
         // POST: Lievitis/Delete/5
         /// <summary>
-        /// <summary>
         /// Metodo invocato alla submit della form per la cancellazione di un lievito nella pagina equivalente
         /// Se il modello è valido rimuove nel database il lievito e salva i cambiamenti
         /// Ritorna la vista
