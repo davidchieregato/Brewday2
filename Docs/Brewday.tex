@@ -328,6 +328,26 @@ Each one of this States represent a view.
 \begin{figure}[H]
 \includegraphics[scale=0.4]{Statechart.png}
 \end{figure}
+\section{Implementation Choices}
+\subsection{DAO Pattern}
+In web programming, the Data Access Object Pattern is an Architectural Pattern used to manage Persistence:\\
+it's a class with its methods that represents a table entity of a Relational Database Management System.\\
+Mainly used to stratify and isolate the access to a table by queries, placed in class methods, hence creating a separation from data layer to business logic and making the code more abstract and maintainable.\\
+\\
+\begin{itshape}
+Advantages:
+\end{itshape}
+\begin{itemize}
+\item Makes a rigid separation from application components, like 
+\begin{itshape} 
+Model 
+\end{itshape} and 
+\begin{itshape}
+Control
+\end{itshape} of a MVC based application
+\end{itemize}
+\subsection{MVC Pattern}
+MVC Pattern stands for Model-View-Controller Pattern
 \section{Classes}
 \section{Test}
 \subsection{Unit Test}
