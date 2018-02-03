@@ -12,11 +12,12 @@
             @Html.DisplayNameFor(model => model.ZuccheriUtente.FirstOrDefault().Zucchero.Produttore)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ZuccheriUtente.FirstOrDefault().Zucchero.Prezzo)
+            @Html.DisplayNameFor(model => model.ZuccheriUtente.FirstOrDefault().Quantita)
         </th>
         <th>.</th>
     </tr>
-
+</thead>
+<tbody>
     @foreach (var item in Model.ZuccheriUtente)
     {
         <tr>
@@ -30,11 +31,11 @@
                 @Html.DisplayFor(modelItem => item.Zucchero.Produttore)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Zucchero.Prezzo)
+                @Html.DisplayFor(modelItem => item.Quantita)
             </td>
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.AdditiviId, idr = Model.RicettaId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.AdditiviId, idr = Model.RicettaId }) |
+                @Html.ActionLink("Edit", "EditZuccheri", new { id = item.ZuccheriId, idr = Model.MagazzinoId })
+                @*    @Html.ActionLink("Details", "Details", new { id = item.AdditiviId, idr = Model.RicettaId }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.AdditiviId, idr = Model.RicettaId })*@
             </td>
         </tr>

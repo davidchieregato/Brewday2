@@ -998,6 +998,11 @@
     <Content Include="Views\Ricette\EditMalti.cshtml" />
     <Content Include="Views\Ricette\EditZuccheri.cshtml" />
     <Content Include="Views\Ricette\AdditiviRicetta.cshtml" />
+    <Content Include="Views\Magazzino\EditAdditivo.cshtml" />
+    <Content Include="Views\Magazzino\EditLievito.cshtml" />
+    <Content Include="Views\Magazzino\EditLuppolo.cshtml" />
+    <Content Include="Views\Magazzino\EditMalti.cshtml" />
+    <Content Include="Views\Magazzino\EditZuccheri.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

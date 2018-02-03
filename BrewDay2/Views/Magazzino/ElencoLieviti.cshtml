@@ -12,11 +12,11 @@
             @Html.DisplayNameFor(model => model.LievitiUtente.FirstOrDefault().Lievito.Produttore)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.LievitiUtente.FirstOrDefault().Lievito.Prezzo)
+            @Html.DisplayNameFor(model => model.LievitiUtente.FirstOrDefault().Quantita)
         </th>
         <th>.</th>
     </tr>
-
+</thead><tbody>
     @foreach (var item in Model.LievitiUtente)
     {
         <tr>
@@ -30,12 +30,12 @@
                 @Html.DisplayFor(modelItem => item.Lievito.Produttore)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Lievito.Prezzo)
+                @Html.DisplayFor(modelItem => item.Quantita)
             </td>
             <td>
-                @*@Html.ActionLink("Edit", "Edit", new { id = item.AdditiviId, idr = Model.RicettaId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.AdditiviId, idr = Model.RicettaId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.AdditiviId, idr = Model.RicettaId })*@
+                @Html.ActionLink("Edit", "EditLievito", new { id = item.LievitiId, idr = Model.MagazzinoId })
+                 @*   @Html.ActionLink("Details", "Details", new { id = item.AdditiviId, idr = Model.RicettaId }) |
+    @Html.ActionLink("Delete", "Delete", new { id = item.AdditiviId, idr = Model.RicettaId })*@
             </td>
         </tr>
     }

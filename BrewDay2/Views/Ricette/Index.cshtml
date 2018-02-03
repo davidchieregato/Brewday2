@@ -14,7 +14,7 @@
     <thead>
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Note)
+            @Html.DisplayNameFor(model => model.Note)<a href="#" data-toggle="tooltip" data-placement="top" title="Ciao sono una nota!"> ? </a>
         </th>
         <th>
             @Html.DisplayNameFor(model => model.NomeRicetta)
@@ -75,7 +75,7 @@
             <td>
                 @Html.ActionLink("+", "AggiungiZuccheri", new {id = item.RicettaId})
             </td>
-            @if (item.UserId == User.Identity.GetUserId())
+            @if (User.Identity != null && item.UserId == User.Identity.GetUserId())
             {
                 <td>
                     @Html.ActionLink("Edit", "Edit", new {id = item.RicettaId}) |

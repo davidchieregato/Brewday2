@@ -327,6 +327,185 @@ namespace BrewDay2.Controllers
             return View(am);
 
         }
+
+        /// <summary>
+        /// Metodo invocato alla modifica di un additivo nella ricetta
+        /// Cerca nel database l'additivo e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID dell'additivo da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
+        public ActionResult EditAdditivo(int id, int idr)
+        {
+            AdditiviMagazzino ar = _db.AdditiviMagazzinos.Where(x => x.AdditiviId == id && x.MagazzinoId == idr).FirstOrDefault();
+            //SelectList AdditiviId = new SelectList(db.Additivi, "AdditiviId", "Nome")
+            return View(ar);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un additivo nella ricetta
+        /// Cerca nel database l'additivo e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag l'additivo modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="ar">Additivo da modificare nella ricetta</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult EditAdditivo(AdditiviMagazzino ar)
+        {
+            AdditiviMagazzino ar2 = _db.AdditiviMagazzinos.Where(x => x.AdditiviId == ar.AdditiviId && x.MagazzinoId == ar.MagazzinoId).FirstOrDefault();
+            ar2.Quantita = ar.Quantita;
+            if (ModelState.IsValid)
+            {
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
+            ViewBag.additivi = additiviId;
+            return View(ar);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla modifica di un lievito nella ricetta
+        /// Cerca nel database il lievito e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID del lievito da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
+        public ActionResult EditLievito(int id, int idr)
+        {
+            LievitiMagazzino lr = _db.LievitiMagazzinos.Where(x => x.LievitiId == id && x.MagazzinoId == idr).FirstOrDefault();
+            return View(lr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un lievito nella ricetta
+        /// Cerca nel database il lievito e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag il lievito modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="lr">Lievito da modificare nella ricetta</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult EditLievito(LievitiMagazzino lr)
+        {
+            LievitiMagazzino lr2 = _db.LievitiMagazzinos.Where(x => x.LievitiId == lr.LievitiId && x.MagazzinoId == lr.MagazzinoId).FirstOrDefault();
+            lr2.Quantita = lr.Quantita;
+            if (ModelState.IsValid)
+            {
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
+            ViewBag.lieviti = lievitiId;
+            return View(lr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla modifica di un luppolo nella ricetta
+        /// Cerca nel database il luppolo e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID del luppolo da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
+        public ActionResult EditLuppolo(int id, int idr)
+        {
+            LuppoliMagazzino lr = _db.LuppoliMagazzinos.Where(x => x.LuppoliId == id && x.MagazzinoId == idr).FirstOrDefault();
+            return View(lr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta
+        /// Cerca nel database il luppolo e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag il luppolo modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="lr">Luppolo da modificare nella ricetta</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult EditLuppolo(LuppoliMagazzino lr)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.luppoli = luppoliId;
+            return View(lr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla modifica di un malto nella ricetta
+        /// Cerca nel database il malto e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID del malto da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
+        public ActionResult EditMalti(int id, int idr)
+        {
+            MaltiMagazzino mr = _db.MaltiMagazzinos.Where(x => x.MaltiId == id && x.MagazzinoId == idr).FirstOrDefault();
+            return View(mr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un malto nella ricetta
+        /// Cerca nel database il malto e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag il malto modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="mr">Malto da modificare nella ricetta</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult EditMalti(MaltiMagazzino mr)
+        {
+            MaltiMagazzino mr2 = _db.MaltiMagazzinos.Where(x => x.MaltiId == mr.MaltiId && x.MagazzinoId == mr.MagazzinoId).FirstOrDefault();
+            mr2.Quantita = mr.Quantita;
+            if (ModelState.IsValid)
+            {
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
+            ViewBag.malti = maltiId;
+            return View(mr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla modifica di uno zucchero nella ricetta
+        /// Cerca nel database lo zucchero e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID dello zucchero da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
+        public ActionResult EditZuccheri(int id, int idr)
+        {
+            ZuccheriMagazzino zr = _db.ZuccheriMagazzinos.Where(x => x.MagazzinoId == idr && x.ZuccheriId == id).FirstOrDefault();
+            return View(zr);
+        }
+
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta
+        /// Cerca nel database lo zucchero e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag lo zucchero modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="zr">Zucchero da modificare nella ricetta</param>
+        /// <returns></returns>
+        [HttpPost]
+        public ActionResult EditZuccheri(ZuccheriMagazzino zr)
+        {
+            ZuccheriMagazzino zr2 = _db.ZuccheriMagazzinos.Where(x => x.ZuccheriId == zr.ZuccheriId && x.MagazzinoId == zr.MagazzinoId).FirstOrDefault();
+            zr2.Quantita = zr.Quantita;
+            if (ModelState.IsValid)
+            {
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = zuccheriId;
+            return View(zr);
+        }
         /// <summary>
         /// Metodo invocato alla cancellazione del database
         /// Se il flag è true, cancella il database
