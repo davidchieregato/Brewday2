@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Runtime.CompilerServices;
+using System.Reflection;
 using System.Runtime.InteropServices;
 
 // Le informazioni generali relative a un assembly sono controllate dal seguente
@@ -32,3 +33,6 @@ using System.Runtime.InteropServices;
 // utilizzando l'asterisco (*) come illustrato di seguito:
 [assembly: AssemblyVersion("1.0.0.0")]
 [assembly: AssemblyFileVersion("1.0.0.0")]
+[assembly: InternalsVisibleTo("BrewDay2.UnitTest")]
+[assembly: InternalsVisibleTo("BrewDay2.Explorables")]
+
