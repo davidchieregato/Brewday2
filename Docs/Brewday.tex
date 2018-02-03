@@ -10,6 +10,9 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
+\usepackage{float}
+\usepackage[export]{adjustbox}
+\usepackage{wrapfig}
 
 \begin{document}
 
@@ -62,7 +65,7 @@ Luca \textsc{De Filippi} 757401\\
 %	LOGO SECTION
 %----------------------------------------------------------------------------------------
 
-\includegraphics{logo.jpg}\\[3cm] % Include a department/university logo - this will require the graphicx package
+\includegraphics[width=0.3\textwidth]{logo.jpg}\\% Include a department/university logo - this will require the graphicx package
  
 %----------------------------------------------------------------------------------------
 
@@ -94,82 +97,272 @@ The project must implement the features described above, i.e., creation, modific
 The choice of the development platform, including tools and programming languages to use, is left to the teams. The application may be desktop-based, web-based or even tailored for portable devices. Besides the development of the software, teams must provide accompanying documentation, including a requirements document, a design document, and a brief user manual (installation and usage of the application).
 
 \end{abstract}
+\vfill
 \section{Assunzioni e glossario}
-\section{Requisiti}
+\section{Requirements}
 
 The goal of this project is to develop an application for home brewers thats allows them to mantain a list of recipes, and adapt esisting ones.
-This application is intended for the "all-grain" users only, thus "extract" brews are not supported. \\\
-\\
+This application is intended for the "all-grain" users only, thus "extract" brews are not supported. \\
 \\
 Functional Requirements:\\
 \\
-\\
 User's account:
+\begin{itemize}
+\item The application allows users to create an account
 
-The application allows users to create an account
+\item The application allows users to login in their account
 
-The application allows users to login in their account
-
-	Every user have specific equipment which can produce a maximum "batch size"
-\\
-\\
+\item Every user have specific equipment which can produce a maximum "batch size"\\
+\end{itemize}
 User's recipe:
-	
-The application allows users to create a recipe
+\begin{itemize}
+\item The application allows users to create a recipe
 
-The application allows users to store a recipe 
+\item The application allows users to store a recipe 
 
-The application allows users to update a recipe
+\item The application allows users to update a recipe
 
-The application allows users to delete a recipe
+\item The application allows users to delete a recipe
 
-The application stores recipe's ingredients in an "absolute" measure; eg. total percentage
+\item The application stores recipe's ingredients in an "absolute" measure; eg. total percentage
 
-	Recipes are made by ingredients: Water, Malts, Hops, Yeasts, Sugars, Additives
-\\
-\\
-Recipes ingredients:
+\item Recipes are made by ingredients: Water, Malts, Hops, Yeasts, Sugars, Additives
+\end{itemize}
+\newpage
+Recipes ingredients:\\
+\begin{itemize}
+\item The application mantain a list of available ingredients
 
-The application mantain a list of available ingredients
+\item The application notifies users about missing ingredients
 
-The application notifies users about missing ingredients
+\item The application update ingredients's list after a batch
 
-The application update ingredients's list after a batch
+\item The application update ingredients's list when new ingredients are bought
 
-The application update ingredients's list when new ingredients are bought
-
-The application produce a shopping list for the next batch 
-\\
-\\
+\item The application produce a shopping list for the next batch \\
+\end{itemize}
 Additional features:
+\begin{itemize}
+\item The application supports notes for brews
 
-The application has "what should i brew today" feature.
+\item The application has "what should i brew today" feature:
 
-	With the "what should i brew today" feature, the application suggest a recipe made with the available ingredients.
+\item With the "what should i brew today" feature, the application suggest a recipe made with the available ingredients.
 
-	With the "what should i brew today" feature, the suggested recipe maximizes the usage of available ingredients.
+\item With the "what should i brew today" feature, the suggested recipe maximizes the usage of available ingredients.
 
-	With the "what should i brew today" feature, the suggested recipe maximizes the batch size.
-	
-The application supports notes for brews
+\item With the "what should i brew today" feature, the suggested recipe maximizes the batch size.
+\end{itemize}
 
-
-\section{Casi d'uso}
-\includegraphics{UseCaseDiagram.png}\\
-\label{cd:primo}
-
-\subsection{Primo}
-...\\
-\todo[inline, color=green!40]{This is an inline comment.}
-
-% Commands to include a figure:
-\begin{figure}
+\section{Use Case}
+\subsection{Use Case Diagram}
+\begin{figure}[H]
+\includegraphics[scale=0.8]{UseCaseDiagram.png}
 \centering
-\includegraphics[width=0.5\textwidth]{logo.jpg}
-\caption{\label{fig:frog}This is a figure caption.}
+\end{figure}
+\subsection{Use Case Description}
+\begin{itshape}
+What Should I Brew Today?
+\end{itshape}\\
+Portata: Web Page\\
+Livello: Obiettivo Utente\\
+Attore Primario: Utente che desidera creare un tipo di birra\\
+Parti Interessate e Interessi: Sistema\\
+Pre-condizioni: Log-In\\
+Garanzia di successo: Presenza ingredienti nel magazzino\\
+Scenario Principale di Successo:
+\begin{enumerate}
+\item Utente seleziona il "catalogo"
+\item Utente seleziona ingrediente
+\item Utente accede al catalogo-ricetta
+\item Sistema mostra l'elemento selezionato
+\end{enumerate}
+Scenari alternativi:\\
+Fallimento: il sistema comunica l'errore o "elemento non trovato"\\
+Requisiti speciali: Nessuno\\
+Elenco delle variabili tecnologiche e dei dati: Nessuna\\
+Frequenza di ripetizione: Nessuna
+\bigskip
+\\
+\begin{itshape}
+Sign-Up
+\end{itshape}\\
+Attore Primario: Utente che desidera registrarsi\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale di Successo:
+\begin{enumerate}
+\item Utente fornisce un indirizzo email
+\item Utente fornisce un nickname
+\item Utente fornisce una password
+\item Utente si registra con successo
+\end{enumerate}
+Scenari alternativi:\\
+Fallimento: Sistema invia un messaggio per invitare utente a riprovare
+\begin{enumerate}
+\item Email già registrata
+\item Nickname invalido oppure già presente
+\item Password non risponde ai criteri stabiliti dal sistema
+\end{enumerate}
+\bigskip
+\begin{itshape}
+Sign-In
+\end{itshape}\\
+Attore Primario: Utente che desidera accedere all'applicazione\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale di Successo:\\
+\begin{enumerate}
+\item Utente immette email e password
+\item Uente accede all'applicazione
+\end{enumerate}
+Scenari Alternativi:\\
+Fallimento: Sistema invita a riprovare ad effettuare il log-in
+\bigskip
+\\
+\begin{itshape}
+Check-Recipe
+\end{itshape}\\
+Attore Primario: Utente che desidera consultare le ricette\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale: Utente accede al catalogo delle ricette
+\bigskip
+\\
+\begin{itshape}
+Add-New-Recipe
+\end{itshape}\\
+Attore Primario: Utente desidera aggiungere la propria ricetta al catalogo\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale: Utente crea una nuova ricetta\\
+Scenari Alternativi:\\
+Fallimento: Utente non fornisce una composizione valida
+\bigskip
+\\
+\begin{itshape}
+Modify-Recipe
+\end{itshape}\\
+Attore Primario: Utente desidera apportare modifiche a ricette nel catalogo\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale: 
+\begin{enumerate}
+\item Utente modifica uno o più ingrediente presenti in una ricetta
+\item Utente modifica la quantità di uno o più ingrediente della ricetta
+\item Utente apporta le modifiche
+\end{enumerate}
+Scenari Alternativi:\\
+Fallimento: Utente apporta modifiche non sono valide
+\bigskip
+\\
+\begin{itshape}
+Delete-Recipe
+\end{itshape}\\
+Attore Primario: Utente che desidera cancellare ricette presenti nel ricettario\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale: Utente cancella la ricetta
+il sistema cancella la ricetta dal database
+\bigskip
+\\
+\begin{itshape}
+Add-Ingredient
+\end{itshape}\\
+Attore Primario: Utente che aggiunge nuovi ingredienti nel magazzino\\
+Parti Interessate: Utente, Sistema\\
+Scenario Principale: \\
+\begin{enumerate}
+\item Utente inserisce ingrediente
+\item Sistema controlla se ingrediente è presente in magazzino
+\item Sistema inserisce ingrediente nel database
+\end{enumerate}
+Scenari Alternativi:\\
+Fallimento: Sistema informa utente che ingrediente è già presente nel magazzino\\
+\begin{enumerate}
+\item Ingrediente già presente nel database
+\end{enumerate}
+\bigskip
+\begin{itshape}
+Delete-Ingredint
+\end{itshape}\\
+Attore Primario: 
+utente: chi desidera cancellare un o più ingredienti dal magazzino
+Parti Interessate: Utente, Sistema\\
+sistema: cancella ingrediente/i dal database
+Scenario Principale: 
+il sistema cancella ingrediente/i selezionato/i dall'utente
+\bigskip
+\\
+\begin{itshape}
+Stamp-Recipe
+\end{itshape}\\
+Attore Primario: 
+sistema: genera un documento relativo alla ricetta
+Parti Interessate: Utente, Sistema\\
+utente: visualizza a video il documento
+Scenario Principale: 
+viene visualizzata la ricetta
+\bigskip
+\\
+\begin{itshape}
+Prepare-Beer
+\end{itshape}\\
+Attore Primario: 
+utente: chi desidera preparare un tipo di birra 
+Parti Interessate: Utente, Sistema\\
+sistema
+Scenario Principale: 
+utente accede alla sezione ricettario
+utente inserisce gli ingredienti disponibili
+il sistema visualizza le possibili ricette che si possono creare
+il sistema visualizza gli ingredienti mancanti
+il sistema visualizza gli strumenti necessari per preparare la ricetta
+
+\section{Activity}
+
+\begin{figure}[H]
+\includegraphics[scale=0.6]{ActivityDiagram.jpg}
+\centering
 \end{figure}
 
-\begin{table}
+\section{Domain}
+\begin{figure}[H]
+\includegraphics[width=1.25\textwidth, left]{DomainDiagram.jpg}
+\end{figure}
+
+\section{Class}
+
+\section{Iterazione}
+
+\section{Statechart}
+\begin{figure}[H]
+\includegraphics[scale=0.6]{Statechart.png}
+\end{figure}
+\section{Test}
+\subsection{Unit Test}
+\subsection{SonarQube}
+
+After a first execution of the SonarQube test engine we noticed that the worst code quality issue where related to Jquery javascript plugin.
+Jquery is a rewrite engine, so it's normal that the code quality analysis result is not good: it's creating a different way
+to use the javascript language so it needs a different kind of language test.
+\begin{figure}[H]
+\includegraphics[scale=0.5]{sonar1.png}
+\end{figure}
+So we concentrated on the C\# issues exposed by SonarQube.
+\begin{figure}[H]
+\includegraphics[scale=0.5]{sonar2.png}
+\end{figure}
+After excluding JS related libraries from the analysis we removed the worst issues and the code quality now gets an 'A'.
+\begin{figure}[H]
+\includegraphics[scale=0.5]{sonar3.png}
+\end{figure}
+We managed to fix almost all the code-smells detected:
+\begin{figure}[H]
+\includegraphics[scale=0.5]{sonar4.png}
+\end{figure}
+Only a few complexity related issue are still not addressed, one is related to the "What should I brew Today" feature that needs
+a lot of data computation to be executed and it wouldn't be a good choice to divide it in smaller functions because
+there is no logical cohesion between suboperations. The other one is related to a C\# default account manaegment function not written by us.
+\begin{figure}[H]
+\includegraphics[scale=0.5]{code-smell.png}
+\end{figure}
+-----------------------------
+\begin{table}[H]
 \centering
 \begin{tabular}{l|r}
 Item & Quantity \\\hline
@@ -178,6 +371,8 @@ Gadgets & 13
 \end{tabular}
 \caption{\label{tab:widgets}An example table.}
 \end{table}
+
+\todo[inline, color=green!40]{This is an inline comment.}
 
 \subsection{Lists}
 
@@ -191,20 +386,13 @@ Gadgets & 13
 \item and like this.
 \end{itemize}
 
-\section{Attività}
+% Commands to include a figure:
+\begin{figure}
+\centering
+\includegraphics[width=0.5\textwidth]{logo.jpg}
+\caption{\label{fig:frog}This is a figure caption.}
+\end{figure}
 
-\section{Sequenza}
 
-\section{Dominio}
-
-\section{Componenti}
-
-\section{Classi}
-
-\section{Iterazione}
-
-\section{Stato}
-
-\section{Test}
 
 \end{document}
