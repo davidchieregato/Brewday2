@@ -20,7 +20,17 @@ namespace BrewDay2.Controllers
         public ActionResult Index()
         {
             var me = _db.Users.First(x => x.UserName == User.Identity.Name);
-            return View(_db.Magazzinoes.First(f => f.UserId == me.Id));            
+            var mioMagazzino = _db.Magazzinoes.First(f => f.UserId == me.Id);
+            mioMagazzino.AdditiviUtente = _db.AdditiviMagazzinos.Where(x => x.MagazzinoId == mioMagazzino.MagazzinoId).ToList();
+            mioMagazzino.LievitiUtente =
+                _db.LievitiMagazzinos.Where(x => x.MagazzinoId == mioMagazzino.MagazzinoId).ToList();
+            mioMagazzino.LuppoliUtente =
+                _db.LuppoliMagazzinos.Where(x => x.MagazzinoId == mioMagazzino.MagazzinoId).ToList();
+            mioMagazzino.MaltiUtente =
+                _db.MaltiMagazzinos.Where(x => x.MagazzinoId == mioMagazzino.MagazzinoId).ToList();
+            mioMagazzino.ZuccheriUtente =
+                _db.ZuccheriMagazzinos.Where(x => x.MagazzinoId == mioMagazzino.MagazzinoId).ToList();
+            return View(mioMagazzino);            
         }
 
         // GET: Magazzino/Details/5
@@ -147,7 +157,9 @@ namespace BrewDay2.Controllers
             Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
             am.MagazzinoId = magazzino.MagazzinoId;
-            SelectList additivi = new SelectList(_db.Additivi,"AdditiviId","Nome");
+            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
+            SelectList additivi = new SelectList(listaAdditivi,"AdditiviId","Nome");
             ViewBag.Additivi = additivi;
             return View(am);
 
