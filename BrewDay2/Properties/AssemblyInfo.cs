@@ -35,4 +35,5 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyFileVersion("1.0.0.0")]
 [assembly: InternalsVisibleTo("BrewDay2.UnitTest")]
 [assembly: InternalsVisibleTo("BrewDay2.Explorables")]
+[assembly: InternalsVisibleTo("BrewDay2.Tests")]
 

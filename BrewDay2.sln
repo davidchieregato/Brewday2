@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.16
+VisualStudioVersion = 15.0.27130.2020
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewDay2", "BrewDay2\BrewDay2.csproj", "{6CB3E7A8-CFC3-4DEF-A84D-6986A7B2989C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestProject", "UnitTestProject\UnitTestProject.csproj", "{18A63EB7-4260-4564-AD09-1F35F6D87597}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrewDay2.Tests", "BrewDay2.Tests01\BrewDay2.Tests.csproj", "{7E606AA7-04E6-4BB7-A3AE-F4A3B520B02B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{18A63EB7-4260-4564-AD09-1F35F6D87597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18A63EB7-4260-4564-AD09-1F35F6D87597}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18A63EB7-4260-4564-AD09-1F35F6D87597}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E606AA7-04E6-4BB7-A3AE-F4A3B520B02B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E606AA7-04E6-4BB7-A3AE-F4A3B520B02B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E606AA7-04E6-4BB7-A3AE-F4A3B520B02B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E606AA7-04E6-4BB7-A3AE-F4A3B520B02B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
