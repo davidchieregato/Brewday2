@@ -165,6 +165,66 @@ namespace BrewDay2.Controllers
 
         }
 
+        public ActionResult AggiungiLievito()
+        {
+            LievitiMagazzino lm = new LievitiMagazzino();
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            lm.Magazzino = magazzino;
+            lm.MagazzinoId = magazzino.MagazzinoId;
+            var listaAdditivi = _db.Lieviti.Except(_db.LievitiMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Lievito));
+            SelectList lieviti = new SelectList(listaAdditivi, "LievitiId", "Nome");
+            ViewBag.Lieviti = lieviti;
+            return View(lm);
+
+        }
+
+        public ActionResult AggiungiLuppolo()
+        {
+            LuppoliMagazzino lum = new LuppoliMagazzino();
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            lum.Magazzino = magazzino;
+            lum.MagazzinoId = magazzino.MagazzinoId;
+            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
+            SelectList luppoli = new SelectList(listaAdditivi, "LuppoliId", "Nome");
+            ViewBag.Luppoli = luppoli;
+            return View(lum);
+
+        }
+
+        public ActionResult AggiungiMalto()
+        {
+            AdditiviMagazzino am = new AdditiviMagazzino();
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            am.Magazzino = magazzino;
+            am.MagazzinoId = magazzino.MagazzinoId;
+            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
+            SelectList additivi = new SelectList(listaAdditivi, "MaltiId", "Nome");
+            ViewBag.Additivi = additivi;
+            return View(am);
+
+        }
+
+        public ActionResult AggiungiZucchero()
+        {
+            AdditiviMagazzino am = new AdditiviMagazzino();
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            am.Magazzino = magazzino;
+            am.MagazzinoId = magazzino.MagazzinoId;
+            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
+            SelectList additivi = new SelectList(listaAdditivi, "ZuccheriId", "Nome");
+            ViewBag.Additivi = additivi;
+            return View(am);
+
+        }
+
         /// <summary>
         /// Metodo invocato alla submit della form per l'aggiunto di un additivo nel magazzino 
         /// Se il modello è valido, aggiunge il nuovo additivo al magazzino e salva i cambiamenti
