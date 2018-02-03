@@ -486,6 +486,9 @@
     <Content Include="images\logo_star_black.svg" />
     <Content Include="images\logo_star_mini.jpg" />
     <Content Include="images\profile.jpg" />
+    <Content Include="images\sort_asc.png" />
+    <Content Include="images\sort_both.png" />
+    <Content Include="images\sort_desc.png" />
     <Content Include="images\sprites\blue.png" />
     <Content Include="images\sprites\dark.png" />
     <Content Include="images\sprites\green.png" />

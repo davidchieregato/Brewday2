@@ -78,10 +78,15 @@
     @Scripts.Render("~/bundles/ajax")
 <script src="/Scripts/jquery.dataTables.min.js"></script>
     @RenderSection("scripts", false)
-    <script>
-        $("li.active").each(function () {
-            $(this).parent().parent().addClass("show");
-        });
-    </script>
+<script>
+    $("li.active").each(function () {
+        $(this).parent().parent().addClass("show");
+    });
+</script>
+<script>
+    $(document).ready(function(){
+        $(".table").DataTable();
+    });
+</script>
 </body>
 </html>
