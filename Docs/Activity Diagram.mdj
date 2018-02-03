@@ -1632,7 +1632,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "Maximise Ingredients Usage",
+											"text": "Maximize Ingredients Usage",
 											"horizontalAlignment": 2,
 											"verticalAlignment": 5,
 											"wordWrap": false
@@ -3439,7 +3439,7 @@
 					"_parent": {
 						"$ref": "AAAAAAFhRxAYQV2T1JE="
 					},
-					"name": "Maximise Ingredients Usage",
+					"name": "Maximize Ingredients Usage",
 					"visibility": "public",
 					"kind": "opaque",
 					"isLocallyReentrant": false,
