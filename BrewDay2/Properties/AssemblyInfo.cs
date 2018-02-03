@@ -36,4 +36,5 @@ using System.Runtime.InteropServices;
 [assembly: InternalsVisibleTo("BrewDay2.UnitTest")]
 [assembly: InternalsVisibleTo("BrewDay2.Explorables")]
 [assembly: InternalsVisibleTo("BrewDay2.Tests")]
+[assembly: InternalsVisibleTo("BrewDay2.Testsn")]
 
