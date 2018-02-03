@@ -1,0 +1,347 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller}{}\section{Brew\+Day2.\+Controllers.\+Manage\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_manage_controller}\index{Brew\+Day2.\+Controllers.\+Manage\+Controller@{Brew\+Day2.\+Controllers.\+Manage\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Manage\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_manage_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}{Manage\+Message\+Id}} \{ \newline
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af08d36b2147213fadb3b223d149ac802}{Manage\+Message\+Id.\+Add\+Phone\+Success}}, 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a0053618c57496fec45c67daf91919394}{Manage\+Message\+Id.\+Change\+Password\+Success}}, 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af17987d9118fd576fed3cbec8d11bd8b}{Manage\+Message\+Id.\+Set\+Two\+Factor\+Success}}, 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af17ca72fcf8adaa46d5e87b12ec3a27d}{Manage\+Message\+Id.\+Set\+Password\+Success}}, 
+\newline
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a46e53931d0e837638a46368b2b04ba6a}{Manage\+Message\+Id.\+Remove\+Login\+Success}}, 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a70460d8db9c29752c1f591eb67a60fdc}{Manage\+Message\+Id.\+Remove\+Phone\+Success}}, 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a902b0d55fddef6f8d651fe1035b7d4bd}{Manage\+Message\+Id.\+Error}}
+ \}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_af9b638e4fc5bda5789e1a3a0e9a5d6d0}{Manage\+Controller}} ()
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_ab2152e5900c16e82846b991765fdaccc}{Manage\+Controller}} (\mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a1ebef1a4534bdae4041dd80f558a05bc}{Index}} (\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}{Manage\+Message\+Id}}? message)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_abfb50c4f1b23ee3a2808e104712680cb}{Remove\+Login}} (string login\+Provider, string provider\+Key)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_abcf4d61a14f8e5c0f9b440b1160f567e}{Add\+Phone\+Number}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_ac9131442b67472e9a1583143be75879a}{Add\+Phone\+Number}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a4bd12cede142028030a66cd324d9e7f8}{Enable\+Two\+Factor\+Authentication}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a1058eecf52e7a2f5dcdca0ff1fa9af21}{Disable\+Two\+Factor\+Authentication}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_ad51359dac409064a9e554d92cec5a5fd}{Verify\+Phone\+Number}} (string phone\+Number)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a4a076b492bbec2df037c99fd3974b84e}{Verify\+Phone\+Number}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a86b77bf51b859b85e32b844022177256}{Remove\+Phone\+Number}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a4aebb01530f9bb9bc78baf90ba8e67c2}{Change\+Password}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a77e41aa6fdea6da157650b4cc6d0f101}{Change\+Password}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}} model)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a4cd2de757b680e0487abb8dce91b3543}{Set\+Password}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a19aab9aee45b1acf7c4b9cbd68f79d48}{Set\+Password}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a59a0289809aed504c5bc5163896e70a2}{Manage\+Logins}} (\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}{Manage\+Message\+Id}}? message)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a58d2aa9cedef8b452ffbaa421cf87391}{Link\+Login}} (string provider)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_aa6ce0595b7f3d5a88f3afaa189b26b05}{Link\+Login\+Callback}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a18d6d2893ed6e2675f33512d89997971}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a0e906cea9b7776c78efc7b35118b90a6}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a5a0dffe800a4f3f2f630d19508965e92}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Manage\+Controller.\+cs.
+
+
+
+\subsection{Member Enumeration Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Manage\+Message\+Id@{Manage\+Message\+Id}}
+\index{Manage\+Message\+Id@{Manage\+Message\+Id}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Manage\+Message\+Id}{ManageMessageId}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}{Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Manage\+Message\+Id}}\hspace{0.3cm}{\ttfamily [strong]}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Add\+Phone\+Success@{Add\+Phone\+Success}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Add\+Phone\+Success@{Add\+Phone\+Success}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af08d36b2147213fadb3b223d149ac802}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af08d36b2147213fadb3b223d149ac802}} 
+Add\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Change\+Password\+Success@{Change\+Password\+Success}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Change\+Password\+Success@{Change\+Password\+Success}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a0053618c57496fec45c67daf91919394}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a0053618c57496fec45c67daf91919394}} 
+Change\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Set\+Two\+Factor\+Success@{Set\+Two\+Factor\+Success}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Set\+Two\+Factor\+Success@{Set\+Two\+Factor\+Success}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af17987d9118fd576fed3cbec8d11bd8b}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af17987d9118fd576fed3cbec8d11bd8b}} 
+Set\+Two\+Factor\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Set\+Password\+Success@{Set\+Password\+Success}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Set\+Password\+Success@{Set\+Password\+Success}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af17ca72fcf8adaa46d5e87b12ec3a27d}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8af17ca72fcf8adaa46d5e87b12ec3a27d}} 
+Set\+Password\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Remove\+Login\+Success@{Remove\+Login\+Success}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Remove\+Login\+Success@{Remove\+Login\+Success}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a46e53931d0e837638a46368b2b04ba6a}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a46e53931d0e837638a46368b2b04ba6a}} 
+Remove\+Login\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Remove\+Phone\+Success@{Remove\+Phone\+Success}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Remove\+Phone\+Success@{Remove\+Phone\+Success}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a70460d8db9c29752c1f591eb67a60fdc}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a70460d8db9c29752c1f591eb67a60fdc}} 
+Remove\+Phone\+Success&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{Error@{Error}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Error@{Error}}}\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a902b0d55fddef6f8d651fe1035b7d4bd}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8a902b0d55fddef6f8d651fe1035b7d4bd}} 
+Error&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+Definition at line 343 of file Manage\+Controller.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_af9b638e4fc5bda5789e1a3a0e9a5d6d0}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_af9b638e4fc5bda5789e1a3a0e9a5d6d0}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Manage\+Controller@{Manage\+Controller}}
+\index{Manage\+Controller@{Manage\+Controller}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Manage\+Controller()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_ab2152e5900c16e82846b991765fdaccc}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_ab2152e5900c16e82846b991765fdaccc}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Manage\+Controller@{Manage\+Controller}}
+\index{Manage\+Controller@{Manage\+Controller}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Manage\+Controller()}{ManageController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Manage\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager,  }\item[{\mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Manage\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_abcf4d61a14f8e5c0f9b440b1160f567e}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_abcf4d61a14f8e5c0f9b440b1160f567e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Add\+Phone\+Number@{Add\+Phone\+Number}}
+\index{Add\+Phone\+Number@{Add\+Phone\+Number}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Phone\+Number()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 91 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_ac9131442b67472e9a1583143be75879a}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_ac9131442b67472e9a1583143be75879a}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Add\+Phone\+Number@{Add\+Phone\+Number}}
+\index{Add\+Phone\+Number@{Add\+Phone\+Number}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Add\+Phone\+Number()}{AddPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Add\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_add_phone_number_view_model}{Add\+Phone\+Number\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a4aebb01530f9bb9bc78baf90ba8e67c2}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a4aebb01530f9bb9bc78baf90ba8e67c2}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Change\+Password@{Change\+Password}}
+\index{Change\+Password@{Change\+Password}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Change\+Password()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 205 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a77e41aa6fdea6da157650b4cc6d0f101}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a77e41aa6fdea6da157650b4cc6d0f101}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Change\+Password@{Change\+Password}}
+\index{Change\+Password@{Change\+Password}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Change\+Password()}{ChangePassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Change\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_change_password_view_model}{Change\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 214 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a1058eecf52e7a2f5dcdca0ff1fa9af21}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a1058eecf52e7a2f5dcdca0ff1fa9af21}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Disable\+Two\+Factor\+Authentication@{Disable\+Two\+Factor\+Authentication}}
+\index{Disable\+Two\+Factor\+Authentication@{Disable\+Two\+Factor\+Authentication}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Disable\+Two\+Factor\+Authentication()}{DisableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Disable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 139 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a18d6d2893ed6e2675f33512d89997971}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a18d6d2893ed6e2675f33512d89997971}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 312 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a4bd12cede142028030a66cd324d9e7f8}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a4bd12cede142028030a66cd324d9e7f8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Enable\+Two\+Factor\+Authentication@{Enable\+Two\+Factor\+Authentication}}
+\index{Enable\+Two\+Factor\+Authentication@{Enable\+Two\+Factor\+Authentication}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Enable\+Two\+Factor\+Authentication()}{EnableTwoFactorAuthentication()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Enable\+Two\+Factor\+Authentication (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a1ebef1a4534bdae4041dd80f558a05bc}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a1ebef1a4534bdae4041dd80f558a05bc}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Index (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}{Manage\+Message\+Id}}?}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line 42 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a58d2aa9cedef8b452ffbaa421cf87391}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a58d2aa9cedef8b452ffbaa421cf87391}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Link\+Login@{Link\+Login}}
+\index{Link\+Login@{Link\+Login}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Link\+Login()}{LinkLogin()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Link\+Login (\begin{DoxyParamCaption}\item[{string}]{provider }\end{DoxyParamCaption})}
+
+
+
+Definition at line 293 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_aa6ce0595b7f3d5a88f3afaa189b26b05}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_aa6ce0595b7f3d5a88f3afaa189b26b05}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Link\+Login\+Callback@{Link\+Login\+Callback}}
+\index{Link\+Login\+Callback@{Link\+Login\+Callback}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Link\+Login\+Callback()}{LinkLoginCallback()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Link\+Login\+Callback (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 301 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a59a0289809aed504c5bc5163896e70a2}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a59a0289809aed504c5bc5163896e70a2}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Manage\+Logins@{Manage\+Logins}}
+\index{Manage\+Logins@{Manage\+Logins}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Manage\+Logins()}{ManageLogins()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Manage\+Logins (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_manage_controller_a418038dc90e9d94606f474b9c06fd8c8}{Manage\+Message\+Id}}?}]{message }\end{DoxyParamCaption})}
+
+
+
+Definition at line 268 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_abfb50c4f1b23ee3a2808e104712680cb}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_abfb50c4f1b23ee3a2808e104712680cb}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Remove\+Login@{Remove\+Login}}
+\index{Remove\+Login@{Remove\+Login}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Remove\+Login()}{RemoveLogin()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Remove\+Login (\begin{DoxyParamCaption}\item[{string}]{login\+Provider,  }\item[{string}]{provider\+Key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 69 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a86b77bf51b859b85e32b844022177256}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a86b77bf51b859b85e32b844022177256}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Remove\+Phone\+Number@{Remove\+Phone\+Number}}
+\index{Remove\+Phone\+Number@{Remove\+Phone\+Number}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Remove\+Phone\+Number()}{RemovePhoneNumber()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Remove\+Phone\+Number (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 188 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a4cd2de757b680e0487abb8dce91b3543}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a4cd2de757b680e0487abb8dce91b3543}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Set\+Password@{Set\+Password}}
+\index{Set\+Password@{Set\+Password}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Set\+Password()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 236 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a19aab9aee45b1acf7c4b9cbd68f79d48}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a19aab9aee45b1acf7c4b9cbd68f79d48}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Set\+Password@{Set\+Password}}
+\index{Set\+Password@{Set\+Password}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Set\+Password()}{SetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Set\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_set_password_view_model}{Set\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 245 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_ad51359dac409064a9e554d92cec5a5fd}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_ad51359dac409064a9e554d92cec5a5fd}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Verify\+Phone\+Number@{Verify\+Phone\+Number}}
+\index{Verify\+Phone\+Number@{Verify\+Phone\+Number}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Verify\+Phone\+Number()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{string}]{phone\+Number }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a4a076b492bbec2df037c99fd3974b84e}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a4a076b492bbec2df037c99fd3974b84e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Verify\+Phone\+Number@{Verify\+Phone\+Number}}
+\index{Verify\+Phone\+Number@{Verify\+Phone\+Number}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Verify\+Phone\+Number()}{VerifyPhoneNumber()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Verify\+Phone\+Number (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_verify_phone_number_view_model}{Verify\+Phone\+Number\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 163 of file Manage\+Controller.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a0e906cea9b7776c78efc7b35118b90a6}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a0e906cea9b7776c78efc7b35118b90a6}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!Sign\+In\+Manager@{Sign\+In\+Manager}}
+\index{Sign\+In\+Manager@{Sign\+In\+Manager}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{Sign\+In\+Manager}{SignInManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} Brew\+Day2.\+Controllers.\+Manage\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 29 of file Manage\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_manage_controller_a5a0dffe800a4f3f2f630d19508965e92}\label{class_brew_day2_1_1_controllers_1_1_manage_controller_a5a0dffe800a4f3f2f630d19508965e92}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}!User\+Manager@{User\+Manager}}
+\index{User\+Manager@{User\+Manager}!Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Manage\+Controller}}
+\subsubsection{\texorpdfstring{User\+Manager}{UserManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}} Brew\+Day2.\+Controllers.\+Manage\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 35 of file Manage\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_manage_controller_8cs}{Manage\+Controller.\+cs}}\end{DoxyCompactItemize}

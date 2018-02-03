@@ -1,0 +1,223 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller}{}\section{Brew\+Day2.\+Controllers.\+Luppoli\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller}\index{Brew\+Day2.\+Controllers.\+Luppoli\+Controller@{Brew\+Day2.\+Controllers.\+Luppoli\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Luppoli\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_luppoli_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a70b87982bc0a3e78433c6a3541377dbe}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di Luppoli Setta nella variabile speciale View\+Bag l\textquotesingle{}utente loggato e restituisce alla view una lista di luppoli \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a18d3d1c67b44d7e1dca624e8a4e24f99}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di dettagli su un luppolo Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a99fc0a945f154ffc4c0313a45cd559c2}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla creazione di un nuovo luppolo Assegna uno user al luppolo con i campi da compilare nella view Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a46c6d9eb7c90e6087a7ec410d6823413}{Create}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Luppoli luppoli)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la creazione di un Luppolo Se il modello è valido, crea e aggiunge il luppolo al database \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a22134f379cb303fbb319310cb41fe259}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un nuovo luppolo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Luppoli trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a0e5fc104793196dd13e3b38120047f4c}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Luppoli luppoli)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un luppolo Se il modello è valido sostituisce nelle database il luppolo con quello modificato, salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_ad7588a964b5bddcd107d96ffd9edb141}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla cancellazione di un luppolo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del luppolo trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_ae44c16148ec11a6c09de346eb22242bf}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la cancellazione di un luppolo Se il modello è valido rimuove nel database il luppolo e salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a43473eb90a2214b37ccc3364982dc1a6}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Luppoli\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a99fc0a945f154ffc4c0313a45cd559c2}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a99fc0a945f154ffc4c0313a45cd559c2}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla creazione di un nuovo luppolo Assegna uno user al luppolo con i campi da compilare nella view Ritorna la vista 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 59 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a46c6d9eb7c90e6087a7ec410d6823413}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a46c6d9eb7c90e6087a7ec410d6823413}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli}{Luppoli}}}]{luppoli }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la creazione di un Luppolo Se il modello è valido, crea e aggiunge il luppolo al database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em luppoli} & Oggetto da inserire nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 76 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_ad7588a964b5bddcd107d96ffd9edb141}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_ad7588a964b5bddcd107d96ffd9edb141}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla cancellazione di un luppolo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del luppolo trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Luppoli\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_ae44c16148ec11a6c09de346eb22242bf}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_ae44c16148ec11a6c09de346eb22242bf}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Delete\+Confirmed@{Delete\+Confirmed}}
+\index{Delete\+Confirmed@{Delete\+Confirmed}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Confirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la cancellazione di un luppolo Se il modello è valido rimuove nel database il luppolo e salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave del luppolo da eliminare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 169 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a18d3d1c67b44d7e1dca624e8a4e24f99}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a18d3d1c67b44d7e1dca624e8a4e24f99}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Details@{Details}}
+\index{Details@{Details}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di dettagli su un luppolo Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per model Luppoli\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a43473eb90a2214b37ccc3364982dc1a6}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a43473eb90a2214b37ccc3364982dc1a6}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 177 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a22134f379cb303fbb319310cb41fe259}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a22134f379cb303fbb319310cb41fe259}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un nuovo luppolo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Luppoli trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Luppoli\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 97 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a0e5fc104793196dd13e3b38120047f4c}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a0e5fc104793196dd13e3b38120047f4c}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli}{Luppoli}}}]{luppoli }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un luppolo Se il modello è valido sostituisce nelle database il luppolo con quello modificato, salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em luppoli} & Oggetto da modificare nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Luppoli\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a70b87982bc0a3e78433c6a3541377dbe}\label{class_brew_day2_1_1_controllers_1_1_luppoli_controller_a70b87982bc0a3e78433c6a3541377dbe}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Luppoli\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Luppoli\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di Luppoli Setta nella variabile speciale View\+Bag l\textquotesingle{}utente loggato e restituisce alla view una lista di luppoli 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Luppoli\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_luppoli_controller_8cs}{Luppoli\+Controller.\+cs}}\end{DoxyCompactItemize}

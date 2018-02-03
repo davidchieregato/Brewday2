@@ -1,0 +1,769 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller}{}\section{Brew\+Day2.\+Controllers.\+Ricette\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_ricette_controller}\index{Brew\+Day2.\+Controllers.\+Ricette\+Controller@{Brew\+Day2.\+Controllers.\+Ricette\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Ricette\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_ricette_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_af44eaada103e9c50fca11811298d8bc8}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di Ricette Ritorna la vista delle ricette \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_aa20670e970ff9a0141080d4d09d63ecd}{My\+Recipes}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di visualizzazione delle mie ricette Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_aea9a165c737ac4b7e272284161296968}{Index}} (String nomeparametro)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di una categoria di ricette Se il parametro passato corrisponde ad una categoria mostra le ricette che le appartengono \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a24c992c1f4be3d406b27d6a8fb46dbda}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di dettagli delle ricette Restituisce errore se id è nullo o non esiste Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_adf49494bb34b562e36b5c64852c642e0}{Create}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_abe2a5a4ebd4f966411eb313576afa5c7}{What\+Shoud\+I\+Brew\+Today}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a9a3bcf974c5617407eb6838bfc8a695f}{Create}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_ricette}{Ricette}} ricette)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la creazione di una Ricetta Se il modello è valido, crea e aggiunge la ricetta al database Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a3e04796b2bacf85d21c27df282326a30}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di una ricetta Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista della ricetta trovato 
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Ricette\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a735f22cf3e622b6017c9454115263e3c}{Edit}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_ricette}{Ricette}} ricette)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di una ricetta Se il modello è valido sostituisce nel database la ricetta con quella modificata, salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_ade6fa19c3ce5fdda6e6c77b1e0412edf}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla cancellazione di una ricetta Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista della ricetta trovata \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a22512431b6ea93f05438a784298b6618}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la cancellazione di una ricetta Se il modello è valido rimuove nel database la ricetta e salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8f87299b4d88f8549bf9f7f1f7b87cac}{Aggiungi\+Additivo}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla aggiunta di un additivo alla ricetta Crea un nuovo additivo e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a1b19ee41b194df5a863f885e7f4b2d50}{Aggiungi\+Additivo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_ricetta}{Additivi\+Ricetta}} ar)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un additivo alla ricetta Se il modello è valido aggiunge nel database l\textquotesingle{}additivo e salva i cambiamenti Crea un nuovo additivo e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8fd1022084f01bd0f631a11238b813a1}{Aggiungi\+Lievito}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla aggiunta di un lievito alla ricetta Crea un nuovo lievito e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a5473bc1c8fe4c43b01e7b68d3e0bca09}{Aggiungi\+Lievito}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_ricetta}{Lieviti\+Ricetta}} lr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un lievito alla ricetta Se il modello è valido aggiunge nel database il lievito e salva i cambiamenti Crea un nuovo lievito e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_af7fb082a690b79fbc2f4d23ee9bcf279}{Aggiungi\+Luppolo}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla aggiunta di un luppolo alla ricetta Crea un nuovo luppolo e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_aaebe97b435fab3e99b45aff4a37aced8}{Aggiungi\+Luppolo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_ricetta}{Luppoli\+Ricetta}} lr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un luppolo alla ricetta Se il modello è valido aggiunge nel database il luppolo e salva i cambiamenti Crea un nuovo luppolo e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_aeacbdb00e09e6b46a8837009f979d0a1}{Aggiungi\+Malti}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla aggiunta di un malto alla ricetta Crea un nuovo malto e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a20029a56389066387f2c0f74b81a0bc5}{Aggiungi\+Malti}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_ricetta}{Malti\+Ricetta}} mr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un malto alla ricetta Se il modello è valido aggiunge nel database il malto e salva i cambiamenti Crea un nuovo malto e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a2f15ba984d68bd7b37f4e36ddd5447dc}{Aggiungi\+Zuccheri}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla aggiunta di uno zucchero alla ricetta Crea un nuovo zucchero e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a7e6882de380d380ab2e6d4f4dc6aa65a}{Aggiungi\+Zuccheri}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_ricetta}{Zuccheri\+Ricetta}} zr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di uno zucchero alla ricetta Se il modello è valido aggiunge nel database lo zucchero e salva i cambiamenti Crea un nuovo zucchero e lo assegna alla variabile speciale View\+Bag Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a20536843bedae3acf20ec4a9991666da}{Edit\+Additivo}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_ad344279d2d02790623793caa5184a8a5}{Edit\+Additivo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_ricetta}{Additivi\+Ricetta}} ar)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag l\textquotesingle{}additivo modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a64a41161a32ff16561aad6ad4cdb4d56}{Edit\+Lievito}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un lievito nella ricetta Cerca nel database il lievito e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a99187569fb5839412db4cc7408d0097c}{Edit\+Lievito}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_ricetta}{Lieviti\+Ricetta}} lr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un lievito nella ricetta Cerca nel database il lievito e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il lievito modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a6f5c5b78d15674336d0825b9cc9c65ec}{Edit\+Luppolo}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un luppolo nella ricetta Cerca nel database il luppolo e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_afdf4aef3b3e01666deef967a7c4353c8}{Edit\+Luppolo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_ricetta}{Luppoli\+Ricetta}} lr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta Cerca nel database il luppolo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il luppolo modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_aca875a01813208cd08ebf7d5b18115c7}{Edit\+Malti}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un malto nella ricetta Cerca nel database il malto e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a38cdcb5cefa1ee88dc5206abad03b56f}{Edit\+Malti}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_ricetta}{Malti\+Ricetta}} mr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un malto nella ricetta Cerca nel database il malto e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il malto modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8adb86316015ba2a434a626226c86143}{Edit\+Zuccheri}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_a112bb278fc4c6fde7448fd99f9b9a114}{Edit\+Zuccheri}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_ricetta}{Zuccheri\+Ricetta}} zr, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag lo zucchero modificato e ne ritorna la vista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_ricette_controller_afde9e7996a273f2d266002af7ca6caa7}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Ricette\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8f87299b4d88f8549bf9f7f1f7b87cac}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8f87299b4d88f8549bf9f7f1f7b87cac}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Additivo@{Aggiungi\+Additivo}}
+\index{Aggiungi\+Additivo@{Aggiungi\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Additivo()}{AggiungiAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Additivo (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla aggiunta di un additivo alla ricetta Crea un nuovo additivo e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per l\textquotesingle{}additivo da aggiungere\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 300 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a1b19ee41b194df5a863f885e7f4b2d50}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a1b19ee41b194df5a863f885e7f4b2d50}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Additivo@{Aggiungi\+Additivo}}
+\index{Aggiungi\+Additivo@{Aggiungi\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Additivo()}{AggiungiAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Additivo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_ricetta}{Additivi\+Ricetta}}}]{ar }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un additivo alla ricetta Se il modello è valido aggiunge nel database l\textquotesingle{}additivo e salva i cambiamenti Crea un nuovo additivo e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & Additivo da aggiungere alla ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 317 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8fd1022084f01bd0f631a11238b813a1}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8fd1022084f01bd0f631a11238b813a1}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Lievito@{Aggiungi\+Lievito}}
+\index{Aggiungi\+Lievito@{Aggiungi\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Lievito()}{AggiungiLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Lievito (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla aggiunta di un lievito alla ricetta Crea un nuovo lievito e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il lievito da aggiungere\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 337 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a5473bc1c8fe4c43b01e7b68d3e0bca09}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a5473bc1c8fe4c43b01e7b68d3e0bca09}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Lievito@{Aggiungi\+Lievito}}
+\index{Aggiungi\+Lievito@{Aggiungi\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Lievito()}{AggiungiLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Lievito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_ricetta}{Lieviti\+Ricetta}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un lievito alla ricetta Se il modello è valido aggiunge nel database il lievito e salva i cambiamenti Crea un nuovo lievito e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Lievito da aggiungere alla ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 354 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_af7fb082a690b79fbc2f4d23ee9bcf279}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_af7fb082a690b79fbc2f4d23ee9bcf279}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Luppolo@{Aggiungi\+Luppolo}}
+\index{Aggiungi\+Luppolo@{Aggiungi\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Luppolo()}{AggiungiLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Luppolo (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla aggiunta di un luppolo alla ricetta Crea un nuovo luppolo e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il luppolo da aggiungere\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 374 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_aaebe97b435fab3e99b45aff4a37aced8}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_aaebe97b435fab3e99b45aff4a37aced8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Luppolo@{Aggiungi\+Luppolo}}
+\index{Aggiungi\+Luppolo@{Aggiungi\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Luppolo()}{AggiungiLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Luppolo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_ricetta}{Luppoli\+Ricetta}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un luppolo alla ricetta Se il modello è valido aggiunge nel database il luppolo e salva i cambiamenti Crea un nuovo luppolo e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Luppolo da aggiungere alla ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 391 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_aeacbdb00e09e6b46a8837009f979d0a1}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_aeacbdb00e09e6b46a8837009f979d0a1}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Malti@{Aggiungi\+Malti}}
+\index{Aggiungi\+Malti@{Aggiungi\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Malti()}{AggiungiMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Malti (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla aggiunta di un malto alla ricetta Crea un nuovo malto e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il malto da aggiungere\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 411 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a20029a56389066387f2c0f74b81a0bc5}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a20029a56389066387f2c0f74b81a0bc5}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Malti@{Aggiungi\+Malti}}
+\index{Aggiungi\+Malti@{Aggiungi\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Malti()}{AggiungiMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Malti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_ricetta}{Malti\+Ricetta}}}]{mr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di un malto alla ricetta Se il modello è valido aggiunge nel database il malto e salva i cambiamenti Crea un nuovo malto e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mr} & Malto da aggiungere alla ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 428 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a2f15ba984d68bd7b37f4e36ddd5447dc}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a2f15ba984d68bd7b37f4e36ddd5447dc}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Zuccheri@{Aggiungi\+Zuccheri}}
+\index{Aggiungi\+Zuccheri@{Aggiungi\+Zuccheri}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Zuccheri()}{AggiungiZuccheri()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Zuccheri (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla aggiunta di uno zucchero alla ricetta Crea un nuovo zucchero e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per lo zucchero da aggiungere\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 448 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a7e6882de380d380ab2e6d4f4dc6aa65a}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a7e6882de380d380ab2e6d4f4dc6aa65a}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Aggiungi\+Zuccheri@{Aggiungi\+Zuccheri}}
+\index{Aggiungi\+Zuccheri@{Aggiungi\+Zuccheri}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Zuccheri()}{AggiungiZuccheri()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Aggiungi\+Zuccheri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_ricetta}{Zuccheri\+Ricetta}}}]{zr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per l\textquotesingle{}aggiunta di uno zucchero alla ricetta Se il modello è valido aggiunge nel database lo zucchero e salva i cambiamenti Crea un nuovo zucchero e lo assegna alla variabile speciale View\+Bag Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zr} & Zucchero da aggiungere alla ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 465 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_adf49494bb34b562e36b5c64852c642e0}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_adf49494bb34b562e36b5c64852c642e0}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a9a3bcf974c5617407eb6838bfc8a695f}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a9a3bcf974c5617407eb6838bfc8a695f}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_ricette}{Ricette}}}]{ricette }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la creazione di una Ricetta Se il modello è valido, crea e aggiunge la ricetta al database Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ricette} & Oggetto da inserire nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 184 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_ade6fa19c3ce5fdda6e6c77b1e0412edf}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_ade6fa19c3ce5fdda6e6c77b1e0412edf}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla cancellazione di una ricetta Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista della ricetta trovata 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Ricette\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 251 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a22512431b6ea93f05438a784298b6618}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a22512431b6ea93f05438a784298b6618}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Delete\+Confirmed@{Delete\+Confirmed}}
+\index{Delete\+Confirmed@{Delete\+Confirmed}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Confirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la cancellazione di una ricetta Se il modello è valido rimuove nel database la ricetta e salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave della ricetta da eliminare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 276 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a24c992c1f4be3d406b27d6a8fb46dbda}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a24c992c1f4be3d406b27d6a8fb46dbda}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Details@{Details}}
+\index{Details@{Details}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di dettagli delle ricette Restituisce errore se id è nullo o non esiste Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Ricette\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 64 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_afde9e7996a273f2d266002af7ca6caa7}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_afde9e7996a273f2d266002af7ca6caa7}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 284 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a3e04796b2bacf85d21c27df282326a30}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a3e04796b2bacf85d21c27df282326a30}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di una ricetta Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista della ricetta trovato 
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Ricette\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+
+
+Definition at line 205 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a735f22cf3e622b6017c9454115263e3c}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a735f22cf3e622b6017c9454115263e3c}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_ricette}{Ricette}}}]{ricette }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di una ricetta Se il modello è valido sostituisce nel database la ricetta con quella modificata, salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ricette} & Oggetto da modificare nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 231 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a20536843bedae3acf20ec4a9991666da}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a20536843bedae3acf20ec4a9991666da}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Additivo@{Edit\+Additivo}}
+\index{Edit\+Additivo@{Edit\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Additivo()}{EditAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Additivo (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID dell\textquotesingle{}additivo da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 486 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_ad344279d2d02790623793caa5184a8a5}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_ad344279d2d02790623793caa5184a8a5}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Additivo@{Edit\+Additivo}}
+\index{Edit\+Additivo@{Edit\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Additivo()}{EditAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Additivo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_ricetta}{Additivi\+Ricetta}}}]{ar }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag l\textquotesingle{}additivo modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & Additivo da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 501 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a64a41161a32ff16561aad6ad4cdb4d56}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a64a41161a32ff16561aad6ad4cdb4d56}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Lievito@{Edit\+Lievito}}
+\index{Edit\+Lievito@{Edit\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Lievito()}{EditLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Lievito (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un lievito nella ricetta Cerca nel database il lievito e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del lievito da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 523 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a99187569fb5839412db4cc7408d0097c}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a99187569fb5839412db4cc7408d0097c}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Lievito@{Edit\+Lievito}}
+\index{Edit\+Lievito@{Edit\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Lievito()}{EditLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Lievito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_ricetta}{Lieviti\+Ricetta}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un lievito nella ricetta Cerca nel database il lievito e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il lievito modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Lievito da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 537 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a6f5c5b78d15674336d0825b9cc9c65ec}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a6f5c5b78d15674336d0825b9cc9c65ec}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Luppolo@{Edit\+Luppolo}}
+\index{Edit\+Luppolo@{Edit\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Luppolo()}{EditLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Luppolo (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un luppolo nella ricetta Cerca nel database il luppolo e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del luppolo da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 559 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_afdf4aef3b3e01666deef967a7c4353c8}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_afdf4aef3b3e01666deef967a7c4353c8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Luppolo@{Edit\+Luppolo}}
+\index{Edit\+Luppolo@{Edit\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Luppolo()}{EditLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Luppolo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_ricetta}{Luppoli\+Ricetta}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta Cerca nel database il luppolo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il luppolo modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Luppolo da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 573 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_aca875a01813208cd08ebf7d5b18115c7}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_aca875a01813208cd08ebf7d5b18115c7}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Malti@{Edit\+Malti}}
+\index{Edit\+Malti@{Edit\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Malti()}{EditMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Malti (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un malto nella ricetta Cerca nel database il malto e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del malto da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 593 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a38cdcb5cefa1ee88dc5206abad03b56f}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a38cdcb5cefa1ee88dc5206abad03b56f}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Malti@{Edit\+Malti}}
+\index{Edit\+Malti@{Edit\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Malti()}{EditMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Malti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_ricetta}{Malti\+Ricetta}}}]{mr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un malto nella ricetta Cerca nel database il malto e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il malto modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mr} & Malto da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 607 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8adb86316015ba2a434a626226c86143}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a8adb86316015ba2a434a626226c86143}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Zuccheri@{Edit\+Zuccheri}}
+\index{Edit\+Zuccheri@{Edit\+Zuccheri}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Zuccheri()}{EditZuccheri()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Zuccheri (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID dello zucchero da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 629 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_a112bb278fc4c6fde7448fd99f9b9a114}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_a112bb278fc4c6fde7448fd99f9b9a114}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Edit\+Zuccheri@{Edit\+Zuccheri}}
+\index{Edit\+Zuccheri@{Edit\+Zuccheri}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Zuccheri()}{EditZuccheri()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Edit\+Zuccheri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_ricetta}{Zuccheri\+Ricetta}}}]{zr,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag lo zucchero modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zr} & Zucchero da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 643 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_af44eaada103e9c50fca11811298d8bc8}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_af44eaada103e9c50fca11811298d8bc8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di Ricette Ritorna la vista delle ricette 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_aea9a165c737ac4b7e272284161296968}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_aea9a165c737ac4b7e272284161296968}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+Index (\begin{DoxyParamCaption}\item[{String}]{nomeparametro }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di una categoria di ricette Se il parametro passato corrisponde ad una categoria mostra le ricette che le appartengono 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nomeparametro} & Nome della categoria da visualizzare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 49 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_aa20670e970ff9a0141080d4d09d63ecd}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_aa20670e970ff9a0141080d4d09d63ecd}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!My\+Recipes@{My\+Recipes}}
+\index{My\+Recipes@{My\+Recipes}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{My\+Recipes()}{MyRecipes()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+My\+Recipes (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di visualizzazione delle mie ricette Ritorna la vista 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 35 of file Ricette\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_ricette_controller_abe2a5a4ebd4f966411eb313576afa5c7}\label{class_brew_day2_1_1_controllers_1_1_ricette_controller_abe2a5a4ebd4f966411eb313576afa5c7}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}!What\+Shoud\+I\+Brew\+Today@{What\+Shoud\+I\+Brew\+Today}}
+\index{What\+Shoud\+I\+Brew\+Today@{What\+Shoud\+I\+Brew\+Today}!Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Ricette\+Controller}}
+\subsubsection{\texorpdfstring{What\+Shoud\+I\+Brew\+Today()}{WhatShoudIBrewToday()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Ricette\+Controller.\+What\+Shoud\+I\+Brew\+Today (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 89 of file Ricette\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_ricette_controller_8cs}{Ricette\+Controller.\+cs}}\end{DoxyCompactItemize}

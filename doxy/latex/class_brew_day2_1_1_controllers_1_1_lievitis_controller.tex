@@ -1,0 +1,223 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller}{}\section{Brew\+Day2.\+Controllers.\+Lievitis\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller}\index{Brew\+Day2.\+Controllers.\+Lievitis\+Controller@{Brew\+Day2.\+Controllers.\+Lievitis\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Lievitis\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_lievitis_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aee68004d8a6975ea5628dd366158c6b4}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di Lievitis Setta nella variabile speciale View\+Bag l\textquotesingle{}utente loggato e restituisce alla view una lista di lieviti \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_ab756f4407e24098c221bf07b9d18dd47}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di dettagli su un lievito Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a643cdf21a5e9bc59b122638a0ca6b9bf}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla creazione di un nuovo lievito Assegna uno user al lievito con i campi da compilare nella view Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_abf9c59637e2f4a7e218c1fec7248b513}{Create}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Lieviti lieviti)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la creazione di un Lievitis Se il modello è valido, crea e aggiunge il lievito al database \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a1325a57f77914d9c51fdd500680009d4}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un nuovo lievito Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Lievitis trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a6be4c8d40b258ae3adc9d1f2c4e74f5e}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Lieviti lieviti)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un lievito Se il modello è valido sostituisce nelle database il lievito con quello modificato, salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aeba252744eb8b94117f757f786418295}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla cancellazione di un lievito Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del lievito trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aaf3d7c0184c52dd5e7884c70867d59c0}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la cancellazione di un lievito Se il modello è valido rimuove nel database il lievito e salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aa9b524cd8e58d054551f86244c5fd0a1}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Lievitis\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a643cdf21a5e9bc59b122638a0ca6b9bf}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a643cdf21a5e9bc59b122638a0ca6b9bf}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla creazione di un nuovo lievito Assegna uno user al lievito con i campi da compilare nella view Ritorna la vista 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_abf9c59637e2f4a7e218c1fec7248b513}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_abf9c59637e2f4a7e218c1fec7248b513}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti}{Lieviti}}}]{lieviti }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la creazione di un Lievitis Se il modello è valido, crea e aggiunge il lievito al database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lieviti} & Oggetto da inserire nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 77 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aeba252744eb8b94117f757f786418295}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aeba252744eb8b94117f757f786418295}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla cancellazione di un lievito Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del lievito trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Lievitis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 144 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aaf3d7c0184c52dd5e7884c70867d59c0}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aaf3d7c0184c52dd5e7884c70867d59c0}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Delete\+Confirmed@{Delete\+Confirmed}}
+\index{Delete\+Confirmed@{Delete\+Confirmed}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Confirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la cancellazione di un lievito Se il modello è valido rimuove nel database il lievito e salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave del lievito da eliminare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 169 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_ab756f4407e24098c221bf07b9d18dd47}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_ab756f4407e24098c221bf07b9d18dd47}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Details@{Details}}
+\index{Details@{Details}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di dettagli su un lievito Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per model Lievitis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aa9b524cd8e58d054551f86244c5fd0a1}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aa9b524cd8e58d054551f86244c5fd0a1}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 177 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a1325a57f77914d9c51fdd500680009d4}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a1325a57f77914d9c51fdd500680009d4}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un nuovo lievito Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Lievitis trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Lievitis\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 98 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a6be4c8d40b258ae3adc9d1f2c4e74f5e}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_a6be4c8d40b258ae3adc9d1f2c4e74f5e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti}{Lieviti}}}]{lieviti }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un lievito Se il modello è valido sostituisce nelle database il lievito con quello modificato, salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lieviti} & Oggetto da modificare nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 124 of file Lievitis\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aee68004d8a6975ea5628dd366158c6b4}\label{class_brew_day2_1_1_controllers_1_1_lievitis_controller_aee68004d8a6975ea5628dd366158c6b4}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Lievitis\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Lievitis\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di Lievitis Setta nella variabile speciale View\+Bag l\textquotesingle{}utente loggato e restituisce alla view una lista di lieviti 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Lievitis\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_lievitis_controller_8cs}{Lievitis\+Controller.\+cs}}\end{DoxyCompactItemize}

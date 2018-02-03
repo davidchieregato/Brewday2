@@ -1,0 +1,569 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller}{}\section{Brew\+Day2.\+Controllers.\+Magazzino\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller}\index{Brew\+Day2.\+Controllers.\+Magazzino\+Controller@{Brew\+Day2.\+Controllers.\+Magazzino\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Magazzino\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_magazzino_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ab7b2e642a6b0cecd96d4882d3d4431bc}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di visualizzazione del Magazzino Setta nella variabile speciale View\+Bag lo Username e ritorna la sua vista specifica confrontando gli ID \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a81997006a07ff282ba98b7cc31dfac9a}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di dettagli sul magazzino Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4a20bb6e042743a3cd258cebfd4ad953}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla creazione di un magazzino Crea un nuovo oggetto Magazzino Assegna a User\+Id l\textquotesingle{} ID dell\textquotesingle{} utente loggato Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a486782c46e67cd8f68b402afb4e80814}{Create}} (\mbox{[}Bind(Include=\char`\"{}Magazzino\+Id,User\+Id\char`\"{})\mbox{]} Magazzino magazzino)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la creazione di un Magazzino Se il modello è valido, crea e aggiunge il magazzino al database \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a8822a7c1a8acad0baddec3c39f522d28}{Edit}} (int? id)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_af8b07601ae4d2c4dedba7a95b029347c}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Magazzino\+Id,User\+Id\char`\"{})\mbox{]} Magazzino magazzino)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un magazzino Se il modello è valido sostituisce nelle database il magazzino con quello modificato, salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a41e900928edeabedf141af5ecb5d4a8a}{Aggiungi\+Additivo}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato all\textquotesingle{} aggiunta di un nuovo additivo nel magazzino Crea un nuovo Additivi\+Magazzino assegnandolo al magazzino collegato all\textquotesingle{} ID dell\textquotesingle{} utente Assegna la lista di additivi alla variabile speciale View\+Bag Ritorna la vista di Additivi\+Magazzino \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4f1a71e54925a34c77a7615d9fb47f86}{Aggiungi\+Lievito}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a7bab72a060f100e30f5628196fec5f19}{Aggiungi\+Luppolo}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a5915a701c7cec6326572a889599eaed4}{Aggiungi\+Malti}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ad4616bed1e6686828ef3f177846e2fe2}{Aggiungi\+Zucchero}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a01eb9baa8099142e115592797ecc2e1f}{Aggiungi\+Additivo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_magazzino}{Additivi\+Magazzino}} am)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per l\textquotesingle{}aggiunto di un additivo nel magazzino Se il modello è valido, aggiunge il nuovo additivo al magazzino e salva i cambiamenti Assegna l\textquotesingle{}Additivi\+Magazzino al magazzino collegato all\textquotesingle{} ID dell\textquotesingle{} utente Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ab45f07125eff444053d68184e3c23319}{Aggiungi\+Lievito}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_magazzino}{Lieviti\+Magazzino}} lm)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a0f976402c518d1a6bbcf316911128620}{Aggiungi\+Luppolo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_magazzino}{Luppoli\+Magazzino}} am)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a06972dbc970850c6562fd7806cac02c9}{Aggiungi\+Malti}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_magazzino}{Malti\+Magazzino}} am)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_afe741db46e9b574bf6f24ccbfa6b2b30}{Aggiungi\+Zucchero}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_magazzino}{Zuccheri\+Magazzino}} am)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_af8a9e46f0163c13ee2fdbd51bcc9e445}{Edit\+Additivo}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a800d0af3879b8ce298707b0d1072c640}{Edit\+Additivo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_magazzino}{Additivi\+Magazzino}} ar)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag l\textquotesingle{}additivo modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a50bd39377dbd3b58301360246e211a05}{Edit\+Lievito}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un lievito nella ricetta Cerca nel database il lievito e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a77226fc3fd21b9965da8c4477951f375}{Edit\+Lievito}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_magazzino}{Lieviti\+Magazzino}} lr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un lievito nella ricetta Cerca nel database il lievito e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il lievito modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_aaa423ee90c20e0e1d4848f4ee9d65c1c}{Edit\+Luppolo}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un luppolo nella ricetta Cerca nel database il luppolo e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a2c5b33fb870d1b3a130d0c9a3208bccc}{Edit\+Luppolo}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_magazzino}{Luppoli\+Magazzino}} lr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta Cerca nel database il luppolo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il luppolo modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a591ba03e7b1d7ab34171e3f84ac15a19}{Edit\+Malti}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un malto nella ricetta Cerca nel database il malto e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a898f64cc8e955db12ca1f12ed288b67b}{Edit\+Malti}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_magazzino}{Malti\+Magazzino}} mr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un malto nella ricetta Cerca nel database il malto e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il malto modificato e ne ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ad0e1622fc890ea97625986b92a51bef7}{Edit\+Zuccheri}} (int id, int idr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e la ricetta passati come parametri Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4b6a33464ce61ed09a75150346c379fb}{Edit\+Zuccheri}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_magazzino}{Zuccheri\+Magazzino}} zr)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag lo zucchero modificato e ne ritorna la vista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_magazzino_controller_abc1d041b34327990c17bd1d410af61c5}{Dispose}} (bool disposing)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla cancellazione del database Se il flag è true, cancella il database \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 11 of file Magazzino\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a41e900928edeabedf141af5ecb5d4a8a}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a41e900928edeabedf141af5ecb5d4a8a}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Additivo@{Aggiungi\+Additivo}}
+\index{Aggiungi\+Additivo@{Aggiungi\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Additivo()}{AggiungiAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Additivo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato all\textquotesingle{} aggiunta di un nuovo additivo nel magazzino Crea un nuovo Additivi\+Magazzino assegnandolo al magazzino collegato all\textquotesingle{} ID dell\textquotesingle{} utente Assegna la lista di additivi alla variabile speciale View\+Bag Ritorna la vista di Additivi\+Magazzino 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 153 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a01eb9baa8099142e115592797ecc2e1f}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a01eb9baa8099142e115592797ecc2e1f}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Additivo@{Aggiungi\+Additivo}}
+\index{Aggiungi\+Additivo@{Aggiungi\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Additivo()}{AggiungiAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Additivo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_magazzino}{Additivi\+Magazzino}}}]{am }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per l\textquotesingle{}aggiunto di un additivo nel magazzino Se il modello è valido, aggiunge il nuovo additivo al magazzino e salva i cambiamenti Assegna l\textquotesingle{}Additivi\+Magazzino al magazzino collegato all\textquotesingle{} ID dell\textquotesingle{} utente Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em am} & Additivo da aggiungere al magazzino\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 237 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4f1a71e54925a34c77a7615d9fb47f86}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4f1a71e54925a34c77a7615d9fb47f86}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Lievito@{Aggiungi\+Lievito}}
+\index{Aggiungi\+Lievito@{Aggiungi\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Lievito()}{AggiungiLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Lievito (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 168 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ab45f07125eff444053d68184e3c23319}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ab45f07125eff444053d68184e3c23319}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Lievito@{Aggiungi\+Lievito}}
+\index{Aggiungi\+Lievito@{Aggiungi\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Lievito()}{AggiungiLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Lievito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_magazzino}{Lieviti\+Magazzino}}}]{lm }\end{DoxyParamCaption})}
+
+
+
+Definition at line 256 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a7bab72a060f100e30f5628196fec5f19}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a7bab72a060f100e30f5628196fec5f19}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Luppolo@{Aggiungi\+Luppolo}}
+\index{Aggiungi\+Luppolo@{Aggiungi\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Luppolo()}{AggiungiLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Luppolo (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 183 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a0f976402c518d1a6bbcf316911128620}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a0f976402c518d1a6bbcf316911128620}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Luppolo@{Aggiungi\+Luppolo}}
+\index{Aggiungi\+Luppolo@{Aggiungi\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Luppolo()}{AggiungiLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Luppolo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_magazzino}{Luppoli\+Magazzino}}}]{am }\end{DoxyParamCaption})}
+
+
+
+Definition at line 275 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a5915a701c7cec6326572a889599eaed4}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a5915a701c7cec6326572a889599eaed4}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Malti@{Aggiungi\+Malti}}
+\index{Aggiungi\+Malti@{Aggiungi\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Malti()}{AggiungiMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Malti (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 198 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a06972dbc970850c6562fd7806cac02c9}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a06972dbc970850c6562fd7806cac02c9}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Malti@{Aggiungi\+Malti}}
+\index{Aggiungi\+Malti@{Aggiungi\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Malti()}{AggiungiMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Malti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_magazzino}{Malti\+Magazzino}}}]{am }\end{DoxyParamCaption})}
+
+
+
+Definition at line 294 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ad4616bed1e6686828ef3f177846e2fe2}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ad4616bed1e6686828ef3f177846e2fe2}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Zucchero@{Aggiungi\+Zucchero}}
+\index{Aggiungi\+Zucchero@{Aggiungi\+Zucchero}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Zucchero()}{AggiungiZucchero()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Zucchero (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 213 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_afe741db46e9b574bf6f24ccbfa6b2b30}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_afe741db46e9b574bf6f24ccbfa6b2b30}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Aggiungi\+Zucchero@{Aggiungi\+Zucchero}}
+\index{Aggiungi\+Zucchero@{Aggiungi\+Zucchero}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Aggiungi\+Zucchero()}{AggiungiZucchero()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Aggiungi\+Zucchero (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_magazzino}{Zuccheri\+Magazzino}}}]{am }\end{DoxyParamCaption})}
+
+
+
+Definition at line 313 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4a20bb6e042743a3cd258cebfd4ad953}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4a20bb6e042743a3cd258cebfd4ad953}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla creazione di un magazzino Crea un nuovo oggetto Magazzino Assegna a User\+Id l\textquotesingle{} ID dell\textquotesingle{} utente loggato Ritorna la vista 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 67 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a486782c46e67cd8f68b402afb4e80814}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a486782c46e67cd8f68b402afb4e80814}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Magazzino\+Id,\+User\+Id\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_magazzino}{Magazzino}}}]{magazzino }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la creazione di un Magazzino Se il modello è valido, crea e aggiunge il magazzino al database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em magazzino} & Oggetto da inserire nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a81997006a07ff282ba98b7cc31dfac9a}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a81997006a07ff282ba98b7cc31dfac9a}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Details@{Details}}
+\index{Details@{Details}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di dettagli sul magazzino Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per model Magazzino\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 44 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_abc1d041b34327990c17bd1d410af61c5}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_abc1d041b34327990c17bd1d410af61c5}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Metodo invocato alla cancellazione del database Se il flag è true, cancella il database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em disposing} & Flag utilizzato per cancellare il database\\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 514 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a8822a7c1a8acad0baddec3c39f522d28}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a8822a7c1a8acad0baddec3c39f522d28}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+Metodo invocato alla modifica di un magazzino Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Magazzino trovato 
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Magazzino\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 107 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_af8b07601ae4d2c4dedba7a95b029347c}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_af8b07601ae4d2c4dedba7a95b029347c}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Magazzino\+Id,\+User\+Id\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_magazzino}{Magazzino}}}]{magazzino }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un magazzino Se il modello è valido sostituisce nelle database il magazzino con quello modificato, salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em magazzino} & Oggetto da modificare nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 133 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_af8a9e46f0163c13ee2fdbd51bcc9e445}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_af8a9e46f0163c13ee2fdbd51bcc9e445}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Additivo@{Edit\+Additivo}}
+\index{Edit\+Additivo@{Edit\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Additivo()}{EditAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Additivo (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID dell\textquotesingle{}additivo da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 339 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a800d0af3879b8ce298707b0d1072c640}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a800d0af3879b8ce298707b0d1072c640}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Additivo@{Edit\+Additivo}}
+\index{Edit\+Additivo@{Edit\+Additivo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Additivo()}{EditAdditivo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Additivo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi_magazzino}{Additivi\+Magazzino}}}]{ar }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un additivo nella ricetta Cerca nel database l\textquotesingle{}additivo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag l\textquotesingle{}additivo modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ar} & Additivo da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 354 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a50bd39377dbd3b58301360246e211a05}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a50bd39377dbd3b58301360246e211a05}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Lievito@{Edit\+Lievito}}
+\index{Edit\+Lievito@{Edit\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Lievito()}{EditLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Lievito (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un lievito nella ricetta Cerca nel database il lievito e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del lievito da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 376 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a77226fc3fd21b9965da8c4477951f375}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a77226fc3fd21b9965da8c4477951f375}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Lievito@{Edit\+Lievito}}
+\index{Edit\+Lievito@{Edit\+Lievito}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Lievito()}{EditLievito()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Lievito (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_lieviti_magazzino}{Lieviti\+Magazzino}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un lievito nella ricetta Cerca nel database il lievito e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il lievito modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Lievito da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 390 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_aaa423ee90c20e0e1d4848f4ee9d65c1c}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_aaa423ee90c20e0e1d4848f4ee9d65c1c}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Luppolo@{Edit\+Luppolo}}
+\index{Edit\+Luppolo@{Edit\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Luppolo()}{EditLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Luppolo (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un luppolo nella ricetta Cerca nel database il luppolo e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del luppolo da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 412 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a2c5b33fb870d1b3a130d0c9a3208bccc}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a2c5b33fb870d1b3a130d0c9a3208bccc}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Luppolo@{Edit\+Luppolo}}
+\index{Edit\+Luppolo@{Edit\+Luppolo}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Luppolo()}{EditLuppolo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Luppolo (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_luppoli_magazzino}{Luppoli\+Magazzino}}}]{lr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta Cerca nel database il luppolo e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il luppolo modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lr} & Luppolo da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 426 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a591ba03e7b1d7ab34171e3f84ac15a19}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a591ba03e7b1d7ab34171e3f84ac15a19}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Malti@{Edit\+Malti}}
+\index{Edit\+Malti@{Edit\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Malti()}{EditMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Malti (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un malto nella ricetta Cerca nel database il malto e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID del malto da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 446 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a898f64cc8e955db12ca1f12ed288b67b}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a898f64cc8e955db12ca1f12ed288b67b}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Malti@{Edit\+Malti}}
+\index{Edit\+Malti@{Edit\+Malti}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Malti()}{EditMalti()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Malti (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_malti_magazzino}{Malti\+Magazzino}}}]{mr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un malto nella ricetta Cerca nel database il malto e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag il malto modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mr} & Malto da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 460 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ad0e1622fc890ea97625986b92a51bef7}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ad0e1622fc890ea97625986b92a51bef7}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Zuccheri@{Edit\+Zuccheri}}
+\index{Edit\+Zuccheri@{Edit\+Zuccheri}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Zuccheri()}{EditZuccheri()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Zuccheri (\begin{DoxyParamCaption}\item[{int}]{id,  }\item[{int}]{idr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e la ricetta passati come parametri Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & ID dello zucchero da modificare\\
+\hline
+{\em idr} & ID della ricetta da modificare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 482 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4b6a33464ce61ed09a75150346c379fb}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_a4b6a33464ce61ed09a75150346c379fb}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Edit\+Zuccheri@{Edit\+Zuccheri}}
+\index{Edit\+Zuccheri@{Edit\+Zuccheri}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Edit\+Zuccheri()}{EditZuccheri()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Edit\+Zuccheri (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri_magazzino}{Zuccheri\+Magazzino}}}]{zr }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta Cerca nel database lo zucchero e ne aggiorna la quantità Assegna alla variabile speciale View\+Bag lo zucchero modificato e ne ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zr} & Zucchero da modificare nella ricetta\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 496 of file Magazzino\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ab7b2e642a6b0cecd96d4882d3d4431bc}\label{class_brew_day2_1_1_controllers_1_1_magazzino_controller_ab7b2e642a6b0cecd96d4882d3d4431bc}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Magazzino\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Magazzino\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di visualizzazione del Magazzino Setta nella variabile speciale View\+Bag lo Username e ritorna la sua vista specifica confrontando gli ID 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 20 of file Magazzino\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_magazzino_controller_8cs}{Magazzino\+Controller.\+cs}}\end{DoxyCompactItemize}
