@@ -10,7 +10,7 @@ namespace BrewDay2.Controllers
     public class MagazzinoController : Controller
     {
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
-
+        const string path = "/pages/samples/404.html";
         // GET: Magazzino
         /// <summary>
         /// Metodo invocato alla richiesta di visualizzazione del Magazzino
@@ -35,7 +35,7 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Redirect(path);
             }
             Magazzino magazzino = _db.Magazzinoes.Find(id);
             if (magazzino == null)
