@@ -64,7 +64,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\BundleConfigTests.cs" />
+    <Compile Include="App_Start\FilterConfigTests.cs" />
     <Compile Include="App_Start\PathConfigTests.cs" />
+    <Compile Include="App_Start\RouteConfigTests.cs" />
     <Compile Include="Controllers\AccountControllerTests.cs" />
     <Compile Include="Controllers\AdditiviControllerTests.cs" />
     <Compile Include="Controllers\HomeControllerTests.cs" />
@@ -77,6 +80,7 @@
     <Compile Include="Controllers\ZuccherisControllerTests.cs" />
     <Compile Include="Models\ApplicationDbContextTests.cs" />
     <Compile Include="Models\ApplicationUserTests.cs" />
+    <Compile Include="StartupTests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

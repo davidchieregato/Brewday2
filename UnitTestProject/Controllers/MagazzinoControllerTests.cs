@@ -58,5 +58,107 @@ namespace BrewDay2.Controllers.Tests
         {
             throw new NotImplementedException();
         }
+
+        [TestMethod()]
+        public void AggiungiLuppoloTest()
+        {
+
+        }
+
+        [TestMethod()]
+        public void IndexTest1()
+        {
+
+        }
+
+        [TestMethod()]
+        public void DetailsTest1()
+        {
+
+        }
+
+        [TestMethod()]
+        public void CreateTest2()
+        {
+
+        }
+
+        [TestMethod()]
+        public void CreateTest3()
+        {
+
+        }
+
+        [TestMethod()]
+        public void EditTest2()
+        {
+
+        }
+
+        [TestMethod()]
+        public void EditTest3()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiAdditivoTest2()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiLievitoTest()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiLuppoloTest1()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiMaltiTest()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiZuccheroTest()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiAdditivoTest3()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiLievitoTest1()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiLuppoloTest2()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiMaltiTest1()
+        {
+
+        }
+
+        [TestMethod()]
+        public void AggiungiZuccheroTest1()
+        {
+
+        }
     }
 }
