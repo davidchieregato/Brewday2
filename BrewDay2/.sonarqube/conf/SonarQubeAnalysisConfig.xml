@@ -75,10 +75,10 @@
     <Property Name="sonar.xml.file.suffixes">.xml,.xsd,.xsl</Property>
     <Property Name="sonar.dbcleaner.weeksBeforeDeletingAllSnapshots">260</Property>
     <Property Name="sonar.updatecenter.url">https://update.sonarsource.org/update-center.properties</Property>
-    <Property Name="sonar.core.startTime">02/02/2018 14:19:42</Property>
     <Property Name="sonar.core.id">AWFWrDwPPej9uwyH2UOT</Property>
     <Property Name="sonar.global.exclusions">*.js</Property>
     <Property Name="sonar.exclusions">**/Scripts/*.js,**/node_modules/*/*.js,**/js/*.js,**/node_modules/*/*/*.js,**/Scripts/*/*.js</Property>
+    <Property Name="sonar.core.startTime">03/02/2018 11:37:31</Property>
   </ServerSettings>
   <LocalSettings />
   <AnalyzersSettings>

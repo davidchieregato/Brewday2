@@ -10,7 +10,7 @@ namespace BrewDay2.Controllers
     public class MagazzinoController : Controller
     {
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
-
+        const string path = "/pages/samples/404.html";
         // GET: Magazzino
         /// <summary>
         /// Metodo invocato alla richiesta di visualizzazione del Magazzino
@@ -33,10 +33,9 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Details(int? id)
         {
-            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Redirect(path);
             }
             Magazzino magazzino = _db.Magazzinoes.Find(id);
             if (magazzino == null)
@@ -77,7 +76,6 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "MagazzinoId,UserId")] Magazzino magazzino)
         {
-            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (ModelState.IsValid)
             {
                 _db.Magazzinoes.Add(magazzino);
@@ -97,7 +95,6 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         public ActionResult Edit(int? id)
         {
-            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -124,7 +121,6 @@ namespace BrewDay2.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "MagazzinoId,UserId")] Magazzino magazzino)
         {
-            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             if (ModelState.IsValid)
             {
                 _db.Entry(magazzino).State = EntityState.Modified;

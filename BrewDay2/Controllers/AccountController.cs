@@ -140,11 +140,6 @@ namespace BrewDay2.Controllers
                 {
                     await SignInManager.SignInAsync(user, false, false);
                     
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Inviare un messaggio di posta elettronica con questo collegamento
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Conferma account", "Per confermare l'account, fare clic <a href=\"" + callbackUrl + "\">qui</a>");
                     ApplicationDbContext db = new ApplicationDbContext();
                     Magazzino m = new Magazzino()
                     {
@@ -197,13 +192,7 @@ namespace BrewDay2.Controllers
                     // Non rivelare che l'utente non esiste o non è confermato
                     return View("ForgotPasswordConfirmation");
                 }
-
-                // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                // Inviare un messaggio di posta elettronica con questo collegamento
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reimposta password", "Per reimpostare la password, fare clic <a href=\"" + callbackUrl + "\">qui</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                
             }
 
             // Se si è arrivati a questo punto, significa che si è verificato un errore, rivisualizzare il form

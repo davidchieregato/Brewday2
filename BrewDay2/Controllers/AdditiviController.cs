@@ -11,6 +11,7 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class AdditiviController : Controller
     {
+        const string path = "/pages/samples/404.html";
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Additivi
@@ -99,7 +100,7 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return Redirect(path);
             }
             Additivi additivi = _db.Additivi.Find(id);
             if (additivi == null)
