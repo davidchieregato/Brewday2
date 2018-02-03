@@ -65,14 +65,21 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                PathConfig c = new PathConfig();
-                return Redirect(c.error);
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Ricette ricette = _db.Ricette.Find(id);
+            Ricette ricette = _db.Ricette.FirstOrDefault(x => x.RicettaId == id);
+            if (ricette?.Privata == true && ricette.UserId != User.Identity.GetUserId())
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            ricette.Additivis = _db.AdditiviRicettas.Where(x => x.RicettaId == id).Select(x => x.Additivo).ToList();
+            ricette.Lievitis = _db.LievitiRicettas.Where(x => x.RicettaId == id).Select(x => x.Lievito).ToList();
+            ricette.Luppolis = _db.LuppoliRicettas.Where(x => x.RicettaId == id).Select(x => x.Luppolo).ToList();
+            ricette.Maltis = _db.MaltiRicettas.Where(x => x.RicettaId == id).Select(x => x.Malto).ToList();
+            ricette.Zuccheris = _db.ZuccheriRicettas.Where(x => x.RicettaId == id).Select(x => x.Zucchero).ToList();
             if (ricette == null)
             {
                 return HttpNotFound();
             }
+            ViewBag.user = _db.Users.FirstOrDefault(x => x.Id == ricette.UserId)?.Email;
             return View(ricette);
         }
 
@@ -166,8 +173,18 @@ namespace BrewDay2.Controllers
             }
             var valide = additivi.Intersect(malti).Intersect(luppoli).Intersect(lieviti).Intersect(zuccheri);
             Random r = new Random();
-            int quale = r.Next(0, valide.Count());
-            return View(valide.ElementAt(quale));
+            if (valide.Count() > 0)
+            {
+                
+                int quale = r.Next(0, valide.Count());
+                return RedirectToAction("Details", new {ricetta = valide.ElementAt(quale).RicettaId});
+            }
+            else
+            {
+                int q = r.Next(0, _db.Ricette.Count());
+                var dove = _db.Ricette.ToList().ElementAt(q).RicettaId;
+                return RedirectToAction("Details", new { id = dove});
+            }
         }
         // POST: Ricette/Create
         // Per proteggere da attacchi di overposting, abilitare le proprietà a cui eseguire il binding.
@@ -290,29 +307,17 @@ namespace BrewDay2.Controllers
             base.Dispose(disposing);
         }
 
-        /// <summary>
-        /// Metodo invocato alla aggiunta di un additivo alla ricetta
-        /// Crea un nuovo additivo e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="id">Valore della chiave per l'additivo da aggiungere</param>
-        /// <returns></returns>
+
         public ActionResult AggiungiAdditivo(int id)
         {
             AdditiviRicetta ar = new AdditiviRicetta { RicettaId = id };
-            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
-            ViewBag.additivi = additiviId;
+            var additivinonusati =
+                _db.Additivi.Except(_db.AdditiviRicettas.Where(x => x.RicettaId == id).Select(x => x.Additivo));
+            SelectList AdditiviId = new SelectList(additivinonusati, "AdditiviId", "Nome");
+            ViewBag.additivi = AdditiviId;
             return View(ar);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per l'aggiunta di un additivo alla ricetta 
-        /// Se il modello è valido aggiunge nel database l'additivo e salva i cambiamenti
-        /// Crea un nuovo additivo e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="ar">Additivo da aggiungere alla ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiAdditivo(AdditiviRicetta ar)
         {
@@ -322,34 +327,24 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
-            ViewBag.additivi = additiviId;
+            var additivinonusati =
+                _db.Additivi.Except(_db.AdditiviRicettas.Where(x => x.RicettaId == ar.RicettaId).Select(x => x.Additivo));
+            SelectList AdditiviId = new SelectList(additivinonusati, "AdditiviId", "Nome");
+            ViewBag.additivi = AdditiviId;
+            ViewBag.additivi = AdditiviId;
             return View(ar);
         }
 
-        /// <summary>
-        /// Metodo invocato alla aggiunta di un lievito alla ricetta
-        /// Crea un nuovo lievito e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="id">Valore della chiave per il lievito da aggiungere</param>
-        /// <returns></returns>
         public ActionResult AggiungiLievito(int id)
         {
             LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
-            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
-            ViewBag.lieviti = lievitiId;
+            var lievitinonusati =
+                _db.Lieviti.Except(_db.LievitiRicettas.Where(x => x.RicettaId == id).Select(x => x.Lievito));
+            SelectList LievitiId = new SelectList(lievitinonusati, "LievitiId", "Nome");
+            ViewBag.lieviti = LievitiId;
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per l'aggiunta di un lievito alla ricetta 
-        /// Se il modello è valido aggiunge nel database il lievito e salva i cambiamenti
-        /// Crea un nuovo lievito e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="lr">Lievito da aggiungere alla ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiLievito(LievitiRicetta lr)
         {
@@ -359,34 +354,26 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
-            ViewBag.lieviti = lievitiId;
+            //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
+            var lievitinonusati =
+                _db.Lieviti.Except(_db.LievitiRicettas.Where(x => x.RicettaId == lr.RicettaId).Select(x => x.Lievito));
+            SelectList LievitiId = new SelectList(lievitinonusati, "LievitiId", "Nome");
+            ViewBag.lieviti = LievitiId;
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla aggiunta di un luppolo alla ricetta
-        /// Crea un nuovo luppolo e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="id">Valore della chiave per il luppolo da aggiungere</param>
-        /// <returns></returns>
         public ActionResult AggiungiLuppolo(int id)
         {
             LuppoliRicetta lr = new LuppoliRicetta { RicettaId = id };
-            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
-            ViewBag.luppoli = luppoliId;
+            var luppolinonusati =
+                _db.Luppoli.Except(_db.LuppoliRicettas.Where(x => x.RicettaId == id).Select(x => x.Luppolo));
+            SelectList AdditiviId = new SelectList(luppolinonusati, "AdditiviId", "Nome");
+            ViewBag.additivi = AdditiviId;
+            SelectList LuppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.luppoli = LuppoliId;
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per l'aggiunta di un luppolo alla ricetta 
-        /// Se il modello è valido aggiunge nel database il luppolo e salva i cambiamenti
-        /// Crea un nuovo luppolo e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="lr">Luppolo da aggiungere alla ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiLuppolo(LuppoliRicetta lr)
         {
@@ -396,34 +383,23 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
-            ViewBag.luppoli = luppoliId;
+            var luppolinonusati =
+                _db.Luppoli.Except(_db.LuppoliRicettas.Where(x => x.RicettaId == lr.RicettaId).Select(x => x.Luppolo));
+            SelectList LuppoliId = new SelectList(luppolinonusati, "AdditiviId", "Nome");
+            ViewBag.additivi = LuppoliId;
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla aggiunta di un malto alla ricetta
-        /// Crea un nuovo malto e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="id">Valore della chiave per il malto da aggiungere</param>
-        /// <returns></returns>
         public ActionResult AggiungiMalti(int id)
         {
             MaltiRicetta mr = new MaltiRicetta { MaltiId = id };
-            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
-            ViewBag.malti = maltiId;
+            var maltinonusati =
+                _db.Malti.Except(_db.MaltiRicettas.Where(x => x.RicettaId == id).Select(x => x.Malto));
+            SelectList MaltiId = new SelectList(maltinonusati, "MaltiId", "Nome");
+            ViewBag.malti = MaltiId;
             return View(mr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per l'aggiunta di un malto alla ricetta 
-        /// Se il modello è valido aggiunge nel database il malto e salva i cambiamenti
-        /// Crea un nuovo malto e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="mr">Malto da aggiungere alla ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiMalti(MaltiRicetta mr)
         {
@@ -433,34 +409,23 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
-            ViewBag.malti = maltiId;
+            var maltinonusati =
+                _db.Malti.Except(_db.MaltiRicettas.Where(x => x.RicettaId == mr.RicettaId).Select(x => x.Malto));
+            SelectList MaltiId = new SelectList(maltinonusati, "MaltiId", "Nome");
+            ViewBag.malti = MaltiId;
             return View(mr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla aggiunta di uno zucchero alla ricetta
-        /// Crea un nuovo zucchero e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="id">Valore della chiave per lo zucchero da aggiungere</param>
-        /// <returns></returns>
         public ActionResult AggiungiZuccheri(int id)
         {
             ZuccheriRicetta zr = new ZuccheriRicetta { RicettaId = id };
-            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
-            ViewBag.zuccheri = zuccheriId;
+            var zuccherinonusati =
+                _db.Zuccheri.Except(_db.ZuccheriRicettas.Where(x => x.RicettaId == id).Select(x => x.Zucchero));
+            SelectList ZuccheriId = new SelectList(zuccherinonusati, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = ZuccheriId;
             return View(zr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per l'aggiunta di uno zucchero alla ricetta 
-        /// Se il modello è valido aggiunge nel database lo zucchero e salva i cambiamenti
-        /// Crea un nuovo zucchero e lo assegna alla variabile speciale ViewBag
-        /// Ritorna la vista
-        /// </summary>
-        /// <param name="zr">Zucchero da aggiungere alla ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiZuccheri(ZuccheriRicetta zr)
         {
@@ -470,187 +435,116 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
-            ViewBag.zuccheri = zuccheriId;
+            var zuccherinonusati =
+                _db.Zuccheri.Except(_db.ZuccheriRicettas.Where(x => x.RicettaId == zr.RicettaId).Select(x => x.Zucchero));
+            SelectList ZuccheriId = new SelectList(zuccherinonusati, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = ZuccheriId;
             return View(zr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla modifica di un additivo nella ricetta
-        /// Cerca nel database l'additivo e la ricetta passati come parametri
-        /// Ritorna la vista 
-        /// </summary>
-        /// <param name="id">ID dell'additivo da modificare</param>
-        /// <param name="idr">ID della ricetta da modificare</param>
-        /// <returns></returns>
         public ActionResult EditAdditivo(int id, int idr)
         {
-            AdditiviRicetta ar = _db.AdditiviRicettas.Where(x => x.AdditiviId == id && x.RicettaId == idr).FirstOrDefault();
+            AdditiviRicetta ar = _db.AdditiviRicettas.FirstOrDefault(x => x.AdditiviId == id && x.RicettaId == idr);
             //SelectList AdditiviId = new SelectList(db.Additivi, "AdditiviId", "Nome")
             return View(ar);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per la modifica di un additivo nella ricetta
-        /// Cerca nel database l'additivo e ne aggiorna la quantità
-        /// Assegna alla variabile speciale ViewBag l'additivo modificato e ne ritorna la vista
-        /// </summary>
-        /// <param name="ar">Additivo da modificare nella ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult EditAdditivo(AdditiviRicetta ar)
         {
-            AdditiviRicetta ar2 = _db.AdditiviRicettas.Where(x => x.AdditiviId == ar.AdditiviId && x.RicettaId == ar.RicettaId).FirstOrDefault();
+            AdditiviRicetta ar2 = _db.AdditiviRicettas.FirstOrDefault(x => x.AdditiviId == ar.AdditiviId && x.RicettaId == ar.RicettaId);
             ar2.Quantita = ar.Quantita;
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList additiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
-            ViewBag.additivi = additiviId;
+            SelectList AdditiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
+            ViewBag.additivi = AdditiviId;
             return View(ar);
         }
 
-        /// <summary>
-        /// Metodo invocato alla modifica di un lievito nella ricetta
-        /// Cerca nel database il lievito e la ricetta passati come parametri
-        /// Ritorna la vista 
-        /// </summary>
-        /// <param name="id">ID del lievito da modificare</param>
-        /// <param name="idr">ID della ricetta da modificare</param>
-        /// <returns></returns>
         public ActionResult EditLievito(int id, int idr)
         {
-            LievitiRicetta lr = _db.LievitiRicettas.Where(x => x.LievitoId == id && x.RicettaId == idr).FirstOrDefault();
+            LievitiRicetta lr = _db.LievitiRicettas.FirstOrDefault(x => x.LievitoId == id && x.RicettaId == idr);
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per la modifica di un lievito nella ricetta
-        /// Cerca nel database il lievito e ne aggiorna la quantità
-        /// Assegna alla variabile speciale ViewBag il lievito modificato e ne ritorna la vista
-        /// </summary>
-        /// <param name="lr">Lievito da modificare nella ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult EditLievito(LievitiRicetta lr)
         {
-            LievitiRicetta lr2 = _db.LievitiRicettas.Where(x => x.LievitoId == lr.LievitoId && x.RicettaId == lr.RicettaId).FirstOrDefault();
+            LievitiRicetta lr2 = _db.LievitiRicettas.FirstOrDefault(x => x.LievitoId == lr.LievitoId && x.RicettaId == lr.RicettaId);
             lr2.Quantita = lr.Quantita;
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
-            ViewBag.lieviti = lievitiId;
+            //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
+            SelectList LievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
+            ViewBag.lieviti = LievitiId;
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla modifica di un luppolo nella ricetta
-        /// Cerca nel database il luppolo e la ricetta passati come parametri
-        /// Ritorna la vista 
-        /// </summary>
-        /// <param name="id">ID del luppolo da modificare</param>
-        /// <param name="idr">ID della ricetta da modificare</param>
-        /// <returns></returns>
         public ActionResult EditLuppolo(int id, int idr)
         {
-            LuppoliRicetta lr = _db.LuppoliRicettas.Where(x => x.LuppoliId == id && x.RicettaId == idr).FirstOrDefault();
+            LuppoliRicetta lr = _db.LuppoliRicettas.FirstOrDefault(x => x.LuppoliId == id && x.RicettaId == idr);
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta
-        /// Cerca nel database il luppolo e ne aggiorna la quantità
-        /// Assegna alla variabile speciale ViewBag il luppolo modificato e ne ritorna la vista
-        /// </summary>
-        /// <param name="lr">Luppolo da modificare nella ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult EditLuppolo(LuppoliRicetta lr)
         {
+            LuppoliRicetta lr2 = _db.LuppoliRicettas.FirstOrDefault(x => x.LuppoliId == lr.LuppoliId && x.RicettaId == lr.RicettaId);
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList luppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
-            ViewBag.luppoli = luppoliId;
+            SelectList LuppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.luppoli = LuppoliId;
             return View(lr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla modifica di un malto nella ricetta
-        /// Cerca nel database il malto e la ricetta passati come parametri
-        /// Ritorna la vista 
-        /// </summary>
-        /// <param name="id">ID del malto da modificare</param>
-        /// <param name="idr">ID della ricetta da modificare</param>
-        /// <returns></returns>
         public ActionResult EditMalti(int id, int idr)
         {
-            MaltiRicetta mr = _db.MaltiRicettas.Where(x => x.MaltiId == id && x.RicettaId == idr).FirstOrDefault();
+            MaltiRicetta mr = _db.MaltiRicettas.FirstOrDefault(x => x.MaltiId == id && x.RicettaId == idr);
             return View(mr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per la modifica di un malto nella ricetta
-        /// Cerca nel database il malto e ne aggiorna la quantità
-        /// Assegna alla variabile speciale ViewBag il malto modificato e ne ritorna la vista
-        /// </summary>
-        /// <param name="mr">Malto da modificare nella ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult EditMalti(MaltiRicetta mr)
         {
-            MaltiRicetta mr2 = _db.MaltiRicettas.Where(x => x.MaltiId == mr.MaltiId && x.RicettaId == mr.RicettaId).FirstOrDefault();
+            MaltiRicetta mr2 = _db.MaltiRicettas.FirstOrDefault(x => x.MaltiId == mr.MaltiId && x.RicettaId == mr.RicettaId);
             mr2.Quantita = mr.Quantita;
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList maltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
-            ViewBag.malti = maltiId;
+            SelectList MaltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
+            ViewBag.malti = MaltiId;
             return View(mr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla modifica di uno zucchero nella ricetta
-        /// Cerca nel database lo zucchero e la ricetta passati come parametri
-        /// Ritorna la vista 
-        /// </summary>
-        /// <param name="id">ID dello zucchero da modificare</param>
-        /// <param name="idr">ID della ricetta da modificare</param>
-        /// <returns></returns>
         public ActionResult EditZuccheri(int id, int idr)
         {
-            ZuccheriRicetta zr = _db.ZuccheriRicettas.Where(x => x.RicettaId == idr && x.ZuccheriId == id).FirstOrDefault();
+            ZuccheriRicetta zr = _db.ZuccheriRicettas.FirstOrDefault(x => x.RicettaId == idr && x.ZuccheriId == id);
             return View(zr);
         }
 
-        /// <summary>
-        /// Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta
-        /// Cerca nel database lo zucchero e ne aggiorna la quantità
-        /// Assegna alla variabile speciale ViewBag lo zucchero modificato e ne ritorna la vista
-        /// </summary>
-        /// <param name="zr">Zucchero da modificare nella ricetta</param>
-        /// <returns></returns>
         [HttpPost]
         public ActionResult EditZuccheri(ZuccheriRicetta zr, int idr)
         {
-            ZuccheriRicetta zr2 = _db.ZuccheriRicettas.Where(x => x.ZuccheriId == zr.ZuccheriId && x.RicettaId == idr).FirstOrDefault();
+            ZuccheriRicetta zr2 = _db.ZuccheriRicettas.FirstOrDefault(x => x.ZuccheriId == zr.ZuccheriId && x.RicettaId == idr);
             zr2.Quantita = zr.Quantita;
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            SelectList zuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
-            ViewBag.zuccheri = zuccheriId;
+            SelectList ZuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
+            ViewBag.zuccheri = ZuccheriId;
             return View(zr);
         }
     }
