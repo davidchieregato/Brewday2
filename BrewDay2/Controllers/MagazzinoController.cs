@@ -172,9 +172,9 @@ namespace BrewDay2.Controllers
             Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             lm.Magazzino = magazzino;
             lm.MagazzinoId = magazzino.MagazzinoId;
-            var listaAdditivi = _db.Lieviti.Except(_db.LievitiMagazzinos
+            var listaLievitis = _db.Lieviti.Except(_db.LievitiMagazzinos
                 .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Lievito));
-            SelectList lieviti = new SelectList(listaAdditivi, "LievitiId", "Nome");
+            SelectList lieviti = new SelectList(listaLievitis, "LievitiId", "Nome");
             ViewBag.Lieviti = lieviti;
             return View(lm);
 
@@ -187,40 +187,40 @@ namespace BrewDay2.Controllers
             Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             lum.Magazzino = magazzino;
             lum.MagazzinoId = magazzino.MagazzinoId;
-            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
-                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
-            SelectList luppoli = new SelectList(listaAdditivi, "LuppoliId", "Nome");
+            var listaLuppolis = _db.Luppoli.Except(_db.LuppoliMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Luppolo));
+            SelectList luppoli = new SelectList(listaLuppolis, "LuppoliId", "Nome");
             ViewBag.Luppoli = luppoli;
             return View(lum);
 
         }
 
-        public ActionResult AggiungiMalto()
+        public ActionResult AggiungiMalti()
         {
-            AdditiviMagazzino am = new AdditiviMagazzino();
+            MaltiMagazzino mm = new MaltiMagazzino();
             var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
-            am.Magazzino = magazzino;
-            am.MagazzinoId = magazzino.MagazzinoId;
-            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
-                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
-            SelectList additivi = new SelectList(listaAdditivi, "MaltiId", "Nome");
-            ViewBag.Additivi = additivi;
-            return View(am);
+            mm.Magazzino = magazzino;
+            mm.MagazzinoId = magazzino.MagazzinoId;
+            var listaMalti = _db.Malti.Except(_db.MaltiMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Malto));
+            SelectList malti = new SelectList(listaMalti, "MaltiId", "Nome");
+            ViewBag.Malti = malti;
+            return View(mm);
 
         }
 
         public ActionResult AggiungiZucchero()
         {
-            AdditiviMagazzino am = new AdditiviMagazzino();
+            ZuccheriMagazzino am = new ZuccheriMagazzino();
             var me = _db.Users.First(x => x.UserName == User.Identity.Name);
             Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
             am.Magazzino = magazzino;
             am.MagazzinoId = magazzino.MagazzinoId;
-            var listaAdditivi = _db.Additivi.Except(_db.AdditiviMagazzinos
-                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Additivo));
-            SelectList additivi = new SelectList(listaAdditivi, "ZuccheriId", "Nome");
-            ViewBag.Additivi = additivi;
+            var listaZuccheri = _db.Zuccheri.Except(_db.ZuccheriMagazzinos
+                .Where(x => x.MagazzinoId == magazzino.MagazzinoId).Select(x => x.Zucchero));
+            SelectList zuccheri = new SelectList(listaZuccheri, "ZuccheriId", "Nome");
+            ViewBag.Zuccheri = zuccheri;
             return View(am);
 
         }
@@ -252,6 +252,81 @@ namespace BrewDay2.Controllers
 
         }
 
+        [HttpPost]
+        public ActionResult AggiungiLievito(LievitiMagazzino lm)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.LievitiMagazzinos.Add(lm);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            lm.Magazzino = magazzino;
+            lm.MagazzinoId = magazzino.MagazzinoId;
+            SelectList lieviti = new SelectList(_db.Lieviti, "LievitiId", "Nome");
+            ViewBag.Lieviti = lieviti;
+            return View(lm);
+
+        }
+
+        [HttpPost]
+        public ActionResult AggiungiLuppolo(LuppoliMagazzino am)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.LuppoliMagazzinos.Add(am);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            am.Magazzino = magazzino;
+            am.MagazzinoId = magazzino.MagazzinoId;
+            SelectList luppoli = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            ViewBag.Luppoli = luppoli;
+            return View(am);
+
+        }
+
+        [HttpPost]
+        public ActionResult AggiungiMalti(MaltiMagazzino am)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.MaltiMagazzinos.Add(am);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            am.Magazzino = magazzino;
+            am.MagazzinoId = magazzino.MagazzinoId;
+            SelectList malti = new SelectList(_db.Malti, "MaltiId", "Nome");
+            ViewBag.Malti = malti;
+            return View(am);
+
+        }
+
+        [HttpPost]
+        public ActionResult AggiungiZucchero(ZuccheriMagazzino am)
+        {
+            if (ModelState.IsValid)
+            {
+                _db.ZuccheriMagazzinos.Add(am);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            var me = _db.Users.First(x => x.UserName == User.Identity.Name);
+            Magazzino magazzino = _db.Magazzinoes.FirstOrDefault(x => x.UserId == me.Id);
+            am.Magazzino = magazzino;
+            am.MagazzinoId = magazzino.MagazzinoId;
+            SelectList zuccheri = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
+            ViewBag.Zuccheri = zuccheri;
+            return View(am);
+
+        }
         /// <summary>
         /// Metodo invocato alla cancellazione del database
         /// Se il flag è true, cancella il database
