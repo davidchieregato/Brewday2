@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table"><thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
@@ -23,10 +23,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Prezzo)
         </th>
-        <th></th>
+        <th>.</th>
     </tr>
 
-@foreach (var item in Model) {
+</thead><tbody>@foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
@@ -47,8 +47,13 @@
             @Html.ActionLink("Details", "Details", new { id = item.MaltiId }) |
             @Html.ActionLink("Delete", "Delete", new { id = item.MaltiId })
         </td>
+}        else
+{
+    <td>
+        Impossibile editare
+    </td>
 }
     </tr>
 }
 
-</table>
+</tbody></table>

@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BrewDay2.Models.Ricette>
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<BrewDay2.Models.Ricette>
 
 @{
     ViewBag.Title = "Index";
@@ -35,11 +36,10 @@
         <th>Aggiungi Luppolo</th>
         <th>Aggiungi Malto</th>
         <th>Aggiungi Zucchero</th>
-        <th></th>
+        <th>.</th>
     </tr>
     </thead>
-    <tbody>
-    @foreach (var item in Model)
+ <tbody>@foreach (var item in Model)
     {
         <tr>
             <td>
@@ -75,15 +75,22 @@
             <td>
                 @Html.ActionLink("+", "AggiungiZuccheri", new {id = item.RicettaId})
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.RicettaId}) |
-                @Html.ActionLink("Details", "Details", new {id = item.RicettaId}) |
-                @Html.ActionLink("Delete", "Delete", new {id = item.RicettaId})
-            </td>
+            @if (item.UserId == User.Identity.GetUserId())
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = item.RicettaId}) |
+                    @Html.ActionLink("Details", "Details", new {id = item.RicettaId}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.RicettaId})
+                </td>
+            }        else
+            {
+                <td>
+                    Impossibile editare
+                </td>
+            }
         </tr>
     }
-    </tbody>
-</table>
+</tbody></table>
 
 <h2>Ultime ricette</h2>
 
@@ -92,7 +99,7 @@
 
 <div class="contlist">
     <ul>
-        @foreach (var item in Model)
+       @foreach (var item in Model)
         {
             <li>
                 <div class="box_1 multibox_preview">
