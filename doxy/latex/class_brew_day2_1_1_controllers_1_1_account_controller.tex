@@ -1,0 +1,343 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller}{}\section{Brew\+Day2.\+Controllers.\+Account\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_account_controller}\index{Brew\+Day2.\+Controllers.\+Account\+Controller@{Brew\+Day2.\+Controllers.\+Account\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Account\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_account_controller}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class {\bfseries Challenge\+Result}
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a3754bc6fe622589b24b8c63d1dae507e}{Account\+Controller}} ()
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_ac924bf46d64f8af1443b1f396bc9d462}{Account\+Controller}} (\mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}} user\+Manager, \mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} sign\+In\+Manager)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_af8e566f39adc2233dd4794944d163d31}{Login}} (string return\+Url)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_ad9ad8a905a83621d78d4687554dde812}{Login}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_login_view_model}{Login\+View\+Model}} model, string return\+Url)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a54da1c7b1c864774aaf9836ec2bbbe53}{Verify\+Code}} (string provider, string return\+Url, bool remember\+Me)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_ab108ec42c6f813474bd73ad47650e463}{Verify\+Code}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_verify_code_view_model}{Verify\+Code\+View\+Model}} model)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_af3f9f544eb4078c5964867d54bc17c75}{Register}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a0eccb71c2436cd83f24364fae3cbbe8c}{Register}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_register_view_model}{Register\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a85707c0c29d5d31427b2d9be10ce74bc}{Confirm\+Email}} (string user\+Id, string code)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a926c610b5a53c8616b7ade4ee307aec5}{Forgot\+Password}} ()
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a621e94f5b40afee98a8e4d1f71d98df2}{Forgot\+Password}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}} model)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a7f72627bc9dc939b4644c9568c4a10df}{Forgot\+Password\+Confirmation}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a80f3b0190c334d42097dd5eb48c5b96e}{Reset\+Password}} (string code)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_ae26675fb414424336eca0e9ed38059de}{Reset\+Password}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}} model)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a749abda29fc866371b1652057b589ef8}{Reset\+Password\+Confirmation}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_af94a683f03d5beabc0649a9c0da31384}{External\+Login}} (string provider, string return\+Url)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_abce1e20a7e77c5304250abade4b35897}{Send\+Code}} (string return\+Url, bool remember\+Me)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_ac93b86652a85a46288a77b760eb25cc3}{Send\+Code}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}} model)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_ad76992de3f6699ce8d3d66bbc8d4f106}{External\+Login\+Callback}} (string return\+Url)
+\item 
+async Task$<$ Action\+Result $>$ \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a326099053cdf8551adfdbfa875a5e848}{External\+Login\+Confirmation}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}} model, string return\+Url)
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a82968fd6963ebb3a9ac80997bc7bd049}{Log\+Off}} ()
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a0ffcbe93ca47401da91b0b0c2d14abdd}{External\+Login\+Failure}} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a70375e7a1aa3e246515cbfcc330df4ce}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_acd6a265613fc6816cebeea68d5d7f8ff}{Sign\+In\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\item 
+\mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}} \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_account_controller_a3b0d883fe8e12fe7b266edac6447e0e8}{User\+Manager}}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Account\+Controller.\+cs.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a3754bc6fe622589b24b8c63d1dae507e}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a3754bc6fe622589b24b8c63d1dae507e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Account\+Controller@{Account\+Controller}}
+\index{Account\+Controller@{Account\+Controller}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Account\+Controller()}{AccountController()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Brew\+Day2.\+Controllers.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 18 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_ac924bf46d64f8af1443b1f396bc9d462}\label{class_brew_day2_1_1_controllers_1_1_account_controller_ac924bf46d64f8af1443b1f396bc9d462}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Account\+Controller@{Account\+Controller}}
+\index{Account\+Controller@{Account\+Controller}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Account\+Controller()}{AccountController()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Brew\+Day2.\+Controllers.\+Account\+Controller.\+Account\+Controller (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}}}]{user\+Manager,  }\item[{\mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}}}]{sign\+In\+Manager }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file Account\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a85707c0c29d5d31427b2d9be10ce74bc}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a85707c0c29d5d31427b2d9be10ce74bc}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Confirm\+Email@{Confirm\+Email}}
+\index{Confirm\+Email@{Confirm\+Email}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Confirm\+Email()}{ConfirmEmail()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Confirm\+Email (\begin{DoxyParamCaption}\item[{string}]{user\+Id,  }\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Definition at line 162 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a70375e7a1aa3e246515cbfcc330df4ce}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a70375e7a1aa3e246515cbfcc330df4ce}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Account\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 383 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_af94a683f03d5beabc0649a9c0da31384}\label{class_brew_day2_1_1_controllers_1_1_account_controller_af94a683f03d5beabc0649a9c0da31384}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!External\+Login@{External\+Login}}
+\index{External\+Login@{External\+Login}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{External\+Login()}{ExternalLogin()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+External\+Login (\begin{DoxyParamCaption}\item[{string}]{provider,  }\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 257 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_ad76992de3f6699ce8d3d66bbc8d4f106}\label{class_brew_day2_1_1_controllers_1_1_account_controller_ad76992de3f6699ce8d3d66bbc8d4f106}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!External\+Login\+Callback@{External\+Login\+Callback}}
+\index{External\+Login\+Callback@{External\+Login\+Callback}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{External\+Login\+Callback()}{ExternalLoginCallback()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+External\+Login\+Callback (\begin{DoxyParamCaption}\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 301 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a326099053cdf8551adfdbfa875a5e848}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a326099053cdf8551adfdbfa875a5e848}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!External\+Login\+Confirmation@{External\+Login\+Confirmation}}
+\index{External\+Login\+Confirmation@{External\+Login\+Confirmation}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{External\+Login\+Confirmation()}{ExternalLoginConfirmation()}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+External\+Login\+Confirmation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_external_login_confirmation_view_model}{External\+Login\+Confirmation\+View\+Model}}}]{model,  }\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 332 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a0ffcbe93ca47401da91b0b0c2d14abdd}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a0ffcbe93ca47401da91b0b0c2d14abdd}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!External\+Login\+Failure@{External\+Login\+Failure}}
+\index{External\+Login\+Failure@{External\+Login\+Failure}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{External\+Login\+Failure()}{ExternalLoginFailure()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+External\+Login\+Failure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 378 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a926c610b5a53c8616b7ade4ee307aec5}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a926c610b5a53c8616b7ade4ee307aec5}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Forgot\+Password@{Forgot\+Password}}
+\index{Forgot\+Password@{Forgot\+Password}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Forgot\+Password()}{ForgotPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Forgot\+Password (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 175 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a621e94f5b40afee98a8e4d1f71d98df2}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a621e94f5b40afee98a8e4d1f71d98df2}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Forgot\+Password@{Forgot\+Password}}
+\index{Forgot\+Password@{Forgot\+Password}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Forgot\+Password()}{ForgotPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Forgot\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_forgot_password_view_model}{Forgot\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 185 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a7f72627bc9dc939b4644c9568c4a10df}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a7f72627bc9dc939b4644c9568c4a10df}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Forgot\+Password\+Confirmation@{Forgot\+Password\+Confirmation}}
+\index{Forgot\+Password\+Confirmation@{Forgot\+Password\+Confirmation}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Forgot\+Password\+Confirmation()}{ForgotPasswordConfirmation()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Forgot\+Password\+Confirmation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 205 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_af8e566f39adc2233dd4794944d163d31}\label{class_brew_day2_1_1_controllers_1_1_account_controller_af8e566f39adc2233dd4794944d163d31}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Login@{Login}}
+\index{Login@{Login}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Login()}{Login()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Login (\begin{DoxyParamCaption}\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 43 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_ad9ad8a905a83621d78d4687554dde812}\label{class_brew_day2_1_1_controllers_1_1_account_controller_ad9ad8a905a83621d78d4687554dde812}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Login@{Login}}
+\index{Login@{Login}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Login()}{Login()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Login (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_login_view_model}{Login\+View\+Model}}}]{model,  }\item[{string}]{return\+Url }\end{DoxyParamCaption})}
+
+
+
+Definition at line 54 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a82968fd6963ebb3a9ac80997bc7bd049}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a82968fd6963ebb3a9ac80997bc7bd049}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Log\+Off@{Log\+Off}}
+\index{Log\+Off@{Log\+Off}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Log\+Off()}{LogOff()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Log\+Off (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 369 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_af3f9f544eb4078c5964867d54bc17c75}\label{class_brew_day2_1_1_controllers_1_1_account_controller_af3f9f544eb4078c5964867d54bc17c75}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Register@{Register}}
+\index{Register@{Register}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Register (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 123 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a0eccb71c2436cd83f24364fae3cbbe8c}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a0eccb71c2436cd83f24364fae3cbbe8c}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Register@{Register}}
+\index{Register@{Register}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Register()}{Register()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Register (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_register_view_model}{Register\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 133 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a80f3b0190c334d42097dd5eb48c5b96e}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a80f3b0190c334d42097dd5eb48c5b96e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Reset\+Password@{Reset\+Password}}
+\index{Reset\+Password@{Reset\+Password}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Reset\+Password()}{ResetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Reset\+Password (\begin{DoxyParamCaption}\item[{string}]{code }\end{DoxyParamCaption})}
+
+
+
+Definition at line 213 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_ae26675fb414424336eca0e9ed38059de}\label{class_brew_day2_1_1_controllers_1_1_account_controller_ae26675fb414424336eca0e9ed38059de}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Reset\+Password@{Reset\+Password}}
+\index{Reset\+Password@{Reset\+Password}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Reset\+Password()}{ResetPassword()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Reset\+Password (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_reset_password_view_model}{Reset\+Password\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 223 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a749abda29fc866371b1652057b589ef8}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a749abda29fc866371b1652057b589ef8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Reset\+Password\+Confirmation@{Reset\+Password\+Confirmation}}
+\index{Reset\+Password\+Confirmation@{Reset\+Password\+Confirmation}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Reset\+Password\+Confirmation()}{ResetPasswordConfirmation()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Account\+Controller.\+Reset\+Password\+Confirmation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 247 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_abce1e20a7e77c5304250abade4b35897}\label{class_brew_day2_1_1_controllers_1_1_account_controller_abce1e20a7e77c5304250abade4b35897}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Send\+Code@{Send\+Code}}
+\index{Send\+Code@{Send\+Code}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Send\+Code()}{SendCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Send\+Code (\begin{DoxyParamCaption}\item[{string}]{return\+Url,  }\item[{bool}]{remember\+Me }\end{DoxyParamCaption})}
+
+
+
+Definition at line 266 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_ac93b86652a85a46288a77b760eb25cc3}\label{class_brew_day2_1_1_controllers_1_1_account_controller_ac93b86652a85a46288a77b760eb25cc3}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Send\+Code@{Send\+Code}}
+\index{Send\+Code@{Send\+Code}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Send\+Code()}{SendCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Send\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_send_code_view_model}{Send\+Code\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 283 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a54da1c7b1c864774aaf9836ec2bbbe53}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a54da1c7b1c864774aaf9836ec2bbbe53}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Verify\+Code@{Verify\+Code}}
+\index{Verify\+Code@{Verify\+Code}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Verify\+Code()}{VerifyCode()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Verify\+Code (\begin{DoxyParamCaption}\item[{string}]{provider,  }\item[{string}]{return\+Url,  }\item[{bool}]{remember\+Me }\end{DoxyParamCaption})}
+
+
+
+Definition at line 81 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_ab108ec42c6f813474bd73ad47650e463}\label{class_brew_day2_1_1_controllers_1_1_account_controller_ab108ec42c6f813474bd73ad47650e463}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Verify\+Code@{Verify\+Code}}
+\index{Verify\+Code@{Verify\+Code}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Verify\+Code()}{VerifyCode()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily async Task$<$Action\+Result$>$ Brew\+Day2.\+Controllers.\+Account\+Controller.\+Verify\+Code (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_verify_code_view_model}{Verify\+Code\+View\+Model}}}]{model }\end{DoxyParamCaption})}
+
+
+
+Definition at line 96 of file Account\+Controller.\+cs.
+
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_acd6a265613fc6816cebeea68d5d7f8ff}\label{class_brew_day2_1_1_controllers_1_1_account_controller_acd6a265613fc6816cebeea68d5d7f8ff}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!Sign\+In\+Manager@{Sign\+In\+Manager}}
+\index{Sign\+In\+Manager@{Sign\+In\+Manager}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{Sign\+In\+Manager}{SignInManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brew_day2_1_1_application_sign_in_manager}{Application\+Sign\+In\+Manager}} Brew\+Day2.\+Controllers.\+Account\+Controller.\+Sign\+In\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 29 of file Account\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_account_controller_a3b0d883fe8e12fe7b266edac6447e0e8}\label{class_brew_day2_1_1_controllers_1_1_account_controller_a3b0d883fe8e12fe7b266edac6447e0e8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}!User\+Manager@{User\+Manager}}
+\index{User\+Manager@{User\+Manager}!Brew\+Day2\+::\+Controllers\+::\+Account\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Account\+Controller}}
+\subsubsection{\texorpdfstring{User\+Manager}{UserManager}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_brew_day2_1_1_application_user_manager}{Application\+User\+Manager}} Brew\+Day2.\+Controllers.\+Account\+Controller.\+User\+Manager\hspace{0.3cm}{\ttfamily [get]}}
+
+
+
+Definition at line 35 of file Account\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_account_controller_8cs}{Account\+Controller.\+cs}}\end{DoxyCompactItemize}

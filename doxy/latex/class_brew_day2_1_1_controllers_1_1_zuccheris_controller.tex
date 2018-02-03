@@ -1,0 +1,231 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller}{}\section{Brew\+Day2.\+Controllers.\+Zuccheris\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller}\index{Brew\+Day2.\+Controllers.\+Zuccheris\+Controller@{Brew\+Day2.\+Controllers.\+Zuccheris\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Zuccheris\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_zuccheris_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_ada1bf34b38c332323dd30dcf18643fb5}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di Zuccheris Setta nella variabile speciale View\+Bag l\textquotesingle{}utente loggato e restituisce alla view una lista di zuccheri \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_aa0b63d9d1577350252de922e0041c4c9}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta di dettagli su uno zucchero Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a47bd1b297f1aedb0d7e3b3a374b2ea33}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla creazione di un nuovo zucchero Assegna uno user lo zucchero con i campi da compilare nella view Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a6af10a8e51185ce8f4cf938c545d10c2}{Create}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Zuccheri zuccheri)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la creazione di uno Zuccheris Se il modello è valido, crea e aggiunge lo zucchero al database \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a65fd03bfe14dab909536be6441b7e5a8}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un nuovo zucchero Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Zuccheris trovato 
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Zuccheris\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a52aadaa2bd2a5f5874efec4d50a0bee9}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Zuccheri zuccheri)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di uno zucchero Se il modello è valido sostituisce nelle database lo zucchero con quello modificato, salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_ac3ee0233b27ac4021c5d78838ea96e78}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla cancellazione di uno zucchero Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista dello zucchero trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a69bc9afa9b5e056977c31dd50da54964}{Delete\+Confirmed}} (int id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la cancellazione di uno zucchero Se il modello è valido rimuove nel database lo zucchero e salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_acd38549fec2cb20af4b6a41c94ba6b0a}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Zuccheris\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a47bd1b297f1aedb0d7e3b3a374b2ea33}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a47bd1b297f1aedb0d7e3b3a374b2ea33}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla creazione di un nuovo zucchero Assegna uno user lo zucchero con i campi da compilare nella view Ritorna la vista 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a6af10a8e51185ce8f4cf938c545d10c2}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a6af10a8e51185ce8f4cf938c545d10c2}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri}{Zuccheri}}}]{zuccheri }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la creazione di uno Zuccheris Se il modello è valido, crea e aggiunge lo zucchero al database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zuccheri} & Oggetto da inserire nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 77 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_ac3ee0233b27ac4021c5d78838ea96e78}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_ac3ee0233b27ac4021c5d78838ea96e78}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla cancellazione di uno zucchero Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista dello zucchero trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Zuccheris\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 143 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a69bc9afa9b5e056977c31dd50da54964}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a69bc9afa9b5e056977c31dd50da54964}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Delete\+Confirmed@{Delete\+Confirmed}}
+\index{Delete\+Confirmed@{Delete\+Confirmed}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Confirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la cancellazione di uno zucchero Se il modello è valido rimuove nel database lo zucchero e salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave dello zucchero da eliminare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 168 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_aa0b63d9d1577350252de922e0041c4c9}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_aa0b63d9d1577350252de922e0041c4c9}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Details@{Details}}
+\index{Details@{Details}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di dettagli su uno zucchero Restituisce errore se id è nullo o non esiste Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per model Zuccheris\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 38 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_acd38549fec2cb20af4b6a41c94ba6b0a}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_acd38549fec2cb20af4b6a41c94ba6b0a}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 176 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a65fd03bfe14dab909536be6441b7e5a8}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a65fd03bfe14dab909536be6441b7e5a8}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un nuovo zucchero Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista del Zuccheris trovato 
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Zuccheris\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+
+
+Definition at line 97 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a52aadaa2bd2a5f5874efec4d50a0bee9}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_a52aadaa2bd2a5f5874efec4d50a0bee9}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_zuccheri}{Zuccheri}}}]{zuccheri }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di uno zucchero Se il modello è valido sostituisce nelle database lo zucchero con quello modificato, salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em zuccheri} & Oggetto da modificare nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 123 of file Zuccheris\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_ada1bf34b38c332323dd30dcf18643fb5}\label{class_brew_day2_1_1_controllers_1_1_zuccheris_controller_ada1bf34b38c332323dd30dcf18643fb5}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Zuccheris\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Zuccheris\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta di Zuccheris Setta nella variabile speciale View\+Bag l\textquotesingle{}utente loggato e restituisce alla view una lista di zuccheri 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Zuccheris\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_zuccheris_controller_8cs}{Zuccheris\+Controller.\+cs}}\end{DoxyCompactItemize}

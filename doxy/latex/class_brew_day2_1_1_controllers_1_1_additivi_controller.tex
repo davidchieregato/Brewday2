@@ -1,0 +1,225 @@
+\hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller}{}\section{Brew\+Day2.\+Controllers.\+Additivi\+Controller Class Reference}
+\label{class_brew_day2_1_1_controllers_1_1_additivi_controller}\index{Brew\+Day2.\+Controllers.\+Additivi\+Controller@{Brew\+Day2.\+Controllers.\+Additivi\+Controller}}
+Inheritance diagram for Brew\+Day2.\+Controllers.\+Additivi\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_brew_day2_1_1_controllers_1_1_additivi_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_abc59038a7b58a22f8300921d8c0fe72e}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla richiesta /\+Additivi/ Setta nella variabile speciale viewbag l\textquotesingle{}utente loggato e restituisce alla view una collection di additivi \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_a9fb0eab448c2b1bd33b3fdb2cd36ad55}{Details}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato dalla richiesta di dettagli su un additivo Es\+: G\+ET\+: Additivi/\+Details/5 Restituisce errore se id è nullo o non esiste a db Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_abe67a6f7b711dac3af4d6e1225867eb5}{Create}} ()
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla creazione di un nuovo additivo Assegna uno user all\textquotesingle{}additivo con i campi da compilare nella view Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_ac5f7c34cd02cfdb70cf7e832c08fa65a}{Create}} (\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi}{Additivi}} additivi)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la creazione di un Additivo Se il modello è valido, crea e aggiunge l\textquotesingle{} Additivo al database \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_a1fd9cac1bf54e85865017590a6e8581f}{Edit}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla modifica di un nuovo additivo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista dell\textquotesingle{} Additivo trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_a476cc279dc89be5682d4a9fe4d512a18}{Edit}} (\mbox{[}Bind(Include=\char`\"{}Id,Nome,Descrizione,Produttore,Prezzo\char`\"{})\mbox{]} Additivi additivi)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla submit della form per la modifica di un Additivo Se il modello è valido sostituisce nelle database l\textquotesingle{} Additivo con quello modificato, salva i cambiamenti Ritorna la vista \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_a444b3db44aec4ff853dadb3312b81372}{Delete}} (int? id)
+\begin{DoxyCompactList}\small\item\em Metodo invocato alla cancellazione di un additivo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista dell\textquotesingle{} Additivo trovato \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_a039d3630deec332cf2deb548deceb6c7}{Delete\+Confirmed}} (int id)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{class_brew_day2_1_1_controllers_1_1_additivi_controller_aa678739843674fffd0f20c51e84bf78e}{Dispose}} (bool disposing)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 13 of file Additivi\+Controller.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_abe67a6f7b711dac3af4d6e1225867eb5}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_abe67a6f7b711dac3af4d6e1225867eb5}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Create (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla creazione di un nuovo additivo Assegna uno user all\textquotesingle{}additivo con i campi da compilare nella view Ritorna la vista 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 60 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_ac5f7c34cd02cfdb70cf7e832c08fa65a}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_ac5f7c34cd02cfdb70cf7e832c08fa65a}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Create@{Create}}
+\index{Create@{Create}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Create()}{Create()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Create (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi}{Additivi}}}]{additivi }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la creazione di un Additivo Se il modello è valido, crea e aggiunge l\textquotesingle{} Additivo al database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em additivi} & Oggetto da inserire nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 78 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_a444b3db44aec4ff853dadb3312b81372}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_a444b3db44aec4ff853dadb3312b81372}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Delete@{Delete}}
+\index{Delete@{Delete}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Delete()}{Delete()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Delete (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla cancellazione di un additivo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista dell\textquotesingle{} Additivo trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Additivi\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 146 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_a039d3630deec332cf2deb548deceb6c7}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_a039d3630deec332cf2deb548deceb6c7}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Delete\+Confirmed@{Delete\+Confirmed}}
+\index{Delete\+Confirmed@{Delete\+Confirmed}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Delete\+Confirmed()}{DeleteConfirmed()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Delete\+Confirmed (\begin{DoxyParamCaption}\item[{int}]{id }\end{DoxyParamCaption})}
+
+
+
+
+
+Metodo invocato alla submit della form per la cancellazione di un Additivo Se il modello è valido rimuove nel database l\textquotesingle{} Additivo e salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave dell\textquotesingle{}additivo da eliminare\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 172 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_a9fb0eab448c2b1bd33b3fdb2cd36ad55}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_a9fb0eab448c2b1bd33b3fdb2cd36ad55}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Details@{Details}}
+\index{Details@{Details}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Details()}{Details()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Details (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato dalla richiesta di dettagli su un additivo Es\+: G\+ET\+: Additivi/\+Details/5 Restituisce errore se id è nullo o non esiste a db Altrimenti restituisce l\textquotesingle{}elemento cercato alla pagina 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per model Additivi\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_aa678739843674fffd0f20c51e84bf78e}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_aa678739843674fffd0f20c51e84bf78e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Dispose@{Dispose}}
+\index{Dispose@{Dispose}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Dispose()}{Dispose()}}
+{\footnotesize\ttfamily override void Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Dispose (\begin{DoxyParamCaption}\item[{bool}]{disposing }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 180 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_a1fd9cac1bf54e85865017590a6e8581f}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_a1fd9cac1bf54e85865017590a6e8581f}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{int?}]{id }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla modifica di un nuovo additivo Se l\textquotesingle{} ID è nullo ritorna uno Status\+Code di Bad\+Request Se l\textquotesingle{} ID non è presente nel database ritorna Http\+Not\+Found Se è presente ritorna la vista dell\textquotesingle{} Additivo trovato 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id} & Valore della chiave per il model Additivi\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 99 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_a476cc279dc89be5682d4a9fe4d512a18}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_a476cc279dc89be5682d4a9fe4d512a18}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Edit@{Edit}}
+\index{Edit@{Edit}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Edit()}{Edit()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Edit (\begin{DoxyParamCaption}\item[{\mbox{[}\+Bind(\+Include = \char`\"{}\+Id,\+Nome,\+Descrizione,\+Produttore,\+Prezzo\char`\"{})\mbox{]} \mbox{\hyperlink{class_brew_day2_1_1_models_1_1_additivi}{Additivi}}}]{additivi }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla submit della form per la modifica di un Additivo Se il modello è valido sostituisce nelle database l\textquotesingle{} Additivo con quello modificato, salva i cambiamenti Ritorna la vista 
+
+
+\begin{DoxyParams}{Parameters}
+{\em additivi} & Oggetto da modificare nel database\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 126 of file Additivi\+Controller.\+cs.
+
+\mbox{\Hypertarget{class_brew_day2_1_1_controllers_1_1_additivi_controller_abc59038a7b58a22f8300921d8c0fe72e}\label{class_brew_day2_1_1_controllers_1_1_additivi_controller_abc59038a7b58a22f8300921d8c0fe72e}} 
+\index{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}!Index@{Index}}
+\index{Index@{Index}!Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller@{Brew\+Day2\+::\+Controllers\+::\+Additivi\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily Action\+Result Brew\+Day2.\+Controllers.\+Additivi\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Metodo invocato alla richiesta /\+Additivi/ Setta nella variabile speciale viewbag l\textquotesingle{}utente loggato e restituisce alla view una collection di additivi 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 24 of file Additivi\+Controller.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Brew\+Day2/\+Controllers/\mbox{\hyperlink{_additivi_controller_8cs}{Additivi\+Controller.\+cs}}\end{DoxyCompactItemize}

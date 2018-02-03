@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['zuccheri',['Zuccheri',['../class_brew_day2_1_1_models_1_1_zuccheri.html',1,'BrewDay2.Models.Zuccheri'],['../class_brew_day2_1_1_models_1_1_application_db_context.html#a171f4dd53beae30480e2440c4f8f2fc3',1,'BrewDay2.Models.ApplicationDbContext.Zuccheri()']]],
+  ['zuccheri_2ecs',['Zuccheri.cs',['../_zuccheri_8cs.html',1,'']]],
+  ['zuccheriid',['ZuccheriId',['../class_brew_day2_1_1_models_1_1_zuccheri.html#aedc113d2f6e282e86012199d39bb44b9',1,'BrewDay2.Models.Zuccheri.ZuccheriId()'],['../class_brew_day2_1_1_models_1_1_zuccheri_magazzino.html#ad2624788b919fc78c3ea27876fb5b59e',1,'BrewDay2.Models.ZuccheriMagazzino.ZuccheriId()'],['../class_brew_day2_1_1_models_1_1_zuccheri_ricetta.html#a4a18160de16932d79fe8d6405d69564c',1,'BrewDay2.Models.ZuccheriRicetta.ZuccheriId()']]],
+  ['zuccherimagazzino',['ZuccheriMagazzino',['../class_brew_day2_1_1_models_1_1_zuccheri_magazzino.html',1,'BrewDay2::Models']]],
+  ['zuccherimagazzino_2ecs',['ZuccheriMagazzino.cs',['../_zuccheri_magazzino_8cs.html',1,'']]],
+  ['zuccherimagazzinos',['ZuccheriMagazzinos',['../class_brew_day2_1_1_models_1_1_application_db_context.html#a9e4bfdd053967fcf43ef8a603b5a96bb',1,'BrewDay2::Models::ApplicationDbContext']]],
+  ['zuccheriricetta',['ZuccheriRicetta',['../class_brew_day2_1_1_models_1_1_zuccheri_ricetta.html',1,'BrewDay2::Models']]],
+  ['zuccheriricetta_2ecs',['ZuccheriRicetta.cs',['../_zuccheri_ricetta_8cs.html',1,'']]],
+  ['zuccheriricettas',['ZuccheriRicettas',['../class_brew_day2_1_1_models_1_1_application_db_context.html#afa36c5941da8fd14bc9ddf5a78c9e786',1,'BrewDay2::Models::ApplicationDbContext']]],
+  ['zuccheriricettatest',['ZuccheriRicettaTest',['../class_brew_day2_1_1_tests_1_1_zuccheri_ricetta_test.html',1,'BrewDay2::Tests']]],
+  ['zuccheriricettatest_2ecs',['ZuccheriRicettaTest.cs',['../_zuccheri_ricetta_test_8cs.html',1,'']]],
+  ['zuccheris',['Zuccheris',['../class_brew_day2_1_1_models_1_1_ricette.html#a2f9935b9c19790de2e0a52bc7d3e6a5f',1,'BrewDay2::Models::Ricette']]],
+  ['zuccheriscontroller',['ZuccherisController',['../class_brew_day2_1_1_controllers_1_1_zuccheris_controller.html',1,'BrewDay2::Controllers']]],
+  ['zuccheriscontroller_2ecs',['ZuccherisController.cs',['../_zuccheris_controller_8cs.html',1,'']]],
+  ['zuccheriscontrollertest',['ZuccherisControllerTest',['../class_brew_day2_1_1_tests_1_1_zuccheris_controller_test.html',1,'BrewDay2.Tests.ZuccherisControllerTest'],['../class_brew_day2_1_1_controllers_1_1_tests_1_1_zuccheris_controller_test.html',1,'BrewDay2.Controllers.Tests.ZuccherisControllerTest']]],
+  ['zuccheriscontrollertest_2ecs',['ZuccherisControllerTest.cs',['../_zuccheris_controller_test_8cs.html',1,'(Global Namespace)'],['../1_2_zuccheris_controller_test_8cs.html',1,'(Global Namespace)']]],
+  ['zuccheriscontrollertests',['ZuccherisControllerTests',['../class_brew_day2_1_1_controllers_1_1_tests_1_1_zuccheris_controller_tests.html',1,'BrewDay2::Controllers::Tests']]],
+  ['zuccheriscontrollertests_2ecs',['ZuccherisControllerTests.cs',['../_zuccheris_controller_tests_8cs.html',1,'']]],
+  ['zuccheritest',['ZuccheriTest',['../class_brew_day2_1_1_tests_1_1_zuccheri_test.html',1,'BrewDay2::Tests']]],
+  ['zuccheritest_2ecs',['ZuccheriTest.cs',['../_zuccheri_test_8cs.html',1,'']]],
+  ['zuccheriutente',['ZuccheriUtente',['../class_brew_day2_1_1_models_1_1_magazzino.html#a1ec01b1101ed7d84c35da0005ce6a1ca',1,'BrewDay2::Models::Magazzino']]],
+  ['zucchero',['Zucchero',['../class_brew_day2_1_1_models_1_1_zuccheri_magazzino.html#a9a963de555ba0e8e6ed439c10994bd1b',1,'BrewDay2.Models.ZuccheriMagazzino.Zucchero()'],['../class_brew_day2_1_1_models_1_1_zuccheri_ricetta.html#abbb04536ee8b95032c945920da5c67e7',1,'BrewDay2.Models.ZuccheriRicetta.Zucchero()']]]
+];
