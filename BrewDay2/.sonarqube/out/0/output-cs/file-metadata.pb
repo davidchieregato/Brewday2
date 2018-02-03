@@ -1,7 +1,8 @@
 I
 GC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\BundleConfig.csI
 GC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\FilterConfig.csK
-IC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\IdentityConfig.csH
+IC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\IdentityConfig.csG
+EC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\PathConfig.csH
 FC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\RouteConfig.csI
 GC:\Users\david\Source\Repos\Brewday2\BrewDay2\App_Start\Startup.Auth.csP
 NC:\Users\david\Source\Repos\Brewday2\BrewDay2\Controllers\AccountController.csQ
