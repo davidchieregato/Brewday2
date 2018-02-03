@@ -46,6 +46,7 @@ namespace BrewDay2.Controllers
         /// <param name="nomeparametro">Nome della categoria da visualizzare</param>
         /// <returns></returns>
         [HttpGet]
+        [AllowAnonymous]
         public ActionResult Index(String nomeparametro)
         {
             var lista = !String.IsNullOrEmpty(nomeparametro) ? _db.Ricette.Where(x => x.Categoria == nomeparametro).ToList() : _db.Ricette.ToList();
