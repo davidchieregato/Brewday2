@@ -1,4 +1,5 @@
-﻿@model IEnumerable<BrewDay2.Models.Ricette>
+﻿@using Microsoft.AspNet.Identity
+@model IEnumerable<BrewDay2.Models.Ricette>
 
 @{
     ViewBag.Title = "Index";
@@ -9,7 +10,8 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table" id="myTable" name="myTable">
+    <thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Note)
@@ -34,10 +36,10 @@
         <th>Aggiungi Luppolo</th>
         <th>Aggiungi Malto</th>
         <th>Aggiungi Zucchero</th>
-        <th></th>
+        <th>.</th>
     </tr>
-
-    @foreach (var item in Model)
+    </thead>
+ <tbody>@foreach (var item in Model)
     {
         <tr>
             <td>
@@ -56,32 +58,39 @@
                 @Html.DisplayFor(modelItem => item.Categoria)
             </td>
             <td>
-                @Html.Raw(item.Privata==false?"Privata":"Pubblica")
+                @Html.Raw(item.Privata == false ? "Privata" : "Pubblica")
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiAdditivo", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiAdditivo", new {id = item.RicettaId})
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiLievito", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiLievito", new {id = item.RicettaId})
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiLuppolo", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiLuppolo", new {id = item.RicettaId})
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiMalto", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiMalti", new {id = item.RicettaId})
             </td>
             <td>
-                @Html.ActionLink("+", "AggiungiZucchero", new { id = item.RicettaId })
+                @Html.ActionLink("+", "AggiungiZuccheri", new {id = item.RicettaId})
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.RicettaId }) |
-                @Html.ActionLink("Details", "Details", new { id = item.RicettaId }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.RicettaId })
-            </td>
+            @if (item.UserId == User.Identity.GetUserId())
+            {
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new {id = item.RicettaId}) |
+                    @Html.ActionLink("Details", "Details", new {id = item.RicettaId}) |
+                    @Html.ActionLink("Delete", "Delete", new {id = item.RicettaId})
+                </td>
+            }        else
+            {
+                <td>
+                    Impossibile editare
+                </td>
+            }
         </tr>
     }
-
-</table>
+</tbody></table>
 
 <h2>Ultime ricette</h2>
 
@@ -90,28 +99,28 @@
 
 <div class="contlist">
     <ul>
-        @foreach (var item in Model)
+       @foreach (var item in Model)
         {
-        <li>
-            <div class="box_1 multibox_preview">
-                <div class="box-articoli-hp">
-                    <div class="box_ss56545">
-                        <div class="img-articolo">
-                            <a href="/Ricette/Details/@item.RicettaId"><img src="@Html.Raw(item.ImmagineScelta != null ? item.ImmagineScelta.Replace(".png","a.png") : "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
+            <li>
+                <div class="box_1 multibox_preview">
+                    <div class="box-articoli-hp">
+                        <div class="box_ss56545">
+                            <div class="img-articolo">
+                                <a href="/Ricette/Details/@item.RicettaId"><img src="@Html.Raw(item.ImmagineScelta != null ? item.ImmagineScelta.Replace(".png","a.png") : "/images/img.jpg")" title="@Html.DisplayFor(modelItem => item.NomeRicetta)" /></a>
+                            </div>
+                            <h3 class="title_articolo">
+                                <a href="/Ricette/Details/@item.RicettaId">@Html.DisplayFor(modelItem => item.NomeRicetta)</a>
+                            </h3>
+                            <p class="abs-articolo">@Html.DisplayFor(modelItem => item.Note) <a href="/Ricette/Details/@item.RicettaId" class="continua">&nbsp;CONTINUA</a></p>
+                            <div class="categoria-articolo-label-time">
+                                <div class="categoria-articolo-label"><a href="/Ricette/Index?nomeparametro=@item.Categoria" class="categoria-articolo-label-link" style="cursor:text">@Html.DisplayFor(modelItem => item.Categoria)</a></div>
+                                <div class="nofloat"></div>
+                            </div>
                         </div>
-                        <h3 class="title_articolo">
-                            <a href="/Ricette/Details/@item.RicettaId">@Html.DisplayFor(modelItem => item.NomeRicetta)</a>
-                        </h3>
-                        <p class="abs-articolo">@Html.DisplayFor(modelItem => item.Note) <a href="/Ricette/Details/@item.RicettaId" class="continua">&nbsp;CONTINUA</a></p>
-                        <div class="categoria-articolo-label-time">
-                            <div class="categoria-articolo-label"><a href="/Ricette/Index?nomeparametro=@item.Categoria" class="categoria-articolo-label-link" style="cursor:text">@Html.DisplayFor(modelItem => item.Categoria)</a></div>
-                            <div class="nofloat"></div>
-                        </div>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
-        </li>
+            </li>
         }
     </ul>
 </div>

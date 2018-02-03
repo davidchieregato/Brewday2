@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using BrewDay2.App_Start;
 using BrewDay2.Models;
 using Microsoft.AspNet.Identity;
 
@@ -97,7 +98,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error);
             }
             Luppoli luppoli = _db.Luppoli.Find(id);
             if (luppoli == null)
@@ -143,7 +145,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error2);
             }
             Luppoli luppoli = _db.Luppoli.Find(id);
             if (luppoli == null)

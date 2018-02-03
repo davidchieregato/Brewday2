@@ -22,7 +22,7 @@
         if (Model.CurrentLogins.Count > 0)
         {
             <h4>Account di accesso registrati</h4>
-            <table class="table">
+            <table class="table"><thead>
                 <tbody>
                     @foreach (var account in Model.CurrentLogins)
                     {
@@ -48,8 +48,7 @@
                             </td>
                         </tr>
                     }
-                </tbody>
-            </table>
+            </tbody></table>
         }
         if (Model.OtherLogins.Count > 0)
         {

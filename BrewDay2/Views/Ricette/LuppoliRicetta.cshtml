@@ -1,6 +1,6 @@
 ﻿@model BrewDay2.Models.Ricette
 
-<table class="table">
+<table class="table"><thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Luppolis.FirstOrDefault().Nome)
@@ -14,7 +14,7 @@
         <th>
             @Html.DisplayNameFor(model => model.Luppolis.FirstOrDefault().Prezzo)
         </th>
-        <th></th>
+        <th>.</th>
     </tr>
 
 @foreach (var item in Model.Luppolis) {
@@ -39,4 +39,4 @@
     </tr>
 }
 
-</table>
+</tbody></table>

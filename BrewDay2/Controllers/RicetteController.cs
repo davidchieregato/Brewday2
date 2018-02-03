@@ -4,6 +4,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using BrewDay2.App_Start;
 using BrewDay2.Models;
 using Microsoft.AspNet.Identity;
 
@@ -64,7 +65,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error);
             }
             Ricette ricette = _db.Ricette.Find(id);
             if (ricette == null)
@@ -75,7 +77,7 @@ namespace BrewDay2.Controllers
         }
 
         // GET: Ricette/Create
-        // TODO comment
+        // questo metodo permette di scegliere la rispettiva categoria di una ricetta
         public ActionResult Create()
         {
             SelectList sl = new SelectList(_db.CategoriaBirres,"Nome","Nome");
@@ -83,7 +85,7 @@ namespace BrewDay2.Controllers
             return View();
         }
 
-        // TODO comment
+        //funzionalità what should I brew Today, suggerisce quale birra preparare in base a ciò che è presente in magazzino
         public ActionResult WhatShoudIBrewToday()
         {
             var me = User.Identity.GetUserId();
@@ -250,7 +252,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error2);
             }
             Ricette ricette = _db.Ricette.Find(id);
             if (ricette == null)
@@ -356,7 +359,6 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
             SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
             ViewBag.lieviti = lievitiId;
             return View(lr);
@@ -541,7 +543,6 @@ namespace BrewDay2.Controllers
                 _db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
             SelectList lievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
             ViewBag.lieviti = lievitiId;
             return View(lr);
@@ -571,7 +572,6 @@ namespace BrewDay2.Controllers
         [HttpPost]
         public ActionResult EditLuppolo(LuppoliRicetta lr)
         {
-            LuppoliRicetta lr2 = _db.LuppoliRicettas.Where(x => x.LuppoliId == lr.LuppoliId && x.RicettaId == lr.RicettaId).FirstOrDefault();
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();

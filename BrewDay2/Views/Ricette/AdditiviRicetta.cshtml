@@ -1,7 +1,8 @@
 ﻿@using BrewDay2.Models
+@using Microsoft.AspNet.Identity
 @model BrewDay2.Models.Ricette
 
-<table class="table">
+<table class="table"><thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Nome)
@@ -18,7 +19,7 @@
         <th>
             Quantit&agrave;
         </th>
-        <th></th>
+        <th>.</th>
     </tr>
 
 @foreach (var item in Model.Additivis) {
@@ -36,18 +37,27 @@
             @Html.DisplayFor(modelItem => item.Prezzo)
         </td>
         <td>
-             @{
-                 ApplicationDbContext db = new ApplicationDbContext();
-                 var quan = db.AdditiviRicettas.Where(x => x.RicettaId == Model.RicettaId && x.AdditiviId == item.AdditiviId).Select(y => y.Quantita).FirstOrDefault();
-             }
+            @{
+                ApplicationDbContext db = new ApplicationDbContext();
+                var quan = db.AdditiviRicettas.Where(x => x.RicettaId == Model.RicettaId && x.AdditiviId == item.AdditiviId).Select(y => y.Quantita).FirstOrDefault();
+            }
             @quan
         </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AdditiviId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AdditiviId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AdditiviId, idr = Model.RicettaId })
-        </td>
+        @if (Model.UserId == User.Identity.GetUserId())
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.AdditiviId, idr = Model.RicettaId}) |
+                @Html.ActionLink("Details", "Details", new {id = item.AdditiviId, idr = Model.RicettaId}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.AdditiviId, idr = Model.RicettaId})
+            </td>
+        }
+        else
+        {
+            <td>
+                Impossibile editare
+            </td>
+        }
     </tr>
 }
 
-</table>
+</tbody></table>

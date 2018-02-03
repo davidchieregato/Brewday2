@@ -11,7 +11,7 @@ namespace BrewDay2.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            var daRestituire = _db.Ricette.Where(x => x.Privata == false);
+            var daRestituire = _db.Ricette.Where(x => !x.Privata);
             return View(daRestituire);
         }
 
