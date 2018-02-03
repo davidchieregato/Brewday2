@@ -5,10 +5,10 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Ricette</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Crea Nuova", "Create")
 </p>
 <table class="table" id="myTable" name="myTable">
     <thead>
@@ -58,7 +58,7 @@
                 @Html.DisplayFor(modelItem => item.Categoria)
             </td>
             <td>
-                @Html.Raw(item.Privata == false ? "Privata" : "Pubblica")
+                @Html.Raw(item.Privata == false ? "Pubblica" : "Privata")
             </td>
             <td>
                 @Html.ActionLink("+", "AggiungiAdditivo", new {id = item.RicettaId})
