@@ -10,9 +10,10 @@
     @Scripts.Render("~/bundles/modernizr")
     <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" href="/node_modules/perfect-scrollbar/dist/css/perfect-scrollbar.min.css" />
-    <link rel="stylesheet" href="/node_modules/flag-icon-css/css/flag-icon.min.css" />
-    <link rel="stylesheet" href="/Content/themes/base/datepicker.css" />
+    @*<link rel="stylesheet" href="/node_modules/flag-icon-css/css/flag-icon.min.css" />
+    <link rel="stylesheet" href="/Content/themes/base/datepicker.css" />*@
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/jquery.dataTables.min.css" />
     <link rel="shortcut icon" href="/favicon.ico" />
 </head>
 <body>
@@ -60,7 +61,7 @@
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/popper.js/dist/umd/popper.min.js"></script>
     <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="/node_modules/chart.js/dist/Chart.min.js"></script>
+    @*<script src="/node_modules/chart.js/dist/Chart.min.js"></script>*@
     <script src="/node_modules/perfect-scrollbar/dist/js/perfect-scrollbar.jquery.min.js"></script>
     @*<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB5NXz9eVnyJOA81wimI8WYE08kW_JMe8g&callback=initMap" async defer></script>*@
     <script src="/js/off-canvas.js"></script>
@@ -75,6 +76,7 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/ajax")
+<script src="/Scripts/jquery.dataTables.min.js"></script>
     @RenderSection("scripts", false)
     <script>
         $("li.active").each(function () {
