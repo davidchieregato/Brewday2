@@ -8,5 +8,7 @@ Nel programma di aggiunta strumenti e funzionalità è necessario aggiungere all
 In alternativa è possibile compilare il progetto con gli ide C# alternativi Xamarin Studio oppure SharpDevelop ma potrebbero richiedere modifiche alla struttura interna dei file di progetto e non è garantito il supporto completo delle funzionalità.
 
 Il deploy del progetto compilato viene periodicamente effettuato sul seguente sito: <http://brewday.cu.cc/>
+EDIT: pare che il servizio cu.cc sia morto negli ultimi giorni, si può accedere tramite ip: <http://185.219.133.28/>
+Disponibile Developer Guide dettagliata per il setup e tutto il resto nella cartella Docs.
 
 Durante lo sviluppo il sito non rifletterà immediatamente tutti i cambiamenti effettuati sui sorgenti, alla consegna del progetto sarà la versione finale.
