@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using BrewDay2.App_Start;
 using BrewDay2.Models;
 
 namespace BrewDay2.Controllers
@@ -10,7 +11,6 @@ namespace BrewDay2.Controllers
     public class MagazzinoController : Controller
     {
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
-        const string path = "/pages/samples/404.html";
         // GET: Magazzino
         /// <summary>
         /// Metodo invocato alla richiesta di visualizzazione del Magazzino
@@ -35,7 +35,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return Redirect(path);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error);
             }
             Magazzino magazzino = _db.Magazzinoes.Find(id);
             if (magazzino == null)

@@ -3,6 +3,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
+using BrewDay2.App_Start;
 using BrewDay2.Models;
 using Microsoft.AspNet.Identity;
 
@@ -11,7 +12,6 @@ namespace BrewDay2.Controllers
     [Authorize]
     public class AdditiviController : Controller
     {
-        const string path = "/pages/samples/404.html";
         private readonly ApplicationDbContext _db = new ApplicationDbContext();
 
         // GET: Additivi
@@ -100,7 +100,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return Redirect(path);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error);
             }
             Additivi additivi = _db.Additivi.Find(id);
             if (additivi == null)
@@ -146,7 +147,8 @@ namespace BrewDay2.Controllers
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                PathConfig c = new PathConfig();
+                return Redirect(c.error2);
             }
             Additivi additivi = _db.Additivi.Find(id);
             if (additivi == null)
