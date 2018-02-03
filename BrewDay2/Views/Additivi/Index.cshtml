@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+<table class="table"><thead>
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Nome)
@@ -23,10 +23,10 @@
         <th>
             @Html.DisplayNameFor(model => model.Prezzo)
         </th>
-        <th></th>
+        <th>prop</th>
     </tr>
 
-@foreach (var item in Model) {
+</thead><tbody>@foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
@@ -40,14 +40,21 @@
         <td>
             @Html.DisplayFor(modelItem => item.Prezzo)
         </td>
-        @if(ViewBag.me!= null && ViewBag.me == item.UserId) { 
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.AdditiviId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.AdditiviId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.AdditiviId })
-        </td>
+        @if (ViewBag.me != null && ViewBag.me == item.UserId)
+        {
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {id = item.AdditiviId}) |
+                @Html.ActionLink("Details", "Details", new {id = item.AdditiviId}) |
+                @Html.ActionLink("Delete", "Delete", new {id = item.AdditiviId})
+            </td>
+        }
+        else
+        {
+            <td>
+                Impossibile editare
+            </td>
         }
     </tr>
 }
 
-</table>
+</tbody></table>
