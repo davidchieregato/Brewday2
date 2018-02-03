@@ -333,6 +333,7 @@
     <Content Include="images\file-icons\8.png" />
     <Content Include="images\file-icons\addt.png" />
     <Content Include="images\file-icons\box.png" />
+    <Content Include="images\file-icons\down.png" />
     <Content Include="images\file-icons\home.png" />
     <Content Include="images\file-icons\lievito.png" />
     <Content Include="images\file-icons\luppolo.png" />
