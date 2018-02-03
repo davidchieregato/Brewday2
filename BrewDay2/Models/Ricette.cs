@@ -10,6 +10,9 @@ namespace BrewDay2.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
         public int RicettaId { get; set; }
+
+        [Display(Name = "Istruzioni")]
+        [DataType(DataType.MultilineText)]
         public String Note { get; set; }
         public String NomeRicetta { get; set; }
         public String TempoPreparazione { get; set; }

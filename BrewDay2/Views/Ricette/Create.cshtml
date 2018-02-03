@@ -4,7 +4,7 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<h2>Crea Nuova</h2>
 
 
 @using (Html.BeginForm()) 
@@ -12,7 +12,7 @@
     @Html.AntiForgeryToken()
     
 <div class="form-horizontal">
-    <h4>Ricette</h4>
+    <h4>Ricette</h4><a href="#" data-toggle="tooltip" data-placement="top" title="Create una ricetta compilando tutti i campi, è possibile aggiugere gli ingredienti in seguito."> ? </a>
     <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div class="form-group">
