@@ -51,12 +51,13 @@ namespace BrewDay2.Controllers
         {
             if (User.Identity.IsAuthenticated)
             {
+                var me = User.Identity.GetUserId();
                 var lista = !String.IsNullOrEmpty(nomeparametro)
                     ? _db.Ricette.Where(x =>
                             x.Categoria == nomeparametro &&
-                            (x.Privata == false || x.UserId == User.Identity.GetUserId()))
+                            (x.Privata == false || x.UserId ==me))
                         .ToList()
-                    : _db.Ricette.Where(x => (x.Privata == false || x.UserId == User.Identity.GetUserId())).ToList();
+                    : _db.Ricette.Where(x => (x.Privata == false || x.UserId ==me)).ToList();
 
                 return View(lista);
             }
