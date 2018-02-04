@@ -548,5 +548,71 @@ namespace BrewDay2.Controllers
             ViewBag.zuccheri = ZuccheriId;
             return View(zr);
         }
+
+        public ActionResult DetailsAdditivo(int id, int idr)
+        {
+            return RedirectToAction("Details", "Additivi", new {id = id});
+        }
+
+        public ActionResult DeleteAdditivo(int id, int idr)
+        {
+            var daRimuovere = _db.AdditiviRicettas
+                .FirstOrDefault(x => x.RicettaId == idr && x.AdditiviId == id);
+            _db.AdditiviRicettas.Remove(daRimuovere);
+            _db.SaveChanges();
+            return RedirectToAction("Details", new {id = idr});
+        }
+        public ActionResult DetailsLievito(int id, int idr)
+        {
+            return RedirectToAction("Details", "Lievitis", new { id = id });
+        }
+
+        public ActionResult DeleteLievito(int id, int idr)
+        {
+            var daRimuovere = _db.LievitiRicettas
+                .FirstOrDefault(x => x.RicettaId == idr && x.LievitoId == id);
+            _db.LievitiRicettas.Remove(daRimuovere);
+            _db.SaveChanges();
+            return RedirectToAction("Details", new { id = idr });
+        }
+        public ActionResult DetailsLuppolo(int id, int idr)
+        {
+            return RedirectToAction("Details", "Luppoli", new { id = id });
+        }
+
+        public ActionResult DeleteLuppolo(int id, int idr)
+        {
+            var daRimuovere = _db.LuppoliRicettas
+                .FirstOrDefault(x => x.RicettaId == idr && x.LuppoliId == id);
+            _db.LuppoliRicettas.Remove(daRimuovere);
+            _db.SaveChanges();
+            return RedirectToAction("Details", new { id = idr });
+        }
+        public ActionResult DetailsMalto(int id, int idr)
+        {
+            return RedirectToAction("Details", "Maltis", new { id = id });
+        }
+
+        public ActionResult DeleteMalto(int id, int idr)
+        {
+            var daRimuovere = _db.MaltiRicettas
+                .FirstOrDefault(x => x.RicettaId == idr && x.MaltiId == id);
+            _db.MaltiRicettas.Remove(daRimuovere);
+            _db.SaveChanges();
+            return RedirectToAction("Details", new { id = idr });
+        }
+        public ActionResult DetailsZucchero(int id, int idr)
+        {
+            return RedirectToAction("Details", "Zuccheris", new { id = id });
+        }
+
+        public ActionResult DeleteZucchero(int id, int idr)
+        {
+            var daRimuovere = _db.ZuccheriRicettas
+                .FirstOrDefault(x => x.RicettaId == idr && x.ZuccheriId == id);
+            _db.ZuccheriRicettas.Remove(daRimuovere);
+            _db.SaveChanges();
+            return RedirectToAction("Details", new { id = idr });
+        }
     }
 }
