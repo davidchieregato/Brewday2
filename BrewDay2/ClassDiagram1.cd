@@ -1,0 +1,270 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="BrewDay2.Startup">
+    <Position X="8" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.Auth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.AccountController">
+    <Position X="12.75" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Class Name="BrewDay2.Controllers.AccountController.ChallengeResult" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\AccountController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABAChACAAAAAAAAFgEgAABAABMKIAAAMRAAQgAAA=</HashCode>
+      <FileName>Controllers\AccountController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.AdditiviController">
+    <Position X="14.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACABAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\AdditiviController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.HomeController">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAAAAAAAEACAAAAAAAAAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\HomeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.LievitisController">
+    <Position X="18" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACABAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\LievitisController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.LuppoliController">
+    <Position X="14.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACABAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\LuppoliController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.MagazzinoController">
+    <Position X="19.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAggAASASABAAAAABAAAAAAAAQAAEACFAEBEAAAAAA=</HashCode>
+      <FileName>Controllers\MagazzinoController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.MaltisController">
+    <Position X="19.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACABAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\MaltisController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.ManageController">
+    <Position X="18" Y="0.75" Width="1.5" />
+    <NestedTypes>
+      <Enum Name="BrewDay2.Controllers.ManageController.ManageMessageId" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\ManageController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAABACAQCAAgAAAAEFhAAAAAAEAIMIAAEEEgAAkAAA=</HashCode>
+      <FileName>Controllers\ManageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.RicetteController">
+    <Position X="16.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAggAASASABgCCAAnAAgAAAAgUACEACHAUCEAAAAAA=</HashCode>
+      <FileName>Controllers\RicetteController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Controllers.ZuccherisController">
+    <Position X="14.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAgAAAACABAACAAAAAAAAAAAEAAEACAAEAAAAAAAA=</HashCode>
+      <FileName>Controllers\ZuccherisController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.LoginViewModel">
+    <Position X="4.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAgAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.RegisterViewModel">
+    <Position X="6.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.ResetPasswordViewModel">
+    <Position X="10.5" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAgAAAAAAAAAAACAAAAAAAAIAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.ForgotPasswordViewModel">
+    <Position X="12.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AccountViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Additivi">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAQAAACAAAgAAAAgAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Additivi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.AdditiviMagazzino">
+    <Position X="6" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAACAAAAABAAAAAAIIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\AdditiviMagazzino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.AdditiviRicetta">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAAAAIICAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\AdditiviRicetta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.CategoriaBirre">
+    <Position X="2.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\CategoriaBirre.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.ApplicationDbContext">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AhAAAAAAEhAAAAAAAQAAAAAQAAAMhGAACIAAAgAAAAA=</HashCode>
+      <FileName>Models\IdentityModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Lieviti">
+    <Position X="0.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAQAAAAAAAgAAAAhAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Lieviti.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.LievitiMagazzino">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAABAABAAAIAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Models\LievitiMagazzino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.LievitiRicetta">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABAAAIACAAAAAIAAQAAAAA=</HashCode>
+      <FileName>Models\LievitiRicetta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Luppoli">
+    <Position X="0.5" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAQAAAAAAAgAAAAgAAAAEAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Luppoli.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.LuppoliMagazzino">
+    <Position X="6.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAABAAAAAAIEgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\LuppoliMagazzino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.LuppoliRicetta">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAIEiAAAAAAAAQAAAAA=</HashCode>
+      <FileName>Models\LuppoliRicetta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Magazzino">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAABAAAACAAAAAAACAAAAIgAAAAAAAAAEBAAAAAAAAA=</HashCode>
+      <FileName>Models\Magazzino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Malti">
+    <Position X="2.25" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAAAAQAAAAAAAgAAAAgAAAAAAAAAgAAAAAEAAAA=</HashCode>
+      <FileName>Models\Malti.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.MaltiMagazzino">
+    <Position X="4.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAABAAAACAIAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Models\MaltiMagazzino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.MaltiRicetta">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAIACAAAgAAAAQAAAAA=</HashCode>
+      <FileName>Models\MaltiRicetta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.IndexViewModel">
+    <Position X="10" Y="6" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAQAAAAAAAAAAAAAAQAAAEAEA=</HashCode>
+      <FileName>Models\ManageViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.ChangePasswordViewModel">
+    <Position X="8" Y="10" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABAAAAAAAEAAAAAAAAAAAAAAIAA=</HashCode>
+      <FileName>Models\ManageViewModels.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Ricette">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAgAEAACAgAAQAIAAAACAAAAwEEEBQ=</HashCode>
+      <FileName>Models\Ricette.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.Zuccheri">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABABAAIAAQAAAAAAAgAAAAgAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Models\Zuccheri.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.ZuccheriMagazzino">
+    <Position X="4.25" Y="7" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIACAAAAAAAAAABAAAAAAIAAAAAAAAAgAAAAAA=</HashCode>
+      <FileName>Models\ZuccheriMagazzino.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BrewDay2.Models.ZuccheriRicetta">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAAAAIACAAAAAAAgQAAAAA=</HashCode>
+      <FileName>Models\ZuccheriRicetta.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

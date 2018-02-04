@@ -73,6 +73,8 @@ Luca \textsc{De Filippi} 757401\\
 
 \end{titlepage}
 
+\tableofcontents
+\pagebreak
 
 \begin{abstract}
 Home brewing, the process of producing beer on a small scale for personal purposes, is an activity that receives growing attention among beer enthusiasts. Every home brewer owns a brewing equipment (kettles, fermenters, pipes, etc.) with a certain maximum brewing capacity, the number of litres the equipment is able to handle in a single "batch". Brewing also requires ingredients, whose actual amounts vary from recipe to recipe; these are various kinds of malts, hops, yeasts and sugars (and of course, water). Brewers like to log their recipes, for future reference, and maintain an updated list of available ingredients, for shopping before the next brew.
@@ -90,7 +92,7 @@ While brewers prefer to create recipes referring to concrete values, like kilogr
 
 Besides the actual recipes, the application must maintain recipe instances, i.e., particular brews based on a recipe; these instances can be accompanied by notes to refer to issues that may affect the resulting beer and the brewers would like to keep logged. A particular kind of note is the tasting notes, that allows brewers to keep track of opinions on a beer from a particular brew.
 
-Besides these more traditional features of Brew Day!, the application maintains a list of available ingredients. This allows brewers to be notified about missing ingredients for the next brew. A recipe instance, i.e., a particular brew, should allow users to update the available ingredients list, substracting used ingredients from the available ones. Related to this information, Brew Day! must support a useful feature for brewers: "what should I brew today?" goes through the recipes database, and chooses the recipe that maximizes the use of the available ingredients, taking into account the equipment capacity, of course.
+Besides these more traditional features of Brew Day!, the application maintains a list of available ingredients. This allows brewers to be notified about missing ingredients for the next brew. A recipe instance, i.e., a particular brew, should allow users to update the available ingredients list, subtracting used ingredients from the available ones. Related to this information, Brew Day! must support a useful feature for brewers: "what should I brew today?" goes through the recipes database, and chooses the recipe that maximizes the use of the available ingredients, taking into account the equipment capacity, of course.
 
 The project must implement the features described above, i.e., creation, modification and deletion of recipes, creation of recipe instances (brews), support for notes on brews, and keeping track of available ingredients. The "what should I brew today?" is a mandatory feature. Optionally, developers may choose to allow ingredients availability manually, as opposed to do it automatically from brews information.
 
@@ -98,10 +100,11 @@ The choice of the development platform, including tools and programming language
 
 \end{abstract}
 \vfill
-\section{Assunzioni e glossario}
+\section{Assumptions and glossary}
+We assume that the equipment capacity is referred to a particular recipe, it will not change the order proportion of the ingredients.
 \section{Requirements}
 
-The goal of this project is to develop an application for home brewers thats allows them to mantain a list of recipes, and adapt esisting ones.
+The goal of this project is to develop an application for home brewers thats allows them to maintain a list of recipes, and adapt existing ones.
 This application is intended for the "all-grain" users only, thus "extract" brews are not supported. \\
 \\
 Functional Requirements:\\
@@ -351,7 +354,20 @@ MVC Pattern stands for Model-View-Controller Pattern. It's an Architectural Patt
 The Model catch the application behavior, directly handling data, logic and application's rules.\\
 A View is every output representation of information.\\
 The Controller accept a input and translate in commands for the model or the view.\\
+\subsection{Row Data Gateway Pattern: LINQ}
+LINQ means language-integrated query: We use the term language-integrated query to indicate that query is an integrated feature of the developer's primary programming languages (for example, Visual C\#, Visual Basic). Language-integrated query allows query expressions to benefit from the rich metadata, compile-time syntax checking, static typing and IntelliSense that was previously available only to imperative code. Language-integrated query also allows a single general purpose declarative query facility to be applied to all in-memory information, not just information from external sources.
+Exactly the Row Data Gateway definition: An object that acts as a Gateway to a single record in a data source. There is one instance per row.
+
 \section{Classes}
+In a web MVC application there aren't a lot of links between the different classes because this structural pattern is based on the separation of unitary programming logic pages that interact after user requests.
+There are some auto generated classes in the project that won't be taken into account in the following diagram in the next page.
+The diagram is split into 2 pages in order to get a better readability.
+\begin{figure}[H]
+\includegraphics[scale=0.55]{classleft.png}
+\end{figure}
+\begin{figure}[H]
+\includegraphics[scale=0.7]{classright.png}
+\end{figure}
 \section{Test}
 \subsection{SonarQube}
 
@@ -395,5 +411,18 @@ their github https://github.com/OpenCover/opencover/issues/121 (they are passing
 So we decided to implement our tests in the standard Visual Studio MSTest V2 platform.\\
 The tests cover most of the code, but it won't be visible in the SonarQube report.\\
 Every controller has from one to five tests per Method in order to make sure everything is working.
+\section{ER-Diagram}
+Image included in this document below this page, but it's better to look at the separated file provided in the Docs\/images\/er.png path because it's big and can't fit an a4 page in any way, cutting would cause confusion.
+\begin{figure}[H]
+\includegraphics[scale=0.25]{er.png}
+\end{figure}
 
+\section{Guides}
+There are 2 guides available for different kinds of users:
+\begin{enumerate}
+\item User Guide (a functional guide to the user interface interaction)
+\item Developer Guide (a fully comprehensive guide that covers the compilation, debuging and deployment of the project)
+\end{enumerate}
+\section{Code manual}
+The code documentation manual with descriptions of every function is available at the link http://brewday.cu.cc/documentazione (if the domain will come back online soon) or http://185.219.133.28/documentazione/ (direct access with ip in case of problems with the domain).
 \end{document}
