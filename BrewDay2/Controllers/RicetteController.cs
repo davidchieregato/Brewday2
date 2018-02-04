@@ -110,7 +110,7 @@ namespace BrewDay2.Controllers
                 {
                     a.Add(_db.Additivi.FirstOrDefault(x => x.AdditiviId == additiviMagazzino.AdditiviId));
                 }
-            foreach (var ricette in _db.Ricette)
+            foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
             {
                 if (a.All(x => ricette.Additivis.Contains(x)))
                 {
@@ -125,7 +125,7 @@ namespace BrewDay2.Controllers
                 {
                     l.Add(_db.Luppoli.FirstOrDefault(x => x.LuppoliId == additiviMagazzino.LuppoliId));
                 }
-                foreach (var ricette in _db.Ricette)
+                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
                 {
                     if (l.All(x => ricette.Luppolis.Contains(x)))
                     {
@@ -138,7 +138,7 @@ namespace BrewDay2.Controllers
                 {
                     li.Add(_db.Lieviti.FirstOrDefault(x => x.LievitiId == additiviMagazzino.LievitiId));
                 }
-                foreach (var ricette in _db.Ricette)
+                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
                 {
                     if (li.All(x => ricette.Lievitis.Contains(x)))
                     {
@@ -151,7 +151,7 @@ namespace BrewDay2.Controllers
                 {
                     ma.Add(_db.Malti.Where(x => x.MaltiId == additiviMagazzino.MaltiId).FirstOrDefault());
                 }
-                foreach (var ricette in _db.Ricette)
+                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
                 {
                     if (ma.All(x => ricette.Maltis.Contains(x)))
                     {
@@ -164,7 +164,7 @@ namespace BrewDay2.Controllers
                 {
                     z.Add(_db.Zuccheri.Where(x => x.ZuccheriId == additiviMagazzino.ZuccheriId).FirstOrDefault());
                 }
-                foreach (var ricette in _db.Ricette)
+                foreach (var ricette in _db.Ricette.Where(x=>x.Privata == false || x.UserId == User.Identity.GetUserId()))
                 {
                     if (z.All(x => ricette.Zuccheris.Contains(x)))
                     {
@@ -180,11 +180,15 @@ namespace BrewDay2.Controllers
                 int quale = r.Next(0, valide.Count());
                 return RedirectToAction("Details", new {ricetta = valide.ElementAt(quale).RicettaId});
             }
-            else
+            else if(_db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()).Count()>0)
             {
                 int q = r.Next(0, _db.Ricette.Count());
-                var dove = _db.Ricette.ToList().ElementAt(q).RicettaId;
+                var dove = _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()).ToList().ElementAt(q).RicettaId;
                 return RedirectToAction("Details", new { id = dove});
+            }
+            else
+            {
+                return Redirect("/Ricette/Nessuna");
             }
         }
         // POST: Ricette/Create
@@ -339,8 +343,9 @@ namespace BrewDay2.Controllers
         public ActionResult AggiungiLievito(int id)
         {
             LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
+            var daEscludere = _db.LievitiRicettas.Include(x=>x.Lievito).Where(x => x.RicettaId == id).Select(x=>x.Lievito);
             var lievitinonusati =
-                _db.Lieviti.Except(_db.LievitiRicettas.Where(x => x.RicettaId == id).Select(x => x.Lievito));
+                _db.Lieviti.Except(daEscludere);
             SelectList LievitiId = new SelectList(lievitinonusati, "LievitiId", "Nome");
             ViewBag.lieviti = LievitiId;
             return View(lr);
@@ -393,7 +398,7 @@ namespace BrewDay2.Controllers
 
         public ActionResult AggiungiMalti(int id)
         {
-            MaltiRicetta mr = new MaltiRicetta { MaltiId = id };
+            MaltiRicetta mr = new MaltiRicetta { RicettaId = id };
             var maltinonusati =
                 _db.Malti.Except(_db.MaltiRicettas.Where(x => x.RicettaId == id).Select(x => x.Malto));
             SelectList MaltiId = new SelectList(maltinonusati, "MaltiId", "Nome");
@@ -467,14 +472,14 @@ namespace BrewDay2.Controllers
 
         public ActionResult EditLievito(int id, int idr)
         {
-            LievitiRicetta lr = _db.LievitiRicettas.FirstOrDefault(x => x.LievitoId == id && x.RicettaId == idr);
+            LievitiRicetta lr = _db.LievitiRicettas.FirstOrDefault(x => x.LievitiId == id && x.RicettaId == idr);
             return View(lr);
         }
 
         [HttpPost]
         public ActionResult EditLievito(LievitiRicetta lr)
         {
-            LievitiRicetta lr2 = _db.LievitiRicettas.FirstOrDefault(x => x.LievitoId == lr.LievitoId && x.RicettaId == lr.RicettaId);
+            LievitiRicetta lr2 = _db.LievitiRicettas.FirstOrDefault(x => x.LievitiId == lr.LievitiId && x.RicettaId == lr.RicettaId);
             lr2.Quantita = lr.Quantita;
             if (ModelState.IsValid)
             {
@@ -570,7 +575,7 @@ namespace BrewDay2.Controllers
         public ActionResult DeleteLievito(int id, int idr)
         {
             var daRimuovere = _db.LievitiRicettas
-                .FirstOrDefault(x => x.RicettaId == idr && x.LievitoId == id);
+                .FirstOrDefault(x => x.RicettaId == idr && x.LievitiId == id);
             _db.LievitiRicettas.Remove(daRimuovere);
             _db.SaveChanges();
             return RedirectToAction("Details", new { id = idr });

@@ -9,7 +9,7 @@ namespace BrewDay2.Models
         [Key, Column(Order = 0)]
         public int RicettaId { get; set; }
         [Key, Column(Order = 1)]
-        public int LievitoId { get; set; }
+        public int LievitiId { get; set; }
         public virtual Ricette Ricetta { get; set; }
         public virtual Lieviti Lievito { get; set; }
         public Decimal Quantita { get; set; }
