@@ -49,7 +49,7 @@ namespace BrewDay2.Controllers
         [AllowAnonymous]
         public ActionResult Index(String nomeparametro)
         {
-            var lista = !String.IsNullOrEmpty(nomeparametro) ? _db.Ricette.Where(x => x.Categoria == nomeparametro).ToList() : _db.Ricette.ToList();
+            var lista = !String.IsNullOrEmpty(nomeparametro) ? _db.Ricette.Where(x => x.Categoria == nomeparametro && (x.Privata == false || x.UserId==User.Identity.GetUserId())).ToList() : _db.Ricette.Where(x=>(x.Privata == false || x.UserId == User.Identity.GetUserId())).ToList();
 
             return View(lista);
         }
