@@ -377,7 +377,7 @@ namespace BrewDay2.Controllers
         public ActionResult AggiungiLievito(int id)
         {
             LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
-            var daEscludere = _db.LievitiRicettas.Include(x=>x.Lievito).Where(x => x.RicettaId == id).Select(x=>x.Lievito);
+            var daEscludere = _db.LievitiRicettas.Where(x => x.RicettaId == id).Select(x=>x.Lievito);
             var lievitinonusati =
                 _db.Lieviti.Except(daEscludere);
             SelectList LievitiId = new SelectList(lievitinonusati, "LievitiId", "Nome");
@@ -422,9 +422,7 @@ namespace BrewDay2.Controllers
             LuppoliRicetta lr = new LuppoliRicetta { RicettaId = id };
             var luppolinonusati =
                 _db.Luppoli.Except(_db.LuppoliRicettas.Where(x => x.RicettaId == id).Select(x => x.Luppolo));
-            SelectList AdditiviId = new SelectList(luppolinonusati, "AdditiviId", "Nome");
-            ViewBag.additivi = AdditiviId;
-            SelectList LuppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
+            SelectList LuppoliId = new SelectList(luppolinonusati, "LuppoliId", "Nome");
             ViewBag.luppoli = LuppoliId;
             return View(lr);
         }
@@ -449,7 +447,7 @@ namespace BrewDay2.Controllers
             var luppolinonusati =
                 _db.Luppoli.Except(_db.LuppoliRicettas.Where(x => x.RicettaId == lr.RicettaId).Select(x => x.Luppolo));
             SelectList LuppoliId = new SelectList(luppolinonusati, "AdditiviId", "Nome");
-            ViewBag.additivi = LuppoliId;
+            ViewBag.luppoli = LuppoliId;
             return View(lr);
         }
 
