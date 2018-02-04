@@ -46,9 +46,9 @@
         @if (Model.UserId == User.Identity.GetUserId())
         {
             <td>
-                @Html.ActionLink("Edit", "Edit", new {id = item.AdditiviId, idr = Model.RicettaId}) |
-                @Html.ActionLink("Details", "Details", new {id = item.AdditiviId, idr = Model.RicettaId}) |
-                @Html.ActionLink("Delete", "Delete", new {id = item.AdditiviId, idr = Model.RicettaId})
+                @Html.ActionLink("Edit", "EditAdditivo", new {id = item.AdditiviId, idr = Model.RicettaId}) |
+                @Html.ActionLink("Details", "DetailsAdditivo", new {id = item.AdditiviId, idr = Model.RicettaId}) |
+                @Html.ActionLink("Delete", "DeleteAdditivo", new {id = item.AdditiviId, idr = Model.RicettaId})
             </td>
         }
         else
