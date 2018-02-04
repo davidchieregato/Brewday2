@@ -21,7 +21,7 @@
         </th>
         <th>.</th>
     </tr>
-
+    </thead><tbody>
 @foreach (var item in Model.Additivis) {
     <tr>
         <td>
@@ -47,7 +47,6 @@
         {
             <td>
                 @Html.ActionLink("Edit", "Edit", new {id = item.AdditiviId, idr = Model.RicettaId}) |
-                @Html.ActionLink("Details", "Details", new {id = item.AdditiviId, idr = Model.RicettaId}) |
                 @Html.ActionLink("Delete", "Delete", new {id = item.AdditiviId, idr = Model.RicettaId})
             </td>
         }
@@ -60,4 +59,4 @@
     </tr>
 }
 
-</tbody></table>
+

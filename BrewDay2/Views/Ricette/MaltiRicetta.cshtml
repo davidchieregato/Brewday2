@@ -1,23 +1,9 @@
-﻿@model BrewDay2.Models.Ricette
+﻿@using BrewDay2.Models
+@using Microsoft.AspNet.Identity
+@model BrewDay2.Models.Ricette
 
-<table class="table"><thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Maltis.FirstOrDefault().Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Maltis.FirstOrDefault().Descrizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Maltis.FirstOrDefault().Produttore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Maltis.FirstOrDefault().Prezzo)
-        </th>
-        <th>.</th>
-    </tr>
-
-@foreach (var item in Model.Maltis) {
+@foreach (var item in Model.Maltis)
+{
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Nome)
@@ -32,11 +18,9 @@
             @Html.DisplayFor(modelItem => item.Prezzo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaltiId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaltiId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.MaltiId, idr = Model.RicettaId })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaltiId, idr = Model.RicettaId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaltiId, idr = Model.RicettaId })
         </td>
     </tr>
 }
 
-</tbody></table>
