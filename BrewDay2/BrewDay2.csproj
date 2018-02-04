@@ -754,6 +754,7 @@
     <Content Include="node_modules\popper.js\dist\umd\popper.js.map" />
     <Content Include="node_modules\popper.js\dist\umd\popper.min.js.map" />
     <Content Include="node_modules\font-awesome\css\font-awesome.css.map" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <Content Include="Scripts\fullcalendar\fullcalendar.js" />
     <Content Include="Scripts\fullcalendar\fullcalendar.min.js" />
