@@ -6,6 +6,7 @@ using Owin;
 using System.Web.Hosting;
 using System.Web.Mvc;
 using BrewDay2.Models;
+using BrewDay2.App_Start;
 
 [assembly: OwinStartupAttribute(typeof(BrewDay2.Startup))]
 
@@ -16,7 +17,7 @@ namespace BrewDay2
         public Startup()
         {
             ModelBinders.Binders.Add(typeof(decimal), new DecimalModelBinder());
-
+            ModelBinders.Binders.Add(typeof(decimal?), new DecimalModelBinder());
             //using (var client = new ApplicationDbContext())
             //{
             //    if (!client.Database.Exists())

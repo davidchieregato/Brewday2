@@ -312,7 +312,13 @@ namespace BrewDay2.Controllers
             base.Dispose(disposing);
         }
 
-
+        /// <summary>
+        /// Metodo invocato alla aggiunta di un additivo alla ricetta
+        /// Crea un nuovo additivo e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id">Valore della chiave per l'additivo da aggiungere</param>
+        /// <returns></returns>
         public ActionResult AggiungiAdditivo(int id)
         {
             AdditiviRicetta ar = new AdditiviRicetta { RicettaId = id };
@@ -323,6 +329,14 @@ namespace BrewDay2.Controllers
             return View(ar);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per l'aggiunta di un additivo alla ricetta 
+        /// Se il modello è valido aggiunge nel database l'additivo e salva i cambiamenti
+        /// Crea un nuovo additivo e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="ar">Additivo da aggiungere alla ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiAdditivo(AdditiviRicetta ar)
         {
@@ -340,6 +354,13 @@ namespace BrewDay2.Controllers
             return View(ar);
         }
 
+        /// <summary>
+        /// Metodo invocato alla aggiunta di un lievito alla ricetta
+        /// Crea un nuovo lievito e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id">Valore della chiave per il lievito da aggiungere</param>
+        /// <returns></returns>
         public ActionResult AggiungiLievito(int id)
         {
             LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
@@ -351,6 +372,14 @@ namespace BrewDay2.Controllers
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per l'aggiunta di un lievito alla ricetta 
+        /// Se il modello è valido aggiunge nel database il lievito e salva i cambiamenti
+        /// Crea un nuovo lievito e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="lr">Lievito da aggiungere alla ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiLievito(LievitiRicetta lr)
         {
@@ -368,6 +397,13 @@ namespace BrewDay2.Controllers
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla aggiunta di un luppolo alla ricetta
+        /// Crea un nuovo luppolo e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id">Valore della chiave per il luppolo da aggiungere</param>
+        /// <returns></returns>
         public ActionResult AggiungiLuppolo(int id)
         {
             LuppoliRicetta lr = new LuppoliRicetta { RicettaId = id };
@@ -380,6 +416,14 @@ namespace BrewDay2.Controllers
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per l'aggiunta di un luppolo alla ricetta 
+        /// Se il modello è valido aggiunge nel database il luppolo e salva i cambiamenti
+        /// Crea un nuovo luppolo e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="lr">Luppolo da aggiungere alla ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiLuppolo(LuppoliRicetta lr)
         {
@@ -396,6 +440,13 @@ namespace BrewDay2.Controllers
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla aggiunta di un malto alla ricetta
+        /// Crea un nuovo malto e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id">Valore della chiave per il malto da aggiungere</param>
+        /// <returns></returns>
         public ActionResult AggiungiMalti(int id)
         {
             MaltiRicetta mr = new MaltiRicetta { RicettaId = id };
@@ -406,6 +457,14 @@ namespace BrewDay2.Controllers
             return View(mr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per l'aggiunta di un malto alla ricetta 
+        /// Se il modello è valido aggiunge nel database il malto e salva i cambiamenti
+        /// Crea un nuovo malto e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="mr">Malto da aggiungere alla ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiMalti(MaltiRicetta mr)
         {
@@ -421,7 +480,14 @@ namespace BrewDay2.Controllers
             ViewBag.malti = MaltiId;
             return View(mr);
         }
-
+        
+        /// <summary>
+        /// Metodo invocato alla aggiunta di uno zucchero alla ricetta
+        /// Crea un nuovo zucchero e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="id">Valore della chiave per lo zucchero da aggiungere</param>
+        /// <returns></returns>
         public ActionResult AggiungiZuccheri(int id)
         {
             ZuccheriRicetta zr = new ZuccheriRicetta { RicettaId = id };
@@ -432,6 +498,14 @@ namespace BrewDay2.Controllers
             return View(zr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per l'aggiunta di uno zucchero alla ricetta 
+        /// Se il modello è valido aggiunge nel database lo zucchero e salva i cambiamenti
+        /// Crea un nuovo zucchero e lo assegna alla variabile speciale ViewBag
+        /// Ritorna la vista
+        /// </summary>
+        /// <param name="zr">Zucchero da aggiungere alla ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult AggiungiZuccheri(ZuccheriRicetta zr)
         {
@@ -448,6 +522,14 @@ namespace BrewDay2.Controllers
             return View(zr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla modifica di un additivo nella ricetta
+        /// Cerca nel database l'additivo e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID dell'additivo da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
         public ActionResult EditAdditivo(int id, int idr)
         {
             AdditiviRicetta ar = _db.AdditiviRicettas.FirstOrDefault(x => x.AdditiviId == id && x.RicettaId == idr);
@@ -455,6 +537,13 @@ namespace BrewDay2.Controllers
             return View(ar);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un additivo nella ricetta
+        /// Cerca nel database l'additivo e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag l'additivo modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="ar">Additivo da modificare nella ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult EditAdditivo(AdditiviRicetta ar)
         {
@@ -470,12 +559,27 @@ namespace BrewDay2.Controllers
             return View(ar);
         }
 
+        /// <summary>
+        /// Metodo invocato alla modifica di un lievito nella ricetta
+        /// Cerca nel database il lievito e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID del lievito da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
         public ActionResult EditLievito(int id, int idr)
         {
             LievitiRicetta lr = _db.LievitiRicettas.FirstOrDefault(x => x.LievitiId == id && x.RicettaId == idr);
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un lievito nella ricetta
+        /// Cerca nel database il lievito e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag il lievito modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="lr">Lievito da modificare nella ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult EditLievito(LievitiRicetta lr)
         {
@@ -492,12 +596,27 @@ namespace BrewDay2.Controllers
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla modifica di un luppolo nella ricetta
+        /// Cerca nel database il luppolo e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID del luppolo da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
         public ActionResult EditLuppolo(int id, int idr)
         {
             LuppoliRicetta lr = _db.LuppoliRicettas.FirstOrDefault(x => x.LuppoliId == id && x.RicettaId == idr);
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un luppolo nella ricetta
+        /// Cerca nel database il luppolo e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag il luppolo modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="lr">Luppolo da modificare nella ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult EditLuppolo(LuppoliRicetta lr)
         {
@@ -512,12 +631,27 @@ namespace BrewDay2.Controllers
             return View(lr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla modifica di un malto nella ricetta
+        /// Cerca nel database il malto e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID del malto da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
         public ActionResult EditMalti(int id, int idr)
         {
             MaltiRicetta mr = _db.MaltiRicettas.FirstOrDefault(x => x.MaltiId == id && x.RicettaId == idr);
             return View(mr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di un malto nella ricetta
+        /// Cerca nel database il malto e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag il malto modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="mr">Malto da modificare nella ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult EditMalti(MaltiRicetta mr)
         {
@@ -533,12 +667,27 @@ namespace BrewDay2.Controllers
             return View(mr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla modifica di uno zucchero nella ricetta
+        /// Cerca nel database lo zucchero e la ricetta passati come parametri
+        /// Ritorna la vista 
+        /// </summary>
+        /// <param name="id">ID dello zucchero da modificare</param>
+        /// <param name="idr">ID della ricetta da modificare</param>
+        /// <returns></returns>
         public ActionResult EditZuccheri(int id, int idr)
         {
             ZuccheriRicetta zr = _db.ZuccheriRicettas.FirstOrDefault(x => x.RicettaId == idr && x.ZuccheriId == id);
             return View(zr);
         }
 
+        /// <summary>
+        /// Metodo invocato alla submit della form per la modifica di uno zucchero nella ricetta
+        /// Cerca nel database lo zucchero e ne aggiorna la quantità
+        /// Assegna alla variabile speciale ViewBag lo zucchero modificato e ne ritorna la vista
+        /// </summary>
+        /// <param name="zr">Zucchero da modificare nella ricetta</param>
+        /// <returns></returns>
         [HttpPost]
         public ActionResult EditZuccheri(ZuccheriRicetta zr, int idr)
         {

@@ -198,6 +198,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\DecimalBinder.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\PathConfig.cs" />
@@ -221,7 +222,6 @@
     <Compile Include="Models\AdditiviMagazzino.cs" />
     <Compile Include="Models\AdditiviRicetta.cs" />
     <Compile Include="Models\CategoriaBirre.cs" />
-    <Compile Include="Models\DecimalBinder.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lieviti.cs" />
     <Compile Include="Models\LievitiMagazzino.cs" />
@@ -333,6 +333,7 @@
     <Content Include="images\file-icons\8.png" />
     <Content Include="images\file-icons\addt.png" />
     <Content Include="images\file-icons\box.png" />
+    <Content Include="images\file-icons\down.png" />
     <Content Include="images\file-icons\home.png" />
     <Content Include="images\file-icons\lievito.png" />
     <Content Include="images\file-icons\luppolo.png" />
