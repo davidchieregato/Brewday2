@@ -2,25 +2,6 @@
 @using Microsoft.AspNet.Identity
 @model BrewDay2.Models.Ricette
 
-<table class="table"><thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Descrizione)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Produttore)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Prezzo)
-        </th>
-        <th>
-            Quantit&agrave;
-        </th>
-        <th>.</th>
-    </tr>
 
 @foreach (var item in Model.Additivis) {
     <tr>
@@ -59,5 +40,3 @@
         }
     </tr>
 }
-
-</tbody></table>

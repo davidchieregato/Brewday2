@@ -18,8 +18,15 @@
             @Html.DisplayFor(modelItem => item.Prezzo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.LievitiId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.LievitiId, idr = Model.RicettaId })
+            @{
+                ApplicationDbContext db = new ApplicationDbContext();
+                var quan = db.LievitiRicettas.Where(x => x.RicettaId == Model.RicettaId && x.LievitiId == item.LievitiId).Select(y => y.Quantita).FirstOrDefault();
+            }
+            @quan
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditLievito", new { id = item.LievitiId, idr = Model.RicettaId }) |
+            @Html.ActionLink("Delete", "DeleteLievito", new { id = item.LievitiId, idr = Model.RicettaId })
         </td>
     </tr>
 }

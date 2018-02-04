@@ -17,7 +17,34 @@
             <div class="card border-secondary mb-3">
                 <div class="card-body">
                     <h5 class="card-title">Ingredienti:</h5>
-                    <p class="card-text"><i><u>@Html.Partial("AdditiviRicetta") <!--Html.Partial("LievitiRicetta")--> @Html.Partial("LuppoliRicetta") @Html.Partial("MaltiRicetta") @Html.Partial("ZuccheriRicetta")</u></i></p>
+                    <p class="card-text">
+                        <table class="table"><thead>
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Nome)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Descrizione)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Produttore)
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Additivis.FirstOrDefault().Prezzo)
+                            </th>
+                            <th>
+                                Quantit&agrave;
+                            </th>
+                            <th>.</th>
+                        </tr>
+                        </thead><tbody>
+                        @Html.Partial("AdditiviRicetta")
+                        @Html.Partial("LievitiRicetta")
+                        @Html.Partial("LuppoliRicetta")
+                        @Html.Partial("MaltiRicetta")
+                        @Html.Partial("ZuccheriRicetta")
+                            </tbody></table>
+                    </p>
                 </div>
             </div>
         </div>

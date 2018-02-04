@@ -1,7 +1,6 @@
 ﻿@using BrewDay2.Models
 @using Microsoft.AspNet.Identity
 @model BrewDay2.Models.Ricette
-
 @foreach (var item in Model.Zuccheris)
 {
     <tr>
@@ -18,10 +17,15 @@
             @Html.DisplayFor(modelItem => item.Prezzo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.ZuccheriId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ZuccheriId, idr = Model.RicettaId })
+            @{
+                ApplicationDbContext db = new ApplicationDbContext();
+                var quan = db.ZuccheriRicettas.Where(x => x.RicettaId == Model.RicettaId && x.ZuccheriId == item.ZuccheriId).Select(y => y.Quantita).FirstOrDefault();
+            }
+            @quan
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditZuccheri", new { id = item.ZuccheriId, idr = Model.RicettaId }) |
+            @Html.ActionLink("Delete", "DeleteZucchero", new { id = item.ZuccheriId, idr = Model.RicettaId })
         </td>
     </tr>
 }
-
-</tbody></table>
