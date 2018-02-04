@@ -187,16 +187,17 @@ namespace BrewDay2.Controllers
             }
             var valide = additivi.Intersect(malti).Intersect(luppoli).Intersect(lieviti).Intersect(zuccheri);
             Random r = new Random();
+            var mex = User.Identity.GetUserId();
             if (valide.Count() > 0)
             {
                 
                 int quale = r.Next(0, valide.Count());
                 return RedirectToAction("Details", new {ricetta = valide.ElementAt(quale).RicettaId});
             }
-            else if(_db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()).Count()>0)
+            else if(_db.Ricette.Where(x => x.Privata == false || x.UserId == mex).Count()>0)
             {
                 int q = r.Next(0, _db.Ricette.Count());
-                var dove = _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()).ToList().ElementAt(q).RicettaId;
+                var dove = _db.Ricette.Where(x => x.Privata == false || x.UserId == mex).ToList().ElementAt(q).RicettaId;
                 return RedirectToAction("Details", new { id = dove});
             }
             else
