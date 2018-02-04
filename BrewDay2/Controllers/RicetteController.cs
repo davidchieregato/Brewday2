@@ -63,7 +63,7 @@ namespace BrewDay2.Controllers
             }
             else
             {
-                return View(_db.Ricette.Where(x => x.Privata == false));
+                return View(_db.Ricette.Where(x =>x.Categoria == nomeparametro &&(x.Privata == false)).ToList());
             }
         }
 
@@ -123,7 +123,7 @@ namespace BrewDay2.Controllers
                 {
                     a.Add(_db.Additivi.FirstOrDefault(x => x.AdditiviId == additiviMagazzino.AdditiviId));
                 }
-            foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
+            foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == me))
             {
                 if (a.All(x => ricette.Additivis.Contains(x)))
                 {
@@ -138,7 +138,7 @@ namespace BrewDay2.Controllers
                 {
                     l.Add(_db.Luppoli.FirstOrDefault(x => x.LuppoliId == additiviMagazzino.LuppoliId));
                 }
-                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
+                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == me))
                 {
                     if (l.All(x => ricette.Luppolis.Contains(x)))
                     {
@@ -151,7 +151,7 @@ namespace BrewDay2.Controllers
                 {
                     li.Add(_db.Lieviti.FirstOrDefault(x => x.LievitiId == additiviMagazzino.LievitiId));
                 }
-                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
+                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == me))
                 {
                     if (li.All(x => ricette.Lievitis.Contains(x)))
                     {
@@ -164,7 +164,7 @@ namespace BrewDay2.Controllers
                 {
                     ma.Add(_db.Malti.Where(x => x.MaltiId == additiviMagazzino.MaltiId).FirstOrDefault());
                 }
-                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == User.Identity.GetUserId()))
+                foreach (var ricette in _db.Ricette.Where(x => x.Privata == false || x.UserId == me))
                 {
                     if (ma.All(x => ricette.Maltis.Contains(x)))
                     {
@@ -177,7 +177,7 @@ namespace BrewDay2.Controllers
                 {
                     z.Add(_db.Zuccheri.Where(x => x.ZuccheriId == additiviMagazzino.ZuccheriId).FirstOrDefault());
                 }
-                foreach (var ricette in _db.Ricette.Where(x=>x.Privata == false || x.UserId == User.Identity.GetUserId()))
+                foreach (var ricette in _db.Ricette.Where(x=>x.Privata == false || x.UserId == me))
                 {
                     if (z.All(x => ricette.Zuccheris.Contains(x)))
                     {
