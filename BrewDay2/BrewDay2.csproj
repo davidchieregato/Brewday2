@@ -235,6 +235,7 @@
     <Compile Include="Models\MaltiRicetta.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Ricette.cs" />
+    <Compile Include="Models\VoteModel.cs" />
     <Compile Include="Models\Zuccheri.cs" />
     <Compile Include="Models\ZuccheriMagazzino.cs" />
     <Compile Include="Models\ZuccheriRicetta.cs" />
@@ -255,6 +256,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\007-star.png" />
     <Content Include="images\asc.gif" />
     <Content Include="images\bg.gif" />
     <Content Include="images\birre\1.png" />
@@ -1006,6 +1008,8 @@
     <Content Include="Views\Magazzino\EditLuppolo.cshtml" />
     <Content Include="Views\Magazzino\EditMalti.cshtml" />
     <Content Include="Views\Magazzino\EditZuccheri.cshtml" />
+    <Content Include="Views\Ricette\_VoteNow.cshtml" />
+    <Content Include="Views\Ricette\_VoteShow.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

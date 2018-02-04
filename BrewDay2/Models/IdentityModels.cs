@@ -43,6 +43,7 @@ namespace BrewDay2.Models
         public DbSet<LuppoliMagazzino> LuppoliMagazzinos { get; set; }
         public DbSet<LievitiMagazzino> LievitiMagazzinos { get; set; }
         public DbSet<CategoriaBirre> CategoriaBirres { get; set; }
+        public DbSet<VoteModel> VoteModels { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

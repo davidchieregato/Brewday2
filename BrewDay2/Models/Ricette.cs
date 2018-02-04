@@ -22,6 +22,7 @@ namespace BrewDay2.Models
         public decimal CapacitaContenitore { get; set; }
         public bool Privata { get; set; } = false;
         public String UserId { get; set; }
+        public String Votes { get; set; }
         public virtual ICollection<Malti> Maltis { get; set; }
         public virtual ICollection<Additivi> Additivis { get; set; }
         public virtual ICollection<Lieviti> Lievitis { get; set; }

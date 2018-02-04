@@ -1,0 +1,58 @@
+﻿@model string
+@{
+    var url = Request.Url.AbsolutePath;
+}
+@if (!User.Identity.IsAuthenticated)
+{
+    <text>Please <a href="/Account/Login?ReturnUrl=@Request.Url.AbsolutePath" title="Login to rate">Login</a> to rate</text>
+    return;
+}
+@if (Request.Cookies[url] == null)
+{
+    <div id="ratingDiv" class="smallText">
+        Poor
+        <img width="64px" height="64px" src="/images/file-icons/2.png" alt="" class="ratingStar" data-value="1" /><img width="64px" height="64px" src="/images/file-icons/4.png" alt="" class="ratingStar" data-value="2" /><img width="64px" height="64px" src="/images/file-icons/6.png" alt="" class="ratingStar" data-value="3" /><img width="64px" height="64px" src="/images/file-icons/8.png" alt="" class="ratingStar" data-value="4" /><img width="64px" height="64px" src="/images/file-icons/10.png" alt="" class="ratingStar" data-value="5" /> Excellent
+        <label id="lblResult"></label>
+    </div>
+    <style type="text/css">
+        .ratingStar {
+            cursor: pointer;
+        }
+    </style>
+  
+}
+else
+{
+    <text><span style="color:green;">Thanks for your vote !</span></text>
+}
+<script src="/Scripts/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript">
+        var clickedFlag = false;
+        $(".ratingStar").mouseover(function () {
+            $(this).attr("src", "/images/file-icons/35.png").prevAll("img.ratingStar").attr("src", "/images/file-icons/35.png");
+        });
+        $(".ratingStar, #radingDiv").mouseout(function () {
+            $(this).attr("src", "/images/file-icons/2.png");
+        });
+        $("#ratingDiv").mouseout(function () {
+            if (!clickedFlag)
+            {
+                $(".ratingStar").attr("src", "/images/file-icons/2.png");
+            }
+        });
+        $(".ratingStar").click(function () {
+            clickedFlag = true;
+            $(".ratingStar").unbind("mouseout mouseover click").css("cursor", "default");
+
+            var url = "/Home/SendRating?r=" + $(this).attr("data-value") + "&s=5&id=@Model&url=@url";
+            $.post(url, null, function (data) {
+                $("#lblResult").html(data);
+            });
+        });
+        $("#lblResult").ajaxStart(function () {
+            $("#lblResult").html("Processing ....");
+        });
+        $("#lblResult").ajaxError(function () {
+            $("#lblResult").html("<br />Error occured.");
+        });
+    </script>

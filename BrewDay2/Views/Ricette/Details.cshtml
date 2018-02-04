@@ -58,7 +58,11 @@
         </div>
     </div>
 </div>
-
+<div class="tr" style="background-color:#f1f1f1;">
+    <div class="td0">Please rate this school</div>
+    <div class="td">@Html.Partial("_VoteNow", Model.RicettaId.ToString())</div>
+    <div class="td">@Html.Partial("_VoteShow", Model.Votes== null?"":Model.Votes.ToString())</div>
+</div>
 <p>
     @Html.ActionLink("Modifica", "Edit", new { id = Model.RicettaId }) |
     @Html.ActionLink("Torna alla lista", "Index")
