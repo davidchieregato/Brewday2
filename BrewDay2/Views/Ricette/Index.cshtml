@@ -10,88 +10,92 @@
 <p>
     @Html.ActionLink("Crea Nuova", "Create")
 </p>
-<table class="table" id="myTable" name="myTable">
-    <thead>
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Note)<a href="#" data-toggle="tooltip" data-placement="top" title="Descrizione della preparazione della ricetta"> ? </a>
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.NomeRicetta)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TempoPreparazione) <a href="#" data-toggle="tooltip" data-placement="top" title="Minuti"> ? </a>
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.TempoFermentazione) <a href="#" data-toggle="tooltip" data-placement="top" title="Mesi"> ? </a>
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Categoria)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Privata)
-        </th>
-        <th>Aggiungi Additivo</th>
-        <th>Aggiungi Lievito</th>
-        <th>Aggiungi Luppolo</th>
-        <th>Aggiungi Malto</th>
-        <th>Aggiungi Zucchero</th>
-        <th>.</th>
-    </tr>
-    </thead>
- <tbody>@foreach (var item in Model)
-    {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Note)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.NomeRicetta)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TempoPreparazione)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TempoFermentazione)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Categoria)
-            </td>
-            <td>
-                @Html.Raw(item.Privata == false ? "Pubblica" : "Privata")
-            </td>
-            <td>
-                @Html.ActionLink("+", "AggiungiAdditivo", new {id = item.RicettaId})
-            </td>
-            <td>
-                @Html.ActionLink("+", "AggiungiLievito", new {id = item.RicettaId})
-            </td>
-            <td>
-                @Html.ActionLink("+", "AggiungiLuppolo", new {id = item.RicettaId})
-            </td>
-            <td>
-                @Html.ActionLink("+", "AggiungiMalti", new {id = item.RicettaId})
-            </td>
-            <td>
-                @Html.ActionLink("+", "AggiungiZuccheri", new {id = item.RicettaId})
-            </td>
-            @if (User.Identity != null && item.UserId == User.Identity.GetUserId())
-            {
+<div style="overflow-x:auto;">
+    <table class="table" id="myTable" name="myTable">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Note)<a href="#" data-toggle="tooltip" data-placement="top" title="Descrizione della preparazione della ricetta"> ? </a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeRicetta)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TempoPreparazione) <a href="#" data-toggle="tooltip" data-placement="top" title="Minuti"> ? </a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TempoFermentazione) <a href="#" data-toggle="tooltip" data-placement="top" title="Mesi"> ? </a>
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Categoria)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Privata)
+                </th>
+                <th>Aggiungi Additivo</th>
+                <th>Aggiungi Lievito</th>
+                <th>Aggiungi Luppolo</th>
+                <th>Aggiungi Malto</th>
+                <th>Aggiungi Zucchero</th>
+                <th>.</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+        {
+            <tr>
                 <td>
-                    @Html.ActionLink("Edit", "Edit", new {id = item.RicettaId}) |
-                    @Html.ActionLink("Details", "Details", new {id = item.RicettaId}) |
-                    @Html.ActionLink("Delete", "Delete", new {id = item.RicettaId})
+                    @Html.DisplayFor(modelItem => item.Note)
                 </td>
-            }        else
-            {
                 <td>
-                    Impossibile editare
+                    @Html.DisplayFor(modelItem => item.NomeRicetta)
                 </td>
-            }
-        </tr>
-    }
-</tbody></table>
-
+                <td>
+                    @Html.DisplayFor(modelItem => item.TempoPreparazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TempoFermentazione)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Categoria)
+                </td>
+                <td>
+                    @Html.Raw(item.Privata == false ? "Pubblica" : "Privata")
+                </td>
+                <td>
+                    @Html.ActionLink("+", "AggiungiAdditivo", new { id = item.RicettaId })
+                </td>
+                <td>
+                    @Html.ActionLink("+", "AggiungiLievito", new { id = item.RicettaId })
+                </td>
+                <td>
+                    @Html.ActionLink("+", "AggiungiLuppolo", new { id = item.RicettaId })
+                </td>
+                <td>
+                    @Html.ActionLink("+", "AggiungiMalti", new { id = item.RicettaId })
+                </td>
+                <td>
+                    @Html.ActionLink("+", "AggiungiZuccheri", new { id = item.RicettaId })
+                </td>
+                @if (User.Identity != null && item.UserId == User.Identity.GetUserId())
+                {
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.RicettaId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.RicettaId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.RicettaId })
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        Impossibile editare
+                    </td>
+                }
+            </tr>
+        }
+    </tbody>
+</table>
+    </div>
 <h2>Ultime ricette</h2>
 
 
@@ -99,7 +103,7 @@
 
 <div class="contlist">
     <ul>
-       @foreach (var item in Model)
+        @foreach (var item in Model)
         {
             <li>
                 <div class="box_1 multibox_preview">
