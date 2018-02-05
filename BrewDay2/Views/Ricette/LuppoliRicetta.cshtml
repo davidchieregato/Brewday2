@@ -26,9 +26,21 @@
             @quan
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditLuppolo", new { id = item.LuppoliId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Delete", "DeleteLuppolo", new { id = item.LuppoliId, idr = Model.RicettaId })
+            Luppolo
         </td>
+@if (Model.UserId == User.Identity.GetUserId())
+{
+    <td>
+        @Html.ActionLink("Edit", "EditLuppolo", new { id = item.LuppoliId, idr = Model.RicettaId }) |
+        @Html.ActionLink("Delete", "DeleteLuppolo", new { id = item.LuppoliId, idr = Model.RicettaId })
+    </td>
+}
+else
+{
+    <td>
+        Impossibile editare
+    </td>
+}
     </tr>
 }
 

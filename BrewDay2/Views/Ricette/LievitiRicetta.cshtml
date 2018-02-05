@@ -25,9 +25,21 @@
             @quan
         </td>
         <td>
-            @Html.ActionLink("Edit", "EditLievito", new { id = item.LievitiId, idr = Model.RicettaId }) |
-            @Html.ActionLink("Delete", "DeleteLievito", new { id = item.LievitiId, idr = Model.RicettaId })
+            Lievito
         </td>
+@if (Model.UserId == User.Identity.GetUserId())
+{
+    <td>
+        @Html.ActionLink("Edit", "EditLievito", new {id = item.LievitiId, idr = Model.RicettaId}) |
+        @Html.ActionLink("Delete", "DeleteLievito", new {id = item.LievitiId, idr = Model.RicettaId})
+    </td>
+}        
+        else
+        {
+        <td>
+            Impossibile editare
+        </td>
+        }
     </tr>
 }
 

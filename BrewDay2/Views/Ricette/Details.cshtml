@@ -35,6 +35,9 @@
                             <th>
                                 Quantit&agrave;
                             </th>
+                            <th>
+                                Categoria
+                            </th>
                             <th>.</th>
                         </tr>
                         </thead><tbody>
@@ -59,7 +62,7 @@
     </div>
 </div>
 <div class="tr" style="background-color:#f1f1f1;">
-    <div class="td0">Please rate this school</div>
+    <div class="td0">Please rate this beer receipe</div>
     <div class="td">@Html.Partial("_VoteNow", Model.RicettaId.ToString())</div>
     <div class="td">@Html.Partial("_VoteShow", Model.Votes?.ToString() ?? "")</div>
 </div>

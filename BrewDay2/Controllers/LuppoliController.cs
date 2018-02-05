@@ -73,7 +73,7 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Luppoli luppoli)
+        public ActionResult Create(Luppoli luppoli)
         {
             if (ModelState.IsValid)
             {
@@ -121,7 +121,7 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Luppoli luppoli)
+        public ActionResult Edit(Luppoli luppoli)
         {
             if (ModelState.IsValid)
             {

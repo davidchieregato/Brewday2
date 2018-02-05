@@ -10,7 +10,7 @@
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
+    @Html.HiddenFor(x => x.UserId)
     <div class="form-horizontal">
         <h4>Zuccheri</h4>
         <hr />

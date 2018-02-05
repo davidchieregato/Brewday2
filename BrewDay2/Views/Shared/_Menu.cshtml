@@ -81,6 +81,15 @@
                             <span class="menu-title">Tutte</span>
                         </a>
                     </li>
+                @if (Request.IsAuthenticated)
+                {
+                    <li class="nav-item @(itemSelezionato == "Personali" ? "active" : "")">
+                        <a class="nav-link" href="/Ricette/?nomeparametro=myReceipe">
+                            <img src="~/images/file-icons/1.png" aria-hidden="true">
+                            <span class="menu-title">Personali</span>
+                        </a>
+                    </li>
+                }
                     <li class="nav-item @(itemSelezionato == "WitBier" ? "active" : "")">
                         <a class="nav-link" href="/Ricette/?nomeparametro=WitBier">
                             <img src="~/images/file-icons/2.png" aria-hidden="true">

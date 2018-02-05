@@ -49,7 +49,13 @@ namespace BrewDay2.Controllers
         [AllowAnonymous]
         public ActionResult Index(String nomeparametro)
         {
-            if (User.Identity.IsAuthenticated)
+            if (nomeparametro == "myReceipe")
+            {
+                var me = User.Identity.GetUserId();
+                var daRestituire = _db.Ricette.Where(x => x.UserId == me);
+                return View(daRestituire);
+            }
+            else if (User.Identity.IsAuthenticated)
             {
                 var me = User.Identity.GetUserId();
                 var lista = !String.IsNullOrEmpty(nomeparametro)
@@ -252,6 +258,8 @@ namespace BrewDay2.Controllers
             {
                 return HttpNotFound();
             }
+            SelectList sl = new SelectList(_db.CategoriaBirres, "Nome", "Nome");
+            ViewBag.categorie = sl;
             return View(ricette);
         }
 
@@ -567,7 +575,7 @@ namespace BrewDay2.Controllers
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details",new {id = ar2.RicettaId});
             }
             SelectList AdditiviId = new SelectList(_db.Additivi, "AdditiviId", "Nome");
             ViewBag.additivi = AdditiviId;
@@ -603,7 +611,7 @@ namespace BrewDay2.Controllers
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details",new {id = lr2.RicettaId});
             }
             //LievitiRicetta lr = new LievitiRicetta { RicettaId = id };
             SelectList LievitiId = new SelectList(_db.Lieviti, "LievitiId", "Nome");
@@ -639,7 +647,7 @@ namespace BrewDay2.Controllers
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details",new {id=lr2.RicettaId});
             }
             SelectList LuppoliId = new SelectList(_db.Luppoli, "LuppoliId", "Nome");
             ViewBag.luppoli = LuppoliId;
@@ -675,7 +683,7 @@ namespace BrewDay2.Controllers
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details",new {id=mr2.RicettaId});
             }
             SelectList MaltiId = new SelectList(_db.Malti, "MaltiId", "Nome");
             ViewBag.malti = MaltiId;
@@ -711,7 +719,7 @@ namespace BrewDay2.Controllers
             if (ModelState.IsValid)
             {
                 _db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Details",new {id=zr2.RicettaId});
             }
             SelectList ZuccheriId = new SelectList(_db.Zuccheri, "ZuccheriId", "Nome");
             ViewBag.zuccheri = ZuccheriId;

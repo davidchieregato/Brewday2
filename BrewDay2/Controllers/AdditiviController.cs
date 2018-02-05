@@ -123,7 +123,7 @@ namespace BrewDay2.Controllers
         /// <returns></returns>
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nome,Descrizione,Produttore,Prezzo")] Additivi additivi)
+        public ActionResult Edit(Additivi additivi)
         {
             if (ModelState.IsValid)
             {
