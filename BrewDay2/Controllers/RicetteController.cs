@@ -205,7 +205,7 @@ namespace BrewDay2.Controllers
             }
             else if(_db.Ricette.Where(x => x.Privata == false || x.UserId == mex).Count()>0)
             {
-                int q = r.Next(0, _db.Ricette.Count());
+                int q = r.Next(0, _db.Ricette.Where(x => x.Privata == false || x.UserId == mex).Count());
                 var dove = _db.Ricette.Where(x => x.Privata == false || x.UserId == mex).ToList().ElementAt(q).RicettaId;
                 return RedirectToAction("Details", new { id = dove});
             }

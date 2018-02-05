@@ -9,6 +9,7 @@ namespace BrewDay2.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         [Key]
+        [Display(Name = "Luppolo")]
         public int LuppoliId { get; set; }
 
         public String Nome { get; set; }
