@@ -63,7 +63,10 @@ namespace BrewDay2.Controllers
             }
             else
             {
+                if(nomeparametro!=null)
                 return View(_db.Ricette.Where(x =>x.Categoria == nomeparametro &&(x.Privata == false)).ToList());
+                else
+                    return View(_db.Ricette.Where(x =>(x.Privata == false)).ToList());
             }
         }
 
